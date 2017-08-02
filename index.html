@@ -842,16 +842,48 @@
 <h4 id="5-写博客"><a href="#5-写博客" class="headerlink" title="5.写博客"></a>5.写博客</h4><blockquote>
 <p>$ hexo new “我的第一篇博文”</p>
 </blockquote>
-<p>然后在本地博客文件夹source-&gt;_post文件夹下看到我们新建的markdown文件；用Markdown编辑器打开md文件编辑文字 “你好，欢迎来到我的个人技术博客。”保存<br>本地发布: </p>
-<blockquote>
+<p>然后在本地博客文件夹source-&gt;_post文件夹下看到我们新建的markdown文件；用Markdown编辑器打开md文件编辑文字 “你好，欢迎来到我的个人技术博客。”保存</p>
+<ul>
+<li>本地发布: <blockquote>
 <p>$ hexo server </p>
 </blockquote>
-<p><strong>打开 <a href="http://localhost：4000" target="_blank" rel="external">http://localhost：4000</a> 就可以看到自己的文章了。开心撒花！！！</strong><br>网络发布：</p>
-<blockquote>
-<p>$ hexo generate //<br>生成 $ hexo deploy //部署</p>
+</li>
+</ul>
+<p><strong>打开 <a href="http://localhost：4000" target="_blank" rel="external">http://localhost：4000</a> 就可以看到自己的文章了。开心撒花！！！</strong> </p>
+<ul>
+<li>将blog部署到Github Pages上<br>使用hexo deploy部署<br>1.打开<strong>站点配置文件</strong>，做如图修改<br><img src="../images/deploy.png" alt="deploy"><br>2.安装一个扩展<blockquote>
+<p>$ npm install hexo-deployer-git –save</p>
 </blockquote>
+</li>
+</ul>
+<ol>
+<li>执行部署<blockquote>
+<p>$ hexo d</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>网络发布：<blockquote>
+<p>$ hexo generate //生成<br>$ hexo deploy //部署</p>
+</blockquote>
+</li>
+</ul>
 <p><strong>这样，zyyjoin.github.io以及zyyup.com都可以看到那篇文章了。 </strong></p>
-<h4 id="6-hexo的主题等相关配置（网上查，不多赘述）"><a href="#6-hexo的主题等相关配置（网上查，不多赘述）" class="headerlink" title="6.hexo的主题等相关配置（网上查，不多赘述）"></a>6.hexo的主题等相关配置（网上查，不多赘述）</h4>
+<h4 id="6-hexo的主题等相关配置"><a href="#6-hexo的主题等相关配置" class="headerlink" title="6.hexo的主题等相关配置"></a>6.hexo的主题等相关配置</h4><blockquote>
+<p>以NexT为例介绍：<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">http://theme-next.iissnan.com/</a></p>
+</blockquote>
+<p><img src="../images/NexT.png" alt="NexT"><br>1.下载主题<br>使用克隆（clone）最新版本 的方式，之后的更新可以通过 git pull 来快速更新。<br><em>$ cd your-hexo-site //定位站点目录的 themes 目录下</em><br><em>$ git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a> themes/next</em><br>2.启用主题<br>打开<strong>站点配置文件</strong>，修改theme值<br><img src="../images/theme.png" alt="theme"><br>3.验证主题</p>
+<blockquote>
+<p>$ hexo s –debug // 启动服务<br>浏览器访问 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>检查站点是否正确运行。</p>
+</blockquote>
+<h2 id="附：hexo常用命令"><a href="#附：hexo常用命令" class="headerlink" title="附：hexo常用命令"></a>附：hexo常用命令</h2><ul>
+<li>hexo new “postName” #新建文章</li>
+<li>hexo new page “pageName” #新建页面</li>
+<li>hexo generate #生成静态页面至public目录</li>
+<li>hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）</li>
+<li>hexo deploy #将.deploy目录部署到GitHub<br><strong>通常使用 hexo d -g 加载部署新博文</strong></li>
+</ul>
+
           
         
       
