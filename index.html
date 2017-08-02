@@ -306,7 +306,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/02/使用IDEA和Maven创建Java web项目/" itemprop="url">Hello World</a></h1>
+                <a class="post-title-link" href="/2017/08/02/使用IDEA和Maven创建Java web项目/" itemprop="url">使用IDEA和Maven创建Java web项目</a></h1>
         
 
         <div class="post-meta">
@@ -355,15 +355,12 @@
       
         
           
-            <h1 id="使用IDEA和Maven创建Java-web项目"><a href="#使用IDEA和Maven创建Java-web项目" class="headerlink" title="使用IDEA和Maven创建Java web项目"></a>使用IDEA和Maven创建Java web项目</h1><blockquote>
-<p>认识 Maven</p>
+            <p><em>你好，欢迎来到我的个人技术博客。</em></p>
+<h1 id="使用IDEA和Maven创建Java-web项目"><a href="#使用IDEA和Maven创建Java-web项目" class="headerlink" title="使用IDEA和Maven创建Java web项目"></a>使用IDEA和Maven创建Java web项目</h1><blockquote>
+<p>认识 Maven<br>Maven是一个软件项目管理工具，基于项目对象模型（POM），maven下管理、创建项目非常简单。最强大的功能就是能够自动下载项目依赖库。<br>Maven 配置</p>
+<h3 id="首先到Maven官网下载-解压；"><a href="#首先到Maven官网下载-解压；" class="headerlink" title="首先到Maven官网下载,解压；"></a>首先到Maven官网下载<apache-maven-3.3.9-bin.tar.gz>,解压；</apache-maven-3.3.9-bin.tar.gz></h3><p>解压后如图<br><img src="../images/maven-bin.png" alt="maven-bin"><br><strong>由于Maven远程仓库在国外，所以在下载相关jar包时非常慢，解决需要两步：</strong></p>
 </blockquote>
-<p>Maven是一个软件项目管理工具，基于项目对象模型（POM），maven下管理、创建项目非常简单。最强大的功能就是能够自动下载项目依赖库。</p>
-<blockquote>
-<p>Maven 配置</p>
-</blockquote>
-<h3 id="首先到Maven官网下载-解压；"><a href="#首先到Maven官网下载-解压；" class="headerlink" title="首先到Maven官网下载,解压；**"></a>首先到Maven官网下载<apache-maven-3.3.9-bin.tar.gz>,解压；**</apache-maven-3.3.9-bin.tar.gz></h3><p>解压后如图<br><img src="../images/maven-bin.png" alt="maven-bin"><br><strong>由于Maven远程仓库在国外，所以在下载相关jar包时非常慢，解决需要两步：</strong><br>1.将其配置为Alibaba的仓库，添加下面代码；</p>
-<p>找到/conf/setting.xml文件，用文本编辑器打开，添加如下信息：<br>    <mirrors><br>      <!-- mirror
+<p>1.将其配置为Alibaba的仓库，添加下面代码；<br>找到/conf/setting.xml文件，用文本编辑器打开，添加如下信息：<br>    <mirrors><br>      <!-- mirror
        | Specifies a repository mirror site to use instead of a given repository. The repository that
        | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
        | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
@@ -406,14 +403,7 @@
 
 &lt;/mirrors&gt;
 </code></pre><p>2.配置IDEA<br><em>加上-DarchetypeCatalog=internal 运行参数，archetype-catalog.xml本地获取</em><br>操作如图：<br><img src="../images/IDEASettings1.png" alt="IDEASettings1"><br><img src="../images/IDEASettings2.png" alt="IDEASettings2"></p>
-<h3 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h3><ul>
-<li><img src="../images/newMaven.png" alt="newMaven"><br>注意：要选<strong>maven-archetype-webapp</strong>（如图）next</li>
-<li><img src="../images/next1.png" alt="next1"><br><strong>GroupID</strong> 是项目组织唯一的标识符，实际对应JAVA的包的结构，是main目录里java的目录结构。<br><strong>ArtifactID</strong> 是项目的唯一的标识符，实际对应项目的名称，就是项目根目录的名称。 next</li>
-<li><img src="../images/next2.png" alt="next2"><br><strong>Maven home directory:</strong>即上一步Maven解压目录<br><strong>User settings file：</strong>即上一步修改的那个xml文件<br><strong>Local repository：</strong>在解压目录同级新建包repository，仓库目录。next</li>
-<li><img src="../images/next3.png" alt="next3"><br>修改项目名称。<strong>finish</strong></li>
-<li>配置成功提示信息（如图）<strong>成功了，开心撒花！！！</strong><br><img src="../images/success.png" alt="success"></li>
-<li>完成之后项目的文件目录如图。<br><img src="../images/last.png" alt="last"></li>
-</ul>
+<h3 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h3><p><img src="../images/newMaven.png" alt="newMaven"><br>注意：要选<strong>maven-archetype-webapp</strong>（如图）next<br><img src="../images/next1.png" alt="next1"><br><strong>GroupID</strong> 是项目组织唯一的标识符，实际对应JAVA的包的结构，是main目录里java的目录结构。<br><strong>ArtifactID</strong> 是项目的唯一的标识符，实际对应项目的名称，就是项目根目录的名称。 next<br><img src="../images/next2.png" alt="next2"><br><strong>Maven home directory:</strong>即上一步Maven解压目录<br><strong>User settings file：</strong>即上一步修改的那个xml文件<br><strong>Local repository：</strong>在解压目录同级新建包repository，仓库目录。next<br><img src="../images/next3.png" alt="next3"><br>修改项目名称。<strong>finish</strong><br>配置成功提示信息（如图）<strong>成功了，开心撒花！！！</strong><br><img src="../images/success.png" alt="success"><br>完成之后项目的文件目录如图。<br><img src="../images/last.png" alt="last"></p>
 
           
         
@@ -528,9 +518,7 @@
             <p><em>你好，欢迎来到我的个人技术博客。</em></p>
 <h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><hr>
 <h3 id="1，正则表达式的用途："><a href="#1，正则表达式的用途：" class="headerlink" title="1，正则表达式的用途："></a>1，正则表达式的用途：</h3><p>正则表达式是用来判断“字 符串”是否符合某个“样式”时，这个“样式”的表达方式。</p>
-<h3 id="2，正则表达式的写法："><a href="#2，正则表达式的写法：" class="headerlink" title="2，正则表达式的写法："></a>2，正则表达式的写法：</h3><p>1）可以使用“//”括住正则表达式的样式，当在程序中使用正则表达式时，这是最快速容易的方式。</p>
-<p>2）可以用类方法建立对象“Regxep.new(str)”这种写法。原来已经有了一个代表样式的字符串时，用这种方式建立正则表达式会比较方 便。</p>
-<p>3）“%r”，当正则表达式内部用到“/”字符时，改用“%r”会比较方便。</p>
+<h3 id="2，正则表达式的写法："><a href="#2，正则表达式的写法：" class="headerlink" title="2，正则表达式的写法："></a>2，正则表达式的写法：</h3><p>1）可以使用“//”括住正则表达式的样式，当在程序中使用正则表达式时，这是最快速容易的方式。<br>2）可以用类方法建立对象“Regxep.new(str)”这种写法。原来已经有了一个代表样式的字符串时，用这种方式建立正则表达式会比较方 便。<br>3）“%r”，当正则表达式内部用到“/”字符时，改用“%r”会比较方便。</p>
 <h3 id="3，正则表达式的匹配："><a href="#3，正则表达式的匹配：" class="headerlink" title="3，正则表达式的匹配："></a>3，正则表达式的匹配：</h3><p>符号“=~”，写法：正则表达式 =~ 字符串；不成立时会返回null，成立时会返回字符串中与样式匹配成功的起始位置。</p>
 <h3 id="4，正则表达式的样式："><a href="#4，正则表达式的样式：" class="headerlink" title="4，正则表达式的样式："></a>4，正则表达式的样式：</h3><p>1）英文字母与数字：只会单纯地去匹配字符串里是否包含相同的文字。</p>
 <p>2）转义字符：</p>
@@ -549,16 +537,7 @@
 </li>
 </ul>
 <h1 id="常用正则表达式："><a href="#常用正则表达式：" class="headerlink" title="常用正则表达式："></a>常用正则表达式：</h1><hr>
-<p>1.匹配<strong>中文字符</strong>的正则表达式： [/u4e00-/u9fa5]<br>2.匹配<strong>双字节字符</strong>(包括汉字在内)：[^\x00-\xff]<br>3.匹配空白行：\n\s<em>\r<br>4.匹配HTML标记：&lt;(\S\</em>?)[^&gt;]*&gt;.<em>?&lt;/\1&gt;|&lt;.</em>? /&gt;<br>5.匹配首尾空白字符：^\s*|\s<em>$<br>6.匹配<strong>Email地址</strong>：\w+([-+.]\w+)\</em>@\w+([-.]\w+)*.\w+([-.]\w+)<em><br>7.匹配网址URL：[a-zA-z]+://[^\s]</em><br>8.匹配帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]{4,15}$<br>9.匹配<strong>国内电话号码</strong>：\d{3}-\d{8}|\d{4}-\d{7}<br>10.匹配中国邮政编码：[1-9]\d{5}(?!\d)<br>11.匹配<strong>身份证</strong>：\d{15}|\d{18}<br>12.匹配<strong>ip地址</strong>：\d+.\d+.\d+.\d+<br><strong>13.匹配特定数字：</strong><br>^[1-9]\d<em>$　 　 //匹配正整数<br>^-[1-9]\d</em>$ 　 //匹配负整数<br>^-?[1-9]\d<em>$　　 //匹配整数<br>^[1-9]\d</em>|0$　 //匹配非负整数（正整数 + 0）<br>^-[1-9]\d<em>|0$　　 //匹配非正整数（负整数 + 0）<br>^[1-9]\d\</em>.\d*|0.\d*[1-9]\d<em>$　　 //匹配正浮点数<br>^-([1-9]\d\</em>.\d*|0.\d*[1-9]\d<em>)$　 //匹配负浮点数<br>^-?([1-9]\d\</em>.\d*|0.\d*[1-9]\d<em>|0?.0+|0)$　 //匹配浮点数<br>^[1-9]\d\</em>.\d*|0.\d*[1-9]\d<em>|0?.0+|0$　　 //匹配非负浮点数（正浮点数 + 0）<br>^(-([1-9]\d\</em>.\d*|0.\d*[1-9]\d*))|0?.0+|0$　　//匹配非正浮点数（负浮点数 + 0）</p>
-<p><strong>14.匹配特定字符串：</strong><br>^[A-Za-z]+$　　//匹配由26个英文字母组成的字符串<br>^[A-Z]+$　　//匹配由26个英文字母的大写组成的字符串<br>^[a-z]+$　　//匹配由26个英文字母的小写组成的字符串<br>^[A-Za-z0-9]+$　　//匹配由数字和26个英文字母组成的字符串<br>^\w+$　　//匹配由数字、26个英文字母或者下划线组成的字符串</p>
-<p>\d{18}|\d{17}[a-zA-Z]{1}|\d{15}　　//身份证号码验证（包括新旧的验证）</p>
-<p>^(13[0-9]|15[0|3|6|8|9])\d{8}$　　//任意手机号码验证</p>
-<p>^[w-]+(.[w-]+)*@[w-]+(.[w-]+)+$　　　　//email地址</p>
-<p>^[a-zA-z]+://(w+(-w+)*)(.(w+(-w+)*))*(?S*)?$　　//url</p>
-<p>[1-9][0-9]{4,}    //腾讯QQ号</p>
-<p>只能输入长度为3的字符：^.{3}$</p>
-<p>以字母开头，长度在6-18之间，只能包含字符、数字和下划线:^[a-zA-Z]w{5,17}$</p>
-<p>验证是否含有^%&amp;’,;=?$等字符：[^%&amp;’,;=?$x22]+</p>
+<p>1.匹配<strong>中文字符</strong>的正则表达式： [/u4e00-/u9fa5]<br>2.匹配<strong>双字节字符</strong>(包括汉字在内)：[^\x00-\xff]<br>3.匹配空白行：\n\s<em>\r<br>4.匹配HTML标记：&lt;(\S\</em>?)[^&gt;]*&gt;.<em>?&lt;/\1&gt;|&lt;.</em>? /&gt;<br>5.匹配首尾空白字符：^\s*|\s<em>$<br>6.匹配<strong>Email地址</strong>：\w+([-+.]\w+)\</em>@\w+([-.]\w+)*.\w+([-.]\w+)<em><br>7.匹配网址URL：[a-zA-z]+://[^\s]</em><br>8.匹配帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]{4,15}$<br>9.匹配<strong>国内电话号码</strong>：\d{3}-\d{8}|\d{4}-\d{7}<br>10.匹配中国邮政编码：[1-9]\d{5}(?!\d)<br>11.匹配<strong>身份证</strong>：\d{15}|\d{18}<br>12.匹配<strong>ip地址</strong>：\d+.\d+.\d+.\d+<br><strong>13.匹配特定数字：</strong><br>^[1-9]\d<em>$　 　 //匹配正整数<br>^-[1-9]\d</em>$ 　 //匹配负整数<br>^-?[1-9]\d<em>$　　 //匹配整数<br>^[1-9]\d</em>|0$　 //匹配非负整数（正整数 + 0）<br>^-[1-9]\d<em>|0$　　 //匹配非正整数（负整数 + 0）<br>^[1-9]\d\</em>.\d*|0.\d*[1-9]\d<em>$　　 //匹配正浮点数<br>^-([1-9]\d\</em>.\d*|0.\d*[1-9]\d<em>)$　 //匹配负浮点数<br>^-?([1-9]\d\</em>.\d*|0.\d*[1-9]\d<em>|0?.0+|0)$　 //匹配浮点数<br>^[1-9]\d\</em>.\d*|0.\d*[1-9]\d<em>|0?.0+|0$　　 //匹配非负浮点数（正浮点数 + 0）<br>^(-([1-9]\d\</em>.\d*|0.\d*[1-9]\d<em>))|0?.0+|0$　　//匹配非正浮点数（负浮点数 + 0）<br><strong>14.匹配特定字符串：</strong><br>^[A-Za-z]+$　　//匹配由26个英文字母组成的字符串<br>^[A-Z]+$　　//匹配由26个英文字母的大写组成的字符串<br>^[a-z]+$　　//匹配由26个英文字母的小写组成的字符串<br>^[A-Za-z0-9]+$　　//匹配由数字和26个英文字母组成的字符串<br>^\w+$　　//匹配由数字、26个英文字母或者下划线组成的字符串<br>\d{18}|\d{17}[a-zA-Z]{1}|\d{15}　　//身份证号码验证（包括新旧的验证）<br>^(13[0-9]|15[0|3|6|8|9])\d{8}$　　//任意手机号码验证<br>^[w-]+(.[w-]+)</em>@[w-]+(.[w-]+)+$　　　　//email地址<br>^[a-zA-z]+://(w+(-w+)*)(.(w+(-w+)*))*(?S*)?$　　//url<br>[1-9][0-9]{4,}    //腾讯QQ号<br>只能输入长度为3的字符：^.{3}$<br>以字母开头，长度在6-18之间，只能包含字符、数字和下划线:^[a-zA-Z]w{5,17}$<br>验证是否含有^%&amp;’,;=?$等字符：[^%&amp;’,;=?$x22]+</p>
 
           
         
