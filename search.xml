@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[使用IDEA和Maven创建Java web项目]]></title>
+    <url>%2F2017%2F08%2F02%2F%E4%BD%BF%E7%94%A8IDEA%E5%92%8CMaven%E5%88%9B%E5%BB%BAJava%20web%E9%A1%B9%E7%9B%AE%2F</url>
+    <content type="text"><![CDATA[你好，欢迎来到我的个人技术博客。 使用IDEA和Maven创建Java web项目 认识 Maven Maven是一个软件项目管理工具，基于项目对象模型（POM），maven下管理、创建项目非常简单。最强大的功能就是能够自动下载项目依赖库。 Maven 配置 首先到Maven官网下载,解压；解压后如图由于Maven远程仓库在国外，所以在下载相关jar包时非常慢，解决需要两步： 1.将其配置为Alibaba的仓库，添加下面代码；找到/conf/setting.xml文件，用文本编辑器打开，添加如下信息： &lt;mirror&gt; &lt;id&gt;alimaven&lt;/id&gt; &lt;name&gt;aliyun maven&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt; &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;/mirror&gt; &lt;mirror&gt; &lt;id&gt;uk&lt;/id&gt; &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt; &lt;url&gt;http://uk.maven.org/maven2/&lt;/url&gt; &lt;/mirror&gt; &lt;mirror&gt; &lt;id&gt;CN&lt;/id&gt; &lt;name&gt;OSChina Central&lt;/name&gt; &lt;url&gt;http://maven.oschina.net/content/groups/public/&lt;/url&gt; &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;/mirror&gt; &lt;mirror&gt; &lt;id&gt;nexus&lt;/id&gt; &lt;name&gt;internal nexus repository&lt;/name&gt; &lt;!-- &lt;url&gt;http://192.168.1.100:8081/nexus/content/groups/public/&lt;/url&gt;--&gt; &lt;url&gt;http://repo.maven.apache.org/maven2&lt;/url&gt; &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;/mirror&gt; &lt;/mirrors&gt; 2.配置IDEA加上-DarchetypeCatalog=internal 运行参数，archetype-catalog.xml本地获取操作如图： 新建项目注意：要选maven-archetype-webapp（如图）nextGroupID 是项目组织唯一的标识符，实际对应JAVA的包的结构，是main目录里java的目录结构。ArtifactID 是项目的唯一的标识符，实际对应项目的名称，就是项目根目录的名称。 nextMaven home directory:即上一步Maven解压目录User settings file：即上一步修改的那个xml文件Local repository：在解压目录同级新建包repository，仓库目录。next修改项目名称。finish配置成功提示信息（如图）成功了，开心撒花！！！完成之后项目的文件目录如图。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[正则表达式]]></title>
+    <url>%2F2017%2F08%2F02%2F%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[你好，欢迎来到我的个人技术博客。 正则表达式 1，正则表达式的用途：正则表达式是用来判断“字 符串”是否符合某个“样式”时，这个“样式”的表达方式。 2，正则表达式的写法：1）可以使用“//”括住正则表达式的样式，当在程序中使用正则表达式时，这是最快速容易的方式。2）可以用类方法建立对象“Regxep.new(str)”这种写法。原来已经有了一个代表样式的字符串时，用这种方式建立正则表达式会比较方 便。3）“%r”，当正则表达式内部用到“/”字符时，改用“%r”会比较方便。 3，正则表达式的匹配：符号“=~”，写法：正则表达式 =~ 字符串；不成立时会返回null，成立时会返回字符串中与样式匹配成功的起始位置。 4，正则表达式的样式：1）英文字母与数字：只会单纯地去匹配字符串里是否包含相同的文字。 2）转义字符： “^”表示“与行首匹配成功的样式”；“$”表示“与行尾匹配成功的样式”；“\A”表示“与字符串头匹配成功的样式”；“\z”表示“与字符 串尾匹配成功的样式”。 “[]”表示“与其中任意一个字符匹配”；“[-]”表示“匹配的范围”；“[^]”表示“与这里所指定之外的字匹配成功”； “.”表示任意一个字符；“\s”表示与空白，即空白字符(0×20)、定位符号、换行字符、换页字符匹配成功；“\d”表示“与0-9之间的 数字匹配成功”；“\w”表示“与英文与数字匹配成功”；“\”后面接上“^”、“$”、“[”这些英文、数字以外的转义字符时，这些字符将不再具备转义 字符的小用了，而可以去匹配这些字符本身。 “”表示“出现0次以上”；“+”表示“出现1次以上”；“？”表示“出现0次和1次”；“？”表示“出现0次以上，但取最短的匹配结 果”；“+？”表示“出现1次以上，但取最短的匹配结果”；“()”表示“多个字构成的字符串反复匹配”；“|”表示“可以在样式里列举多个候补条件，只 要其中一个符合就匹配成功”。 quote方法：会返回忽略所有转移字符串后的字符串，再以这个字符串作为new的实参建立出正则表达式对象。 “i”：忽略英文字母大小写的差异；“s”：字符编码方式为Shift_JIS;“e”：字符编码方式为E _JP;”u”:字符编码方式为 UTF-8,”n”：匹配时不考虑文字编码；“x”：忽略正则表达式内部的空白，并忽略“#”后面的内容；“m”：使得“.”能与换行符号匹配成功 常用正则表达式： 1.匹配中文字符的正则表达式： [/u4e00-/u9fa5]2.匹配双字节字符(包括汉字在内)：[^\x00-\xff]3.匹配空白行：\n\s\r4.匹配HTML标记：&lt;(\S\?)[^&gt;]*&gt;.?&lt;/\1&gt;|&lt;.? /&gt;5.匹配首尾空白字符：^\s*|\s$6.匹配Email地址：\w+([-+.]\w+)\@\w+([-.]\w+)*.\w+([-.]\w+)7.匹配网址URL：[a-zA-z]+://[^\s]8.匹配帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]{4,15}$9.匹配国内电话号码：\d{3}-\d{8}|\d{4}-\d{7}10.匹配中国邮政编码：[1-9]\d{5}(?!\d)11.匹配身份证：\d{15}|\d{18}12.匹配ip地址：\d+.\d+.\d+.\d+13.匹配特定数字：^[1-9]\d$ //匹配正整数^-[1-9]\d$ //匹配负整数^-?[1-9]\d$ //匹配整数^[1-9]\d|0$ //匹配非负整数（正整数 + 0）^-[1-9]\d|0$ //匹配非正整数（负整数 + 0）^[1-9]\d\.\d*|0.\d*[1-9]\d$ //匹配正浮点数^-([1-9]\d\.\d*|0.\d*[1-9]\d)$ //匹配负浮点数^-?([1-9]\d\.\d*|0.\d*[1-9]\d|0?.0+|0)$ //匹配浮点数^[1-9]\d\.\d*|0.\d*[1-9]\d|0?.0+|0$ //匹配非负浮点数（正浮点数 + 0）^(-([1-9]\d\.\d*|0.\d*[1-9]\d))|0?.0+|0$ //匹配非正浮点数（负浮点数 + 0）14.匹配特定字符串：^[A-Za-z]+$ //匹配由26个英文字母组成的字符串^[A-Z]+$ //匹配由26个英文字母的大写组成的字符串^[a-z]+$ //匹配由26个英文字母的小写组成的字符串^[A-Za-z0-9]+$ //匹配由数字和26个英文字母组成的字符串^\w+$ //匹配由数字、26个英文字母或者下划线组成的字符串\d{18}|\d{17}[a-zA-Z]{1}|\d{15} //身份证号码验证（包括新旧的验证）^(13[0-9]|15[0|3|6|8|9])\d{8}$ //任意手机号码验证^[w-]+(.[w-]+)@[w-]+(.[w-]+)+$ //email地址^[a-zA-z]+://(w+(-w+)*)(.(w+(-w+)*))*(?S*)?$ //url[1-9][0-9]{4,} //腾讯QQ号只能输入长度为3的字符：^.{3}$以字母开头，长度在6-18之间，只能包含字符、数字和下划线:^[a-zA-Z]w{5,17}$验证是否含有^%&amp;’,;=?$等字符：[^%&amp;’,;=?$x22]+]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[分享整理自己做这个博客的经验]]></title>
+    <url>%2F2017%2F08%2F01%2F%E5%88%86%E4%BA%AB%E6%95%B4%E7%90%86%E8%87%AA%E5%B7%B1%E5%81%9A%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BB%8F%E9%AA%8C%2F</url>
+    <content type="text"><![CDATA[你好，欢迎来到我的个人技术博客。 自己做博客的全过程整理（Github+Hexo）自己建博客的初衷：首先觉得它高大上，学计算机不是都应该有自己的blog吗？然后想好好整理自己所学所想，记录自己学习、思考、总结的过程，分享我的故事、经验，这里可以张扬个性，崇尚自由。在这里，严格要求自己，不断进步，加油。 我的步骤：github账户准备关于github，这是一个网站，就是每个程序员自己写的程序，可以在github上建立一个网上的仓库，你每次提交的时候可以把代码提交到网上，这样你的每次提交，别人也都可以看到你的代码，同时别人也可以帮你修改你的代码，这种开源的方式非常方便程序员之间的交流和学习。 我先知道的github，所以就先进行了这方面准备： 账号注册然后登录进去[Github官网]（https://github.com/）注：记你的用户名为username创建一个代码库，名称为 username.github.io 开启github pages功能，主要就是用它搭建的博客。（点击设置，点击Automatic page generator） GitHubPages可以被认为是用户编写的、托管在GitHub上的静态网页。 至此网址username.github.io就可以在浏览器中访问了。撒花！！！ 插曲：Git SSH keys的生成和添加。 ssh keys是ssh中基于密匙的安全验证。通过ssh keys本地git项目与远程的GitHub建立起了联系。 1.设置Git的user name和email： $ git config –global user.name”张玉鹰”（名字是你的真名，不是GitHub的昵称。） $ git config –global user.email “862071204@qq.com” 2.检查SSH keys是否已经有了。桌面打开Git Bash Here： $ cd ~/.ssh 如果提示：No such file or directory 说明你是第一次使用 git。 3.生成密匙： $ ssh-keygen -t rsa -C “862071204@qq.com”回车 回车 回车 回车（密码可以为空，也可设置） 4.这样成功之后在～/.ssh目录下有两个文件，如图记事本打开id_rsa.pub，复制内容到github帐号管理中的添加SSH key界面中。 5.验证： $ ssh -T git@GitHub.com 然后yes 看到如图字样就算成功了。 从此以后就可以拷贝github上的项目源码了。 使用github得到源码：1.获取源码： $ git clone git@github.com:billyanyteen/github-services.git 这样你的机器上就有一个repo了。git是分布式的，没有服务器概念。所有的人的机器上都有一个repo，每次提交都是给自己机器的repo 2.仓库初始化： $ git init 3.生成快照并存入项目索引： $ git add . 4.项目索引提交： $ git commit 4.协作编程：将本地repo于远程的origin的repo合并，推送本地更新到远程： $ git push origin master 5.更新远程更新到本地： $ git pull origin master 下载安装准备软件1.node.js 2.git 如图验证安装，出现版本信息说明安装正确 自定义域名（.com等，需要购买）与Github Pages域名绑定我半信半疑的去腾讯云买了一年（/45元）的zyyup.com的域名。1.进行域名解析，在哪买在哪解析，记录指向的ip地址是 GitHub Pages 的提供的 ip（自己ping username.github.io）2.去到你的username.github.io代码仓库，新建一个文件，名称CNAME 内容zyyup.com（你买的自定义域名）至此你的博客网址zyyup.com就可以在浏览器中访问了。撒花！！！ 至此，个人博客就搭建完毕了。 下面是使用一个快速blog生成工具Hexo，进行博客装饰和博客提交、部署安装配置hexo1.在D盘新建文件夹/blog2.下载安装hexo：打开git bash here ： $ npm install -g hexo-cli 终端输入hexo 回车 如图说明安装成功了。 3.初始化hexo $ hexo init 4.进入安装文件夹 $ npm install （自动安装你需要的组件）之后会出现很多文件如图 5.写博客 $ hexo new “我的第一篇博文” 然后在本地博客文件夹source-&gt;_post文件夹下看到我们新建的markdown文件；用Markdown编辑器打开md文件编辑文字 “你好，欢迎来到我的个人技术博客。”保存 本地发布: $ hexo server 打开 http://localhost：4000 就可以看到自己的文章了。开心撒花！！！ 将blog部署到Github Pages上使用hexo deploy部署1.打开站点配置文件，做如图修改2.安装一个扩展 $ npm install hexo-deployer-git –save 执行部署 $ hexo d 网络发布： $ hexo generate //生成$ hexo deploy //部署 这样，zyyjoin.github.io以及zyyup.com都可以看到那篇文章了。 6.hexo的主题等相关配置 以NexT为例介绍：http://theme-next.iissnan.com/ 1.下载主题使用克隆（clone）最新版本 的方式，之后的更新可以通过 git pull 来快速更新。$ cd your-hexo-site //定位站点目录的 themes 目录下$ git clone https://github.com/iissnan/hexo-theme-next themes/next2.启用主题打开站点配置文件，修改theme值3.验证主题 $ hexo s –debug // 启动服务浏览器访问 http://localhost:4000/检查站点是否正确运行。 附：hexo常用命令 hexo new “postName” #新建文章 hexo new page “pageName” #新建页面 hexo generate #生成静态页面至public目录 hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server） hexo deploy #将.deploy目录部署到GitHub通常使用 hexo d -g 加载部署新博文]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Markdown常用语法]]></title>
+    <url>%2F2017%2F07%2F31%2FMarkdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[你好，欢迎来到我的个人技术博客。 Markdown常用语法]]></content>
+      <categories>
+        <category>Markdown</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[诗歌：致橡树]]></title>
+    <url>%2F2017%2F07%2F31%2Farticle-%E8%87%B4%E6%A9%A1%E6%A0%91%2F</url>
+    <content type="text"><![CDATA[致橡树——舒婷 我如果爱你—— 绝不像攀援的凌霄花， 借你的高枝炫耀自己； 我如果爱你—— 绝不学痴情的鸟儿， 为绿荫重复单调的歌曲； 也不止像泉源， 常年送来清凉的慰藉； 也不止像险峰， 增加你的高度，衬托你的威仪。 甚至日光， 甚至春雨。 不，这些都还不够！ 我必须是你近旁的一株木棉， 作为树的形象和你站在一起。 根，紧握在地下； 叶，相触在云里。 每一阵风过， 我们都互相致意， 但没有人， 听懂我们的言语。 你有你的铜枝铁干， 像刀，像剑，也像戟； 我有我红硕的花朵， 像沉重的叹息， 又像英勇的火炬。 我们分担寒潮、风雷、霹雳； 我们共享雾霭、流岚、虹霓。 仿佛永远分离， 却又终身相依。 这才是伟大的爱情， 坚贞就在这里： 爱—— 不仅爱你伟岸的身躯， 也爱你坚持的位置， 足下的土地。]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>诗歌</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2017%2F07%2F30%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
