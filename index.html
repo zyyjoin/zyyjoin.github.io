@@ -354,62 +354,15 @@
 
       
         
-          
-            <p><em>你好，欢迎来到我的个人技术博客。</em></p>
-<h1 id="使用IDEA和Maven创建Java-web项目"><a href="#使用IDEA和Maven创建Java-web项目" class="headerlink" title="使用IDEA和Maven创建Java web项目"></a>使用IDEA和Maven创建Java web项目</h1><blockquote>
-<p>认识 Maven</p>
-</blockquote>
-<p>Maven是一个软件项目管理工具，基于项目对象模型（POM），maven下管理、创建项目非常简单。最强大的功能就是能够自动下载项目依赖库。</p>
-<blockquote>
-<p>Maven 配置</p>
-</blockquote>
-<h3 id="首先到Maven官网下载-解压；"><a href="#首先到Maven官网下载-解压；" class="headerlink" title="首先到Maven官网下载,解压；"></a>首先到Maven官网下载<apache-maven-3.3.9-bin.tar.gz>,解压；</apache-maven-3.3.9-bin.tar.gz></h3><p>解压后如图<br><img src="../images/maven-bin.png" alt="maven-bin"><br><strong>由于Maven远程仓库在国外，所以在下载相关jar包时非常慢，解决需要两步：</strong></p>
-<p>1.将其配置为Alibaba的仓库，添加下面代码；<br>找到/conf/setting.xml文件，用文本编辑器打开，添加如下信息：<br>    <mirrors><br>      <!-- mirror
-       | Specifies a repository mirror site to use instead of a given repository. The repository that
-       | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
-       | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
-       |
-      <mirror>
-        <id>mirrorId</id>
-        <mirrorOf>repositoryId</mirrorOf>
-        <name>Human Readable Name for this Mirror.</name>
-        <url>http://my.repository.com/repo/path</url>
-      </mirror>
-       --></mirrors></p>
-<pre><code>  &lt;mirror&gt;
-    &lt;id&gt;alimaven&lt;/id&gt;
-    &lt;name&gt;aliyun maven&lt;/name&gt;
-    &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;
-    &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
-  &lt;/mirror&gt;
-
-  &lt;mirror&gt; 
-    &lt;id&gt;uk&lt;/id&gt;  
-    &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;  
-    &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;  
-    &lt;url&gt;http://uk.maven.org/maven2/&lt;/url&gt; 
-  &lt;/mirror&gt;
-
-   &lt;mirror&gt;
-    &lt;id&gt;CN&lt;/id&gt;
-    &lt;name&gt;OSChina Central&lt;/name&gt;
-    &lt;url&gt;http://maven.oschina.net/content/groups/public/&lt;/url&gt;
-    &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
-  &lt;/mirror&gt;
-
-  &lt;mirror&gt;
-    &lt;id&gt;nexus&lt;/id&gt;
-    &lt;name&gt;internal nexus repository&lt;/name&gt;
-    &lt;!-- &lt;url&gt;http://192.168.1.100:8081/nexus/content/groups/public/&lt;/url&gt;--&gt;
-    &lt;url&gt;http://repo.maven.apache.org/maven2&lt;/url&gt;
-    &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
-  &lt;/mirror&gt;
-
-&lt;/mirrors&gt;
-</code></pre><p>2.配置IDEA<br><em>加上-DarchetypeCatalog=internal 运行参数，archetype-catalog.xml本地获取</em><br>操作如图：<br><img src="../images/IDEASettings1.png" alt="IDEASettings1"><br><img src="../images/IDEASettings2.png" alt="IDEASettings2"></p>
-<h3 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h3><p><img src="../images/newMaven.png" alt="newMaven"><br>注意：要选<strong>maven-archetype-webapp</strong>（如图）next<br><img src="../images/next1.png" alt="next1"><br><strong>GroupID</strong> 是项目组织唯一的标识符，实际对应JAVA的包的结构，是main目录里java的目录结构。<br><strong>ArtifactID</strong> 是项目的唯一的标识符，实际对应项目的名称，就是项目根目录的名称。 next<br><img src="../images/next2.png" alt="next2"><br><strong>Maven home directory:</strong>即上一步Maven解压目录<br><strong>User settings file：</strong>即上一步修改的那个xml文件<br><strong>Local repository：</strong>在解压目录同级新建包repository，仓库目录。next<br><img src="../images/next3.png" alt="next3"><br>修改项目名称。<strong>finish</strong><br>配置成功提示信息（如图）<strong>成功了，开心撒花！！！</strong><br><img src="../images/success.png" alt="success"><br>完成之后项目的文件目录如图。<br><img src="../images/last.png" alt="last"></p>
-
-          
+          <p><em>你好，欢迎来到我的个人技术博客。</em></p>
+<h1 id="使用IDEA和Maven创建Java-web项目"><a href="#使用IDEA和Maven创建Java-web项目" class="headerlink" title="使用IDEA和Maven创建Java web项目"></a>使用IDEA和Maven创建Java web项目</h1>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/02/使用IDEA和Maven创建Java web项目/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -518,32 +471,15 @@
 
       
         
-          
-            <p><em>你好，欢迎来到我的个人技术博客。</em></p>
-<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1><hr>
-<h3 id="1，正则表达式的用途："><a href="#1，正则表达式的用途：" class="headerlink" title="1，正则表达式的用途："></a>1，正则表达式的用途：</h3><p>正则表达式是用来判断“字 符串”是否符合某个“样式”时，这个“样式”的表达方式。</p>
-<h3 id="2，正则表达式的写法："><a href="#2，正则表达式的写法：" class="headerlink" title="2，正则表达式的写法："></a>2，正则表达式的写法：</h3><p>1）可以使用“//”括住正则表达式的样式，当在程序中使用正则表达式时，这是最快速容易的方式。<br>2）可以用类方法建立对象“Regxep.new(str)”这种写法。原来已经有了一个代表样式的字符串时，用这种方式建立正则表达式会比较方 便。<br>3）“%r”，当正则表达式内部用到“/”字符时，改用“%r”会比较方便。</p>
-<h3 id="3，正则表达式的匹配："><a href="#3，正则表达式的匹配：" class="headerlink" title="3，正则表达式的匹配："></a>3，正则表达式的匹配：</h3><p>符号“=~”，写法：正则表达式 =~ 字符串；不成立时会返回null，成立时会返回字符串中与样式匹配成功的起始位置。</p>
-<h3 id="4，正则表达式的样式："><a href="#4，正则表达式的样式：" class="headerlink" title="4，正则表达式的样式："></a>4，正则表达式的样式：</h3><p>1）英文字母与数字：只会单纯地去匹配字符串里是否包含相同的文字。</p>
-<p>2）转义字符：</p>
-<ul>
-<li><p>“^”表示“与行首匹配成功的样式”；“$”表示“与行尾匹配成功的样式”；“\A”表示“与字符串头匹配成功的样式”；“\z”表示“与字符 串尾匹配成功的样式”。</p>
-</li>
-<li><p>“[]”表示“与其中任意一个字符匹配”；“[-]”表示“匹配的范围”；“[^]”表示“与这里所指定之外的字匹配成功”；</p>
-</li>
-<li><p>“.”表示任意一个字符；“\s”表示与空白，即空白字符(0×20)、定位符号、换行字符、换页字符匹配成功；“\d”表示“与0-9之间的 数字匹配成功”；“\w”表示“与英文与数字匹配成功”；“\”后面接上“^”、“$”、“[”这些英文、数字以外的转义字符时，这些字符将不再具备转义 字符的小用了，而可以去匹配这些字符本身。</p>
-</li>
-<li><p>“<em>”表示“出现0次以上”；“+”表示“出现1次以上”；“？”表示“出现0次和1次”；“</em>？”表示“出现0次以上，但取最短的匹配结 果”；“+？”表示“出现1次以上，但取最短的匹配结果”；“()”表示“多个字构成的字符串反复匹配”；“|”表示“可以在样式里列举多个候补条件，只 要其中一个符合就匹配成功”。</p>
-</li>
-<li><p>quote方法：会返回忽略所有转移字符串后的字符串，再以这个字符串作为new的实参建立出正则表达式对象。</p>
-</li>
-<li><p>“i”：忽略英文字母大小写的差异；“s”：字符编码方式为Shift_JIS;“e”：字符编码方式为E _JP;”u”:字符编码方式为 UTF-8,”n”：匹配时不考虑文字编码；“x”：忽略正则表达式内部的空白，并忽略“#”后面的内容；“m”：使得“.”能与换行符号匹配成功</p>
-</li>
-</ul>
-<h1 id="常用正则表达式："><a href="#常用正则表达式：" class="headerlink" title="常用正则表达式："></a>常用正则表达式：</h1><hr>
-<p>1.匹配<strong>中文字符</strong>的正则表达式： [/u4e00-/u9fa5]<br>2.匹配<strong>双字节字符</strong>(包括汉字在内)：[^\x00-\xff]<br>3.匹配空白行：\n\s<em>\r<br>4.匹配HTML标记：&lt;(\S\</em>?)[^&gt;]*&gt;.<em>?&lt;/\1&gt;|&lt;.</em>? /&gt;<br>5.匹配首尾空白字符：^\s*|\s<em>$<br>6.匹配<strong>Email地址</strong>：\w+([-+.]\w+)\</em>@\w+([-.]\w+)*.\w+([-.]\w+)<em><br>7.匹配网址URL：[a-zA-z]+://[^\s]</em><br>8.匹配帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]{4,15}$<br>9.匹配<strong>国内电话号码</strong>：\d{3}-\d{8}|\d{4}-\d{7}<br>10.匹配中国邮政编码：[1-9]\d{5}(?!\d)<br>11.匹配<strong>身份证</strong>：\d{15}|\d{18}<br>12.匹配<strong>ip地址</strong>：\d+.\d+.\d+.\d+<br><strong>13.匹配特定数字：</strong><br>^[1-9]\d<em>$　 　 //匹配正整数<br>^-[1-9]\d</em>$ 　 //匹配负整数<br>^-?[1-9]\d<em>$　　 //匹配整数<br>^[1-9]\d</em>|0$　 //匹配非负整数（正整数 + 0）<br>^-[1-9]\d<em>|0$　　 //匹配非正整数（负整数 + 0）<br>^[1-9]\d\</em>.\d*|0.\d*[1-9]\d<em>$　　 //匹配正浮点数<br>^-([1-9]\d\</em>.\d*|0.\d*[1-9]\d<em>)$　 //匹配负浮点数<br>^-?([1-9]\d\</em>.\d*|0.\d*[1-9]\d<em>|0?.0+|0)$　 //匹配浮点数<br>^[1-9]\d\</em>.\d*|0.\d*[1-9]\d<em>|0?.0+|0$　　 //匹配非负浮点数（正浮点数 + 0）<br>^(-([1-9]\d\</em>.\d*|0.\d*[1-9]\d<em>))|0?.0+|0$　　//匹配非正浮点数（负浮点数 + 0）<br><strong>14.匹配特定字符串：</strong><br>^[A-Za-z]+$　　//匹配由26个英文字母组成的字符串<br>^[A-Z]+$　　//匹配由26个英文字母的大写组成的字符串<br>^[a-z]+$　　//匹配由26个英文字母的小写组成的字符串<br>^[A-Za-z0-9]+$　　//匹配由数字和26个英文字母组成的字符串<br>^\w+$　　//匹配由数字、26个英文字母或者下划线组成的字符串<br>\d{18}|\d{17}[a-zA-Z]{1}|\d{15}　　//身份证号码验证（包括新旧的验证）<br>^(13[0-9]|15[0|3|6|8|9])\d{8}$　　//任意手机号码验证<br>^[w-]+(.[w-]+)</em>@[w-]+(.[w-]+)+$　　　　//email地址<br>^[a-zA-z]+://(w+(-w+)*)(.(w+(-w+)*))*(?S*)?$　　//url<br>[1-9][0-9]{4,}    //腾讯QQ号<br>只能输入长度为3的字符：^.{3}$<br>以字母开头，长度在6-18之间，只能包含字符、数字和下划线:^[a-zA-Z]w{5,17}$<br>验证是否含有^%&amp;’,;=?$等字符：[^%&amp;’,;=?$x22]+</p>
-
-          
+          <p><em>你好，欢迎来到我的个人技术博客。</em></p>
+<h1 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h1>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/02/正则表达式/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -652,127 +588,15 @@
 
       
         
-          
-            <p><em>你好，欢迎来到我的个人技术博客。</em></p>
-<h1 id="自己做博客的全过程整理（Github-Hexo）"><a href="#自己做博客的全过程整理（Github-Hexo）" class="headerlink" title="自己做博客的全过程整理（Github+Hexo）"></a>自己做博客的全过程整理（Github+Hexo）</h1><p><strong>自己建博客的初衷：</strong><br>首先觉得它高大上，学计算机不是都应该有自己的blog吗？然后想好好整理自己所学所想，记录自己学习、思考、总结的过程，分享我的故事、经验，这里可以张扬个性，崇尚自由。在这里，严格要求自己，不断进步，加油。</p>
-<h1 id="我的步骤："><a href="#我的步骤：" class="headerlink" title="我的步骤："></a>我的步骤：</h1><h3 id="github账户准备"><a href="#github账户准备" class="headerlink" title="github账户准备"></a>github账户准备</h3><p>关于github，这是一个网站，就是每个程序员自己写的程序，可以在github上建立一个网上的仓库，你每次提交的时候可以把代码提交到网上，这样你的每次提交，别人也都可以看到你的代码，同时别人也可以帮你修改你的代码，这种开源的方式非常方便程序员之间的交流和学习。 </p>
-<blockquote>
-<p>我先知道的github，所以就先进行了这方面准备：</p>
-</blockquote>
-<ul>
-<li>账号注册然后登录进去[Github官网]（<a href="https://github.com/）" target="_blank" rel="external">https://github.com/）</a><br>注：记你的用户名为username创建一个代码库，名称为 username.github.io</li>
-<li>开启github pages功能，主要就是用它搭建的博客。（点击设置，点击Automatic page generator）<blockquote>
-<p>GitHubPages可以被认为是用户编写的、托管在GitHub上的静态网页。</p>
-</blockquote>
-</li>
-</ul>
-<p><strong>至此网址username.github.io就可以在浏览器中访问了。撒花！！！</strong>    </p>
-<h3 id="插曲：Git-SSH-keys的生成和添加。"><a href="#插曲：Git-SSH-keys的生成和添加。" class="headerlink" title="插曲：Git SSH keys的生成和添加。"></a>插曲：Git SSH keys的生成和添加。</h3><blockquote>
-<p>ssh keys是ssh中基于密匙的安全验证。通过ssh keys本地git项目与远程的GitHub建立起了联系。</p>
-</blockquote>
-<h4 id="1-设置Git的user-name和email："><a href="#1-设置Git的user-name和email：" class="headerlink" title="1.设置Git的user name和email："></a>1.设置Git的user name和email：</h4><blockquote>
-<p>$ git config –global user.name”张玉鹰”<br>（名字是你的真名，不是GitHub的昵称。）</p>
-<p>$ git config –global user.email “862071204@qq.com”</p>
-</blockquote>
-<h4 id="2-检查SSH-keys是否已经有了。"><a href="#2-检查SSH-keys是否已经有了。" class="headerlink" title="2.检查SSH keys是否已经有了。"></a>2.检查SSH keys是否已经有了。</h4><p>桌面打开Git Bash Here： </p>
-<blockquote>
-<p>$ cd ~/.ssh </p>
-</blockquote>
-<p>如果提示：No such file or directory 说明你是第一次使用 git。</p>
-<h4 id="3-生成密匙："><a href="#3-生成密匙：" class="headerlink" title="3.生成密匙："></a>3.生成密匙：</h4><blockquote>
-<p>$ ssh-keygen -t rsa -C “862071204@qq.com”回车</p>
-</blockquote>
-<p>回车 回车 回车（密码可以为空，也可设置）</p>
-<h4 id="4-这样成功之后在～-ssh目录下有两个文件，如图"><a href="#4-这样成功之后在～-ssh目录下有两个文件，如图" class="headerlink" title="4.这样成功之后在～/.ssh目录下有两个文件，如图"></a>4.这样成功之后在～/.ssh目录下有两个文件，如图</h4><p><img src="../images/ssh.png" alt="ssh"><br>记事本打开id_rsa.pub，复制内容到github帐号管理中的添加<br>SSH key界面中。</p>
-<h4 id="5-验证："><a href="#5-验证：" class="headerlink" title="5.验证："></a>5.验证：</h4><blockquote>
-<p>$ ssh -T git@GitHub.com 然后yes 看到如图字样就算成功了。</p>
-</blockquote>
-<p><img src="../images/ssh成功可用.png" alt="ssh成功可用"><br><em>从此以后就可以拷贝github上的项目源码了。</em></p>
-<h3 id="使用github得到源码："><a href="#使用github得到源码：" class="headerlink" title="使用github得到源码："></a>使用github得到源码：</h3><h4 id="1-获取源码："><a href="#1-获取源码：" class="headerlink" title="1.获取源码："></a>1.获取源码：</h4><blockquote>
-<p>$ git clone git@github.com:billyanyteen/github-services.git</p>
-</blockquote>
-<p>这样你的机器上就有一个repo了。git是分布式的，没有服务器概念。所有的人的机器上都有一个repo，每次提交都是给自己机器的repo</p>
-<h4 id="2-仓库初始化："><a href="#2-仓库初始化：" class="headerlink" title="2.仓库初始化："></a>2.仓库初始化：</h4><blockquote>
-<p>$ git init</p>
-</blockquote>
-<h4 id="3-生成快照并存入项目索引："><a href="#3-生成快照并存入项目索引：" class="headerlink" title="3.生成快照并存入项目索引："></a>3.生成快照并存入项目索引：</h4><blockquote>
-<p>$ git add .</p>
-</blockquote>
-<h4 id="4-项目索引提交："><a href="#4-项目索引提交：" class="headerlink" title="4.项目索引提交："></a>4.项目索引提交：</h4><blockquote>
-<p>$ git commit</p>
-</blockquote>
-<h4 id="4-协作编程：将本地repo于远程的origin的repo合并，推送本地更新到远程："><a href="#4-协作编程：将本地repo于远程的origin的repo合并，推送本地更新到远程：" class="headerlink" title="4.协作编程：将本地repo于远程的origin的repo合并，推送本地更新到远程："></a>4.协作编程：将本地repo于远程的origin的repo合并，推送本地更新到远程：</h4><blockquote>
-<p>$ git push origin master</p>
-</blockquote>
-<h4 id="5-更新远程更新到本地："><a href="#5-更新远程更新到本地：" class="headerlink" title="5.更新远程更新到本地："></a>5.更新远程更新到本地：</h4><blockquote>
-<p>$ git pull origin master</p>
-</blockquote>
-<h3 id="下载安装准备软件"><a href="#下载安装准备软件" class="headerlink" title="下载安装准备软件"></a>下载安装准备软件</h3><pre><code>1.node.js
-2.git    
-</code></pre><blockquote>
-<p>如图验证安装，出现版本信息说明安装正确</p>
-</blockquote>
-<p><img src="../images/验证安装.png" alt="验证安装"></p>
-<h3 id="自定义域名（-com等，需要购买）与Github-Pages域名绑定"><a href="#自定义域名（-com等，需要购买）与Github-Pages域名绑定" class="headerlink" title="自定义域名（.com等，需要购买）与Github Pages域名绑定"></a>自定义域名（.com等，需要购买）与Github Pages域名绑定</h3><p><em>我半信半疑的去腾讯云买了一年（/45元）的zyyup.com的域名。</em><br>1.进行域名解析，在哪买在哪解析，记录指向的ip地址是 GitHub Pages 的提供的 ip（自己ping username.github.io）<br>2.去到你的username.github.io代码仓库，新建一个文件，名称CNAME 内容zyyup.com（你买的自定义域名）<br><strong>至此你的博客网址zyyup.com就可以在浏览器中访问了。撒花！！！</strong></p>
-<p><strong>至此，个人博客就搭建完毕了。</strong></p>
-<h1 id="下面是使用一个快速blog生成工具Hexo，进行博客装饰和博客提交、部署"><a href="#下面是使用一个快速blog生成工具Hexo，进行博客装饰和博客提交、部署" class="headerlink" title="下面是使用一个快速blog生成工具Hexo，进行博客装饰和博客提交、部署"></a>下面是使用一个快速blog生成工具Hexo，进行博客装饰和博客提交、部署</h1><h3 id="安装配置hexo"><a href="#安装配置hexo" class="headerlink" title="安装配置hexo"></a>安装配置hexo</h3><h4 id="1-在D盘新建文件夹-blog"><a href="#1-在D盘新建文件夹-blog" class="headerlink" title="1.在D盘新建文件夹/blog"></a>1.在D盘新建文件夹/blog</h4><h4 id="2-下载安装hexo："><a href="#2-下载安装hexo：" class="headerlink" title="2.下载安装hexo："></a>2.下载安装hexo：</h4><p>打开git bash here ：</p>
-<blockquote>
-<p>$ npm install -g hexo-cli</p>
-</blockquote>
-<p>终端输入hexo 回车 如图说明安装成功了。<br><img src="../images/hexo安装验证.png" alt="hexo安装验证"></p>
-<h4 id="3-初始化hexo"><a href="#3-初始化hexo" class="headerlink" title="3.初始化hexo"></a>3.初始化hexo</h4><blockquote>
-<p>$ hexo init </p>
-</blockquote>
-<h4 id="4-进入安装文件夹"><a href="#4-进入安装文件夹" class="headerlink" title="4.进入安装文件夹"></a>4.进入安装文件夹</h4><blockquote>
-<p>$ npm install</p>
-</blockquote>
-<p>（自动安装你需要的组件）之后会出现很多文件如图<br><img src="../images/hexo文件夹.png" alt="hexo文件夹"></p>
-<h4 id="5-写博客"><a href="#5-写博客" class="headerlink" title="5.写博客"></a>5.写博客</h4><blockquote>
-<p>$ hexo new “我的第一篇博文”</p>
-</blockquote>
-<p>然后在本地博客文件夹source-&gt;_post文件夹下看到我们新建的markdown文件；用Markdown编辑器打开md文件编辑文字 “你好，欢迎来到我的个人技术博客。”保存</p>
-<ul>
-<li>本地发布: <blockquote>
-<p>$ hexo server </p>
-</blockquote>
-</li>
-</ul>
-<p><strong>打开 <a href="http://localhost：4000" target="_blank" rel="external">http://localhost：4000</a> 就可以看到自己的文章了。开心撒花！！！</strong> </p>
-<ul>
-<li>将blog部署到Github Pages上<br>使用hexo deploy部署<br>1.打开<strong>站点配置文件</strong>，做如图修改<br><img src="../images/deploy.png" alt="deploy"><br>2.安装一个扩展<blockquote>
-<p>$ npm install hexo-deployer-git –save</p>
-</blockquote>
-</li>
-</ul>
-<ol>
-<li>执行部署<blockquote>
-<p>$ hexo d</p>
-</blockquote>
-</li>
-</ol>
-<ul>
-<li>网络发布：<blockquote>
-<p>$ hexo generate //生成<br>$ hexo deploy //部署</p>
-</blockquote>
-</li>
-</ul>
-<p><strong>这样，zyyjoin.github.io以及zyyup.com都可以看到那篇文章了。 </strong></p>
-<h4 id="6-hexo的主题等相关配置"><a href="#6-hexo的主题等相关配置" class="headerlink" title="6.hexo的主题等相关配置"></a>6.hexo的主题等相关配置</h4><blockquote>
-<p>以NexT为例介绍：<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">http://theme-next.iissnan.com/</a></p>
-</blockquote>
-<p><img src="../images/NexT.png" alt="NexT"><br>1.下载主题<br>使用克隆（clone）最新版本 的方式，之后的更新可以通过 git pull 来快速更新。<br><em>$ cd your-hexo-site //定位站点目录的 themes 目录下</em><br><em>$ git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a> themes/next</em><br>2.启用主题<br>打开<strong>站点配置文件</strong>，修改theme值<br><img src="../images/theme.png" alt="theme"><br>3.验证主题</p>
-<blockquote>
-<p>$ hexo s –debug // 启动服务<br>浏览器访问 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>检查站点是否正确运行。</p>
-</blockquote>
-<h2 id="附：hexo常用命令"><a href="#附：hexo常用命令" class="headerlink" title="附：hexo常用命令"></a>附：hexo常用命令</h2><ul>
-<li>hexo new “postName” #新建文章</li>
-<li>hexo new page “pageName” #新建页面</li>
-<li>hexo generate #生成静态页面至public目录</li>
-<li>hexo server #开启<strong>预览</strong>访问端口（默认端口4000，’ctrl + c’关闭server）</li>
-<li>hexo deploy #将.deploy目录部署到GitHub<br><strong>通常使用 hexo d -g 加载部署新博文</strong></li>
-</ul>
-
-          
+          <p><em>你好，欢迎来到我的个人技术博客。</em></p>
+<h1 id="自己做博客的全过程整理（Github-Hexo）"><a href="#自己做博客的全过程整理（Github-Hexo）" class="headerlink" title="自己做博客的全过程整理（Github+Hexo）"></a>自己做博客的全过程整理（Github+Hexo）</h1><p><strong>自己建博客的初衷：</strong><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/01/分享整理自己做这个博客的经验/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -903,10 +727,17 @@
 
       
         
-          
-            <p><em>你好，欢迎来到我的个人技术博客。</em></p>
-<h1 id="Markdown常用语法"><a href="#Markdown常用语法" class="headerlink" title="Markdown常用语法"></a>Markdown常用语法</h1>
-          
+          <p><em>你好，欢迎来到我的个人技术博客。</em></p>
+<h1 id="Markdown常用语法"><a href="#Markdown常用语法" class="headerlink" title="Markdown常用语法"></a>Markdown常用语法</h1><blockquote>
+<p>Markdown是标记语言，语法十分简单。专注你的文字内容而不是排版样式，安心写作。</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/31/Markdown常用语法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1039,7 +870,6 @@
         
           <h1 id="致橡树"><a href="#致橡树" class="headerlink" title="致橡树"></a>致橡树</h1><blockquote class="blockquote-center"><p><strong>——舒婷</strong> </p>
 </blockquote>
-<p>   我如果爱你——<br>　　绝不像攀援的凌霄花，<br>　　借你的高枝炫耀自己；<br>　　我如果爱你——<br>　　绝不学痴情的鸟儿，<br>　　为绿荫重复单调的歌曲；<br>　　也不止像泉源，<br>　　常年送来清凉的慰藉；<br>　　也不止像险峰，<br>　　增加你的高度，衬托你的威仪。<br>　　甚至日光，<br>　　甚至春雨。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/07/31/article-致橡树/#more" rel="contents">
@@ -1155,18 +985,14 @@
 
       
         
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
+          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/30/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1363,10 +1189,9 @@
   
 
 
+  
 
 
-  
-  
 
 
 
@@ -1395,10 +1220,7 @@
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
   
-  <script type="text/javascript" src="/lib/three/three.min.js"></script>
-
-  
-  <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   

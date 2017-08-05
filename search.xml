@@ -18,7 +18,7 @@
   <entry>
     <title><![CDATA[Markdown常用语法]]></title>
     <url>%2F2017%2F07%2F31%2FMarkdown%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[你好，欢迎来到我的个人技术博客。 Markdown常用语法]]></content>
+    <content type="text"><![CDATA[你好，欢迎来到我的个人技术博客。 Markdown常用语法 Markdown是标记语言，语法十分简单。专注你的文字内容而不是排版样式，安心写作。 1.标题（六级）#，##，###,####,#####，###### 大标题 === 小标题 --- 大标题 小标题 2.超链接 百度可嵌入html语句，嵌入锚点实现同样效果： 补充索引链接： 百度 baidu:http://www.baidu.com/ 百度 自动链接 &lt;http://www.baidu.com/&gt; http://www.baidu.com/ 3.图片类似于在超链接前面加上一个英文的感叹号: ! [图片描述,可以为空,类似于 alt](../images/001.jpg) 4.字体（font） *黑体** \斜体 **黑体斜体* 黑体斜体黑体斜体 5.源代码引用多行级别（每一行行首tab键缩进）行内级别（`代码` 键1左边那个） 6.列表有序（1.我是*）无序（-、星、+） 7.引言> 引言内容（引言内可以嵌套使用Markdown语法） 8.分割线 * * *** - - - -——————————- - - -9.\使用反斜线来插入普通符号。 10.分割使文章部分显示 \&lt;!–more–&gt;]]></content>
       <categories>
         <category>Markdown</category>
       </categories>
