@@ -93,18 +93,18 @@
 
 
 
-<meta name="description" content="你好，欢迎来到我的个人技术博客。 Java web之servlet学习Servlet是jsp的前身，他是运行在服务器上的Java小程序。 servlet基础：手工编写Servlet类：1.Servlet类继承HttpServlet（实现了http协议）2.重写doGet()或者doGet()方法注：\标签超链接是doGet()方式请求，form表单可以doPost()可以doGet()3.在web">
+<meta name="description" content="你好，欢迎来到我的个人技术博客。 Java web之servlet学习Servlet是jsp的前身，他是运行在服务器上的Java小程序。">
 <meta name="keywords" content="Java web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Servlet学习笔记">
 <meta property="og:url" content="http://zyyup.com/2017/08/09/Servlet/index.html">
 <meta property="og:site_name" content="ZYY的博客">
-<meta property="og:description" content="你好，欢迎来到我的个人技术博客。 Java web之servlet学习Servlet是jsp的前身，他是运行在服务器上的Java小程序。 servlet基础：手工编写Servlet类：1.Servlet类继承HttpServlet（实现了http协议）2.重写doGet()或者doGet()方法注：\标签超链接是doGet()方式请求，form表单可以doPost()可以doGet()3.在web">
+<meta property="og:description" content="你好，欢迎来到我的个人技术博客。 Java web之servlet学习Servlet是jsp的前身，他是运行在服务器上的Java小程序。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-11T06:48:01.204Z">
+<meta property="og:updated_time" content="2017-08-11T06:58:30.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Servlet学习笔记">
-<meta name="twitter:description" content="你好，欢迎来到我的个人技术博客。 Java web之servlet学习Servlet是jsp的前身，他是运行在服务器上的Java小程序。 servlet基础：手工编写Servlet类：1.Servlet类继承HttpServlet（实现了http协议）2.重写doGet()或者doGet()方法注：\标签超链接是doGet()方式请求，form表单可以doPost()可以doGet()3.在web">
+<meta name="twitter:description" content="你好，欢迎来到我的个人技术博客。 Java web之servlet学习Servlet是jsp的前身，他是运行在服务器上的Java小程序。">
 
 
 
@@ -374,11 +374,11 @@
 
       
         <p><em>你好，欢迎来到我的个人技术博客。</em></p>
-<h1 id="Java-web之servlet学习"><a href="#Java-web之servlet学习" class="headerlink" title="Java web之servlet学习"></a>Java web之servlet学习</h1><p>Servlet是jsp的前身，他是运行在服务器上的Java小程序。</p>
-<h1 id="servlet基础："><a href="#servlet基础：" class="headerlink" title="servlet基础："></a>servlet基础：</h1><h3 id="手工编写Servlet类："><a href="#手工编写Servlet类：" class="headerlink" title="手工编写Servlet类："></a>手工编写Servlet类：</h3><p>1.Servlet类继承HttpServlet（实现了http协议）<br>2.重写doGet()或者doGet()方法<br>注：\<a>标签超链接是doGet()方式请求，form表单可以doPost()可以doGet()<br>3.在web.xml中注册该Servlet类<br>    <servlet><br>        <servlet-name>HelloServlet</servlet-name><br>        <servlet-class>servlet.HelloServlet</servlet-class><br>    </servlet><br>      <servlet-mapping><br>        <servlet-name>HelloServlet</servlet-name><br>        <url-pattern>/servlet/HelloServlet</url-pattern><br>      </servlet-mapping></a></p>
+<h1 id="Java-web之servlet学习"><a href="#Java-web之servlet学习" class="headerlink" title="Java web之servlet学习"></a>Java web之servlet学习</h1><p>Servlet是jsp的前身，他是运行在服务器上的Java小程序。<br><a id="more"></a></p>
+<h1 id="servlet基础："><a href="#servlet基础：" class="headerlink" title="servlet基础："></a>servlet基础：</h1><h3 id="手工编写Servlet类："><a href="#手工编写Servlet类：" class="headerlink" title="手工编写Servlet类："></a>手工编写Servlet类：</h3><p>1.Servlet类继承HttpServlet（实现了http协议）<br>2.重写doGet()或者doGet()方法<br>注：\<a>标签超链接是doGet()方式请求，form表单可以doPost()可以doGet()<br>3.在web.xml中注册该Servlet类<br>    &lt;\servlet&gt;<br>        &lt;\servlet-name&gt;HelloServlet&lt;\/servlet-name&gt;<br>        &lt;\servlet-class&gt;servlet.HelloServlet&lt;\/servlet-class&gt;<br>    &lt;\/servlet&gt;<br>      &lt;\servlet-mapping&gt;<br>        &lt;\servlet-name&gt;HelloServlet&lt;\/servlet-name&gt;<br>        &lt;\url-pattern&gt;/servlet/HelloServlet&lt;\/url-pattern&gt;<br>      &lt;\/servlet-mapping&gt;</a></p>
 <h3 id="集成工具编写Servlet："><a href="#集成工具编写Servlet：" class="headerlink" title="集成工具编写Servlet："></a>集成工具编写Servlet：</h3><p>1.src-&gt;new-&gt;Servlet<br>2.重写doGet()或者doGet()方法<br>3.部署运行</p>
-<h3 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h3><p>1.生命周期：init()初始化、调用service()方法执行doGet()或者doPost()方法、调用destroy()销毁。<br>2.Tomcat装载Servlet的三种情况：<em> Servlet容器（Tomcat服务器包含多个Servlet容器）启动时，可以在\<servlet></servlet>中添加代码：\<load-on-startup>2</load-on-startup>（设置加载优先级，数字小优先级高。） </em> Servlet容器启动后，客户端首次向服务器发送请求时。 * Servlet类文件修改更新时，重新加载Servlet容器。<br>3.整个生命周期，init()方法只调用一次。</p>
-<h3 id="获取初始化参数"><a href="#获取初始化参数" class="headerlink" title="获取初始化参数"></a>获取初始化参数</h3><p>1.在\<servlet></servlet>中添加代码：<br>    <init-param><br>        <param-name>username</param-name><br>        <param-value>admin</param-value><br>    </init-param><br>    <init-param><br>        <param-name>password</param-name><br>        <param-value>admin</param-value><br>    </init-param><br>设置初始化参数&lt;名、值&gt;<br>2.Servlet类调用父类方法getInitParameter(“username”)获取初始化参数。</p>
+<h3 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h3><p>1.生命周期：init()初始化、调用service()方法执行doGet()或者doPost()方法、调用destroy()销毁。<br>2.Tomcat装载Servlet的三种情况：<em> Servlet容器（Tomcat服务器包含多个Servlet容器）启动时，可以在<servlet>&lt;\/Servlet&gt;中添加代码：&lt;\load-on-startup&gt;2&lt;\/load-on-startup&gt;（设置加载优先级，数字小优先级高。） </servlet></em> Servlet容器启动后，客户端首次向服务器发送请求时。 * Servlet类文件修改更新时，重新加载Servlet容器。<br>3.整个生命周期，init()方法只调用一次。</p>
+<h3 id="获取初始化参数"><a href="#获取初始化参数" class="headerlink" title="获取初始化参数"></a>获取初始化参数</h3><p>1.在\<servlet>&lt;\/Servlet&gt;中添加代码：<br>    &lt;\init-param&gt;<br>        &lt;\param-name&gt;username&lt;\/param-name&gt;<br>        &lt;\param-value&gt;admin&lt;\/param-value&gt;<br>    &lt;\/init-param&gt;<br>    &lt;\init-param&gt;<br>        &lt;\param-name&gt;password&lt;\/param-name&gt;<br>        &lt;\param-value&gt;admin&lt;\/param-value&gt;<br>    &lt;\/init-param&gt;<br>设置初始化参数&lt;名、值&gt;<br>2.Servlet类调用父类方法getInitParameter(“username”)获取初始化参数。</servlet></p>
 <h3 id="Servlet与jsp九大内置对象"><a href="#Servlet与jsp九大内置对象" class="headerlink" title="Servlet与jsp九大内置对象"></a>Servlet与jsp九大内置对象</h3><table>
 <thead>
 <tr>
@@ -433,7 +433,7 @@
 <blockquote>
 <p>request.getRequestDispatcher(“userinfo.jsp”).forward(request, response);<br>//response.sendRedirect(“userinfo.jsp”);</p>
 </blockquote>
-<p>4.jsp页面回显数据：<br>    <jsp:usebean id="regUser" class="bean.User" scope="session"></jsp:usebean><br>正常获取显示<br>    <jsp:getproperty property="username" name="regUser"><br>Java遍历输出显示</jsp:getproperty></p>
+<p>4.jsp页面回显数据：<br>    &lt;\jsp:useBean id=”regUser” class=”bean.User” scope=”session”&gt;&lt;\/jsp:useBean&gt;<br>正常获取显示<br>    &lt;\jsp:getProperty property=”username” name=”regUser”/&gt;<br>Java遍历输出显示</p>
 <pre><code>&lt;%
 String[] favorites = regUser.getFavorites();
 if(favorites!=null){
@@ -443,7 +443,7 @@ if(favorites!=null){
 &lt;%} 
     }else{%>
     <%="null" %="">
-            <%} %&gt;="" <="" code=""></%}></%="null"></code></pre><h3 id="Servlet路径跳转"><a href="#Servlet路径跳转" class="headerlink" title="Servlet路径跳转"></a>Servlet路径跳转</h3><p>1.jsp跳转到Servlet</p>
+            <%} %="" &gt;="" <="" code=""></%}></%="null"></code></pre><h3 id="Servlet路径跳转"><a href="#Servlet路径跳转" class="headerlink" title="Servlet路径跳转"></a>Servlet路径跳转</h3><p>1.jsp跳转到Servlet</p>
 <pre><code>&lt;!-- 使用相对路径访问HelloServlet 加&quot;/&quot;就表示服务器根目录--&gt;
 &lt;a href=&quot;HelloServlet&quot;&gt;相对路径访问HelloServlet&lt;/a&gt;&lt;br&gt;
 &lt;!-- 使用绝对路径访问HelloServlet 借助path变量(path标识项目的路径)  --&gt;
