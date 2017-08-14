@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="ZYY的博客">
 <meta property="og:description" content="你好，欢迎来到我的个人技术博客。 Java web之servlet学习Servlet是jsp的前身，他是运行在服务器上的Java小程序。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-11T06:58:30.183Z">
+<meta property="og:updated_time" content="2017-08-11T07:04:26.325Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Servlet学习笔记">
 <meta name="twitter:description" content="你好，欢迎来到我的个人技术博客。 Java web之servlet学习Servlet是jsp的前身，他是运行在服务器上的Java小程序。">
@@ -375,7 +375,7 @@
       
         <p><em>你好，欢迎来到我的个人技术博客。</em></p>
 <h1 id="Java-web之servlet学习"><a href="#Java-web之servlet学习" class="headerlink" title="Java web之servlet学习"></a>Java web之servlet学习</h1><p>Servlet是jsp的前身，他是运行在服务器上的Java小程序。<br><a id="more"></a></p>
-<h1 id="servlet基础："><a href="#servlet基础：" class="headerlink" title="servlet基础："></a>servlet基础：</h1><h3 id="手工编写Servlet类："><a href="#手工编写Servlet类：" class="headerlink" title="手工编写Servlet类："></a>手工编写Servlet类：</h3><p>1.Servlet类继承HttpServlet（实现了http协议）<br>2.重写doGet()或者doGet()方法<br>注：\<a>标签超链接是doGet()方式请求，form表单可以doPost()可以doGet()<br>3.在web.xml中注册该Servlet类<br>    &lt;\servlet&gt;<br>        &lt;\servlet-name&gt;HelloServlet&lt;\/servlet-name&gt;<br>        &lt;\servlet-class&gt;servlet.HelloServlet&lt;\/servlet-class&gt;<br>    &lt;\/servlet&gt;<br>      &lt;\servlet-mapping&gt;<br>        &lt;\servlet-name&gt;HelloServlet&lt;\/servlet-name&gt;<br>        &lt;\url-pattern&gt;/servlet/HelloServlet&lt;\/url-pattern&gt;<br>      &lt;\/servlet-mapping&gt;</a></p>
+<h1 id="servlet基础："><a href="#servlet基础：" class="headerlink" title="servlet基础："></a>servlet基础：</h1><h3 id="手工编写Servlet类："><a href="#手工编写Servlet类：" class="headerlink" title="手工编写Servlet类："></a>手工编写Servlet类：</h3><p>1.Servlet类继承HttpServlet（实现了http协议）<br>2.重写doGet()或者doGet()方法<br>注：&lt;\a&gt;标签超链接是doGet()方式请求，form表单可以doPost()可以doGet()<br>3.在web.xml中注册该Servlet类<br>    &lt;\servlet&gt;<br>        &lt;\servlet-name&gt;HelloServlet&lt;\/servlet-name&gt;<br>        &lt;\servlet-class&gt;servlet.HelloServlet&lt;\/servlet-class&gt;<br>    &lt;\/servlet&gt;<br>      &lt;\servlet-mapping&gt;<br>        &lt;\servlet-name&gt;HelloServlet&lt;\/servlet-name&gt;<br>        &lt;\url-pattern&gt;/servlet/HelloServlet&lt;\/url-pattern&gt;<br>      &lt;\/servlet-mapping&gt;</p>
 <h3 id="集成工具编写Servlet："><a href="#集成工具编写Servlet：" class="headerlink" title="集成工具编写Servlet："></a>集成工具编写Servlet：</h3><p>1.src-&gt;new-&gt;Servlet<br>2.重写doGet()或者doGet()方法<br>3.部署运行</p>
 <h3 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h3><p>1.生命周期：init()初始化、调用service()方法执行doGet()或者doPost()方法、调用destroy()销毁。<br>2.Tomcat装载Servlet的三种情况：<em> Servlet容器（Tomcat服务器包含多个Servlet容器）启动时，可以在<servlet>&lt;\/Servlet&gt;中添加代码：&lt;\load-on-startup&gt;2&lt;\/load-on-startup&gt;（设置加载优先级，数字小优先级高。） </servlet></em> Servlet容器启动后，客户端首次向服务器发送请求时。 * Servlet类文件修改更新时，重新加载Servlet容器。<br>3.整个生命周期，init()方法只调用一次。</p>
 <h3 id="获取初始化参数"><a href="#获取初始化参数" class="headerlink" title="获取初始化参数"></a>获取初始化参数</h3><p>1.在\<servlet>&lt;\/Servlet&gt;中添加代码：<br>    &lt;\init-param&gt;<br>        &lt;\param-name&gt;username&lt;\/param-name&gt;<br>        &lt;\param-value&gt;admin&lt;\/param-value&gt;<br>    &lt;\/init-param&gt;<br>    &lt;\init-param&gt;<br>        &lt;\param-name&gt;password&lt;\/param-name&gt;<br>        &lt;\param-value&gt;admin&lt;\/param-value&gt;<br>    &lt;\/init-param&gt;<br>设置初始化参数&lt;名、值&gt;<br>2.Servlet类调用父类方法getInitParameter(“username”)获取初始化参数。</servlet></p>
@@ -507,6 +507,10 @@ request.getRequestDispatcher(&quot;/test.jsp&quot;).forward(request, response);
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/08/11/Java基础/" rel="prev" title="Java学习笔记">
+                Java学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -578,7 +582,7 @@ request.getRequestDispatcher(&quot;/test.jsp&quot;).forward(request, response);
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -589,7 +593,7 @@ request.getRequestDispatcher(&quot;/test.jsp&quot;).forward(request, response);
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -600,7 +604,7 @@ request.getRequestDispatcher(&quot;/test.jsp&quot;).forward(request, response);
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
