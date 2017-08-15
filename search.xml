@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[网站整理]]></title>
+    <url>%2F2017%2F08%2F15%2F%E7%BD%91%E7%AB%99%E6%95%B4%E7%90%86%2F</url>
+    <content type="text"><![CDATA[你好，欢迎来到我的个人技术博客。 网站海洋中自己的足迹 主要是学习的网站，学习中主要是IT计算机。不过也有其他的：交流网站，视频网站等，不断的收集整理。总有一个最美丽的贝壳属于你。 学习网站前端技术网站1.W3school（主要是Web技术）2.DIVCSS53.前端网 文档教程1.ORACLE Java文档（Oracle官网Java教程）2.易百教程3.菜鸟教程4.ImportNew（专注Java&amp;Android）5.在线工具 视频课程1.慕课网（程序员的梦工厂）2.牛客网（题库是亮点）3.极客学院4.腾讯课堂（不只是学习IT）5.网易云课堂6.codecademy（）7.中国大学MOOC（大学课程）8.网易公开课（学习各种知识）9.百度传课（学知识）10.好知（重拾学习乐趣）11.淘宝教育 技术论坛文章新闻1.知乎2.果壳问答（外国的知乎）3.V2EX（一个关于分享和探索的地方）4.微博（新鲜事）5.网易新闻6.掘金（一个帮助开发者成长的社区）7.码农网8.并发编程网（天下没有难学的技术）9.开源中国（找到你想想要的开源项目）10.博客园11.图灵社区（阅读）12.异步社区（书）13.Fenby（IT图书阅读）14.今日头条15.NEXT（不错过任何一个新产品）16.GitHub（代码托管）17.码云（中国的GitHub）18.萌码19.CSDN20.51CTO21.CodeCloud（问题解决方案）22.程序源代码（好多源码下载）23.程序员之家24.最代码（分享问答）25.Ruby China26.我要自学网 我也不知道这些都是干嘛的！1.codewars2.LeetCode3.StackOverflow（翻墙访问问答）4.SegmentFault（面向开发者的技术问答）5.石墨文档6.CODING 美丽的博客1.华行天下2.结构之法 算法之道（） 生活qq、微信、Twitter1.豆瓣FM（音乐）2.哔哩哔哩（漫视频）3.落花网（电影电视你懂的） 学习网站导航1纳米（学习网站导航）]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>学习整理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java学习笔记]]></title>
     <url>%2F2017%2F08%2F11%2FJava%E5%9F%BA%E7%A1%80%2F</url>
     <content type="text"><![CDATA[你好，欢迎来到我的个人技术博客。 Java基础Java语言1995年由Sun公司发布，2009年被Oracle公司收购。（2014年JDK8） 开发环境相关1.Java核心概念：jvm、jdk、jre我们下载的jdk（包含jre（jre包含Java虚拟机））2.安装JDK，配置环境变量： 1.JAVA_HOME：（jdk安装路径,即整个文件夹的本地路径） 2.path:（jdk命令文件的位置，即bin目录） 3.CLASSPATH：（类库文件位置，即lib目录）3.java程序是如何一步步变化执行的：源文件（.java）–&gt;经过Java编译器（使用javac命令）–&gt;字节码文件（.class）–&gt;经过解释器（使用java命令）–&gt;平台执行 封装继承多态1.this：当前对象2.初始化顺序：先初始化父类对象，然后是子类对象先属性初始化再构造方法3.Object类：toString()返回对象的哈希码（对象的身份证号）equals()比较对象的引用是否指向同一块内存区域（比较引用）等价于“==”4.引用多态（父类引用指向子类对象），方法多态（子类可以调用重写方法和继承方法） （自己新定义的方法不能用）5.向下类型转换（强制，大类型转小类型，有风险）使用instanceof运算符避免运行时错误。（对象引用 instanceof 类）返回布尔值6.abstract抽象类：限制子类必须实现某些方法，不关注实现细节。7.接口： 1.由常量，抽象方法组成。（接口可以说是一个规范，用来约束类的。interface） 2.接口可以继承多个父接口。 3.常量自动包含public static final，方法自动包含public abstract。 4.类可以实现implements多接口。（命名，前面加I，如:IPlayGame） 5.可以使用匿名内部类实现接口。 异常1.Throwable–&gt;(Error)+Exception–&gt;运行时异常+检查异常2.运行时异常（RuntimeException）主要包括:空指针异常(NullPointerException)、数组下标越界异常(ArrayIndexOutOfBoundsException)、类型转换异常(ClassCastException)、算数异常(ArithmeticException)3.检查异常主要包括：文件异常(IOException)、SQL异常(SQLException) 集合：即盛装其他元素的容器。Collection–&gt;List(序列)+Set(集)–&gt;ArrayList(数组序列)+LinkedList(链表)+HashSetMap–&gt;HashMap List ArrayList（父接口：Collection，Iterable）本身是个接口，不能实例化。特点：有序，可重复性，常用方法：1.添加元素：(boolean)add(E e)（(void)add(int index,E e)、addAll(Collection c)、addAll(int i,Collection c)）2.获取元素：(E)get(int index)3.迭代器方法：(Iterator)iterator() （方法：(boolean)hasNext()、(E)next()）4.修改元素：(E)set(int index, E e)5.删除元素：(E)remove(int i)（(boolean)remove(Object o)、removeAll()） 泛型集合中存放的元素，可以是任意数据类型的对象（对象的引用）。 如果把某个对象放入集合，就会忽略它的类型，当Object处理。而在取出元素的时候进行数据类型转换。当插入错误类型对象数据时，编译正常，运行取出时就会报错。 泛型是规定某一集合中只能存放特定类型的对象。 会在编译期进行类型检查获取集合元素时按照指定类型获取，就不用数据强转了。 Set HashSet特点：无序，不包含重复元素，最多一个空元素。set添加元素，无论重复添加多少次，都只会保留一个该对象（对象的引用）方法跟list相似，没有set()修改元素的方法 Map HashMap特点：存放键映射值的对象引用，键不可以重复，值可以重复。无序添加或修改元素：(V)put(K key,V value) 添加时应判断key不存在，修改是判断key存在删除元素：(V)remove(Object key)(V)get(Object key):返回指定键所映射的值或null。（可用于判断要添加元素键是否已存在） 特殊方法：可以方便遍历Map中的元素得到Map中key值的集合:(Set)keySet()得到Map中Value值的集合:(Collection)values()得到Map中键值对的集合:(Set]]></content>
