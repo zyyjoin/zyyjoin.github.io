@@ -8,45 +8,63 @@
         <category>杂记</category>
       </categories>
       <tags>
-        <tag>学习整理</tag>
+        <tag>网站整理</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java学习笔记]]></title>
+    <title><![CDATA[Java基础]]></title>
     <url>%2F2017%2F08%2F11%2FJava%E5%9F%BA%E7%A1%80%2F</url>
     <content type="text"><![CDATA[你好，欢迎来到我的个人技术博客。 Java基础Java语言1995年由Sun公司发布，2009年被Oracle公司收购。（2014年JDK8） 开发环境相关1.Java核心概念：jvm、jdk、jre我们下载的jdk（包含jre（jre包含Java虚拟机））2.安装JDK，配置环境变量： 1.JAVA_HOME：（jdk安装路径,即整个文件夹的本地路径） 2.path:（jdk命令文件的位置，即bin目录） 3.CLASSPATH：（类库文件位置，即lib目录）3.java程序是如何一步步变化执行的：源文件（.java）–&gt;经过Java编译器（使用javac命令）–&gt;字节码文件（.class）–&gt;经过解释器（使用java命令）–&gt;平台执行 封装继承多态1.this：当前对象2.初始化顺序：先初始化父类对象，然后是子类对象先属性初始化再构造方法3.Object类：toString()返回对象的哈希码（对象的身份证号）equals()比较对象的引用是否指向同一块内存区域（比较引用）等价于“==”4.引用多态（父类引用指向子类对象），方法多态（子类可以调用重写方法和继承方法） （自己新定义的方法不能用）5.向下类型转换（强制，大类型转小类型，有风险）使用instanceof运算符避免运行时错误。（对象引用 instanceof 类）返回布尔值6.abstract抽象类：限制子类必须实现某些方法，不关注实现细节。7.接口： 1.由常量，抽象方法组成。（接口可以说是一个规范，用来约束类的。interface） 2.接口可以继承多个父接口。 3.常量自动包含public static final，方法自动包含public abstract。 4.类可以实现implements多接口。（命名，前面加I，如:IPlayGame） 5.可以使用匿名内部类实现接口。 异常1.Throwable–&gt;(Error)+Exception–&gt;运行时异常+检查异常2.运行时异常（RuntimeException）主要包括:空指针异常(NullPointerException)、数组下标越界异常(ArrayIndexOutOfBoundsException)、类型转换异常(ClassCastException)、算数异常(ArithmeticException)3.检查异常主要包括：文件异常(IOException)、SQL异常(SQLException) 集合：即盛装其他元素的容器。Collection–&gt;List(序列)+Set(集)–&gt;ArrayList(数组序列)+LinkedList(链表)+HashSetMap–&gt;HashMap List ArrayList（父接口：Collection，Iterable）本身是个接口，不能实例化。特点：有序，可重复性，常用方法：1.添加元素：(boolean)add(E e)（(void)add(int index,E e)、addAll(Collection c)、addAll(int i,Collection c)）2.获取元素：(E)get(int index)3.迭代器方法：(Iterator)iterator() （方法：(boolean)hasNext()、(E)next()）4.修改元素：(E)set(int index, E e)5.删除元素：(E)remove(int i)（(boolean)remove(Object o)、removeAll()） 泛型集合中存放的元素，可以是任意数据类型的对象（对象的引用）。 如果把某个对象放入集合，就会忽略它的类型，当Object处理。而在取出元素的时候进行数据类型转换。当插入错误类型对象数据时，编译正常，运行取出时就会报错。 泛型是规定某一集合中只能存放特定类型的对象。 会在编译期进行类型检查获取集合元素时按照指定类型获取，就不用数据强转了。 Set HashSet特点：无序，不包含重复元素，最多一个空元素。set添加元素，无论重复添加多少次，都只会保留一个该对象（对象的引用）方法跟list相似，没有set()修改元素的方法 Map HashMap特点：存放键映射值的对象引用，键不可以重复，值可以重复。无序添加或修改元素：(V)put(K key,V value) 添加时应判断key不存在，修改是判断key存在删除元素：(V)remove(Object key)(V)get(Object key):返回指定键所映射的值或null。（可用于判断要添加元素键是否已存在） 特殊方法：可以方便遍历Map中的元素得到Map中key值的集合:(Set)keySet()得到Map中Value值的集合:(Collection)values()得到Map中键值对的集合:(Set]]></content>
       <categories>
-        <category>Java基础</category>
+        <category>Java</category>
       </categories>
       <tags>
-        <tag>Java</tag>
+        <tag>Java基础</tag>
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Servlet学习笔记]]></title>
-    <url>%2F2017%2F08%2F09%2FServlet%2F</url>
+    <title><![CDATA[JavaEE之Servlet学习]]></title>
+    <url>%2F2017%2F08%2F09%2FJavaEE%E4%B9%8BServlet%E5%AD%A6%E4%B9%A0%2F</url>
     <content type="text"><![CDATA[你好，欢迎来到我的个人技术博客。 Java web之servlet学习Servlet是jsp的前身，他是运行在服务器上的Java小程序。 servlet基础：手工编写Servlet类：1.Servlet类继承HttpServlet（实现了http协议）2.重写doGet()或者doGet()方法注：&lt;\a&gt;标签超链接是doGet()方式请求，form表单可以doPost()可以doGet()3.在web.xml中注册该Servlet类 &lt;\servlet&gt; &lt;\servlet-name&gt;HelloServlet&lt;\/servlet-name&gt; &lt;\servlet-class&gt;servlet.HelloServlet&lt;\/servlet-class&gt; &lt;\/servlet&gt; &lt;\servlet-mapping&gt; &lt;\servlet-name&gt;HelloServlet&lt;\/servlet-name&gt; &lt;\url-pattern&gt;/servlet/HelloServlet&lt;\/url-pattern&gt; &lt;\/servlet-mapping&gt; 集成工具编写Servlet：1.src-&gt;new-&gt;Servlet2.重写doGet()或者doGet()方法3.部署运行 注意点：1.生命周期：init()初始化、调用service()方法执行doGet()或者doPost()方法、调用destroy()销毁。2.Tomcat装载Servlet的三种情况： Servlet容器（Tomcat服务器包含多个Servlet容器）启动时，可以在&lt;\/Servlet&gt;中添加代码：&lt;\load-on-startup&gt;2&lt;\/load-on-startup&gt;（设置加载优先级，数字小优先级高。） Servlet容器启动后，客户端首次向服务器发送请求时。 * Servlet类文件修改更新时，重新加载Servlet容器。3.整个生命周期，init()方法只调用一次。 获取初始化参数1.在\&lt;\/Servlet&gt;中添加代码： &lt;\init-param&gt; &lt;\param-name&gt;username&lt;\/param-name&gt; &lt;\param-value&gt;admin&lt;\/param-value&gt; &lt;\/init-param&gt; &lt;\init-param&gt; &lt;\param-name&gt;password&lt;\/param-name&gt; &lt;\param-value&gt;admin&lt;\/param-value&gt; &lt;\/init-param&gt;设置初始化参数&lt;名、值&gt;2.Servlet类调用父类方法getInitParameter(“username”)获取初始化参数。 Servlet与jsp九大内置对象 JSP对象 Servlet如何获取 out response.getWriter requset service方法中的requset response service方法中的response session requset.getSession()函数 application getServletContext()函数 exception Throwable page this pageContext PageContext Config getServletConfig()函数 Servlet表单提交回显1.实例化Javabean对象，使用getParameter()获取表单数据，getParameterValues()获取复选框数据，将数据封装到Javabean对象中。2.保存Javabean对象到session中。例： request.getSession().setAttribute(“regUser”, u); 3.页面跳转。例： request.getRequestDispatcher(“userinfo.jsp”).forward(request, response);//response.sendRedirect(“userinfo.jsp”); 4.jsp页面回显数据： &lt;\jsp:useBean id=”regUser” class=”bean.User” scope=”session”&gt;&lt;\/jsp:useBean&gt;正常获取显示 &lt;\jsp:getProperty property=”username” name=”regUser”/&gt;Java遍历输出显示 &lt;% String[] favorites = regUser.getFavorites(); if(favorites!=null){ for(String f:favorites){ %&gt; &lt;%=f %&gt;&amp;nbsp;&amp;nbsp; &lt;%} }else{%>]]></content>
       <categories>
-        <category>servlet</category>
+        <category>JavaEE</category>
       </categories>
       <tags>
-        <tag>Java web</tag>
+        <tag>Servlet</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[使用IDEA和Maven创建Java web项目]]></title>
     <url>%2F2017%2F08%2F02%2F%E4%BD%BF%E7%94%A8IDEA%E5%92%8CMaven%E5%88%9B%E5%BB%BAJava%20web%E9%A1%B9%E7%9B%AE%2F</url>
     <content type="text"><![CDATA[你好，欢迎来到我的个人技术博客。 使用IDEA和Maven创建Java web项目 认识 Maven Maven是一个软件项目管理工具，基于项目对象模型（POM），maven下管理、创建项目非常简单。最强大的功能就是能够自动下载项目依赖库。 Maven 配置 首先到Maven官网下载,解压；解压后如图由于Maven远程仓库在国外，所以在下载相关jar包时非常慢，解决需要两步： 1.将其配置为Alibaba的仓库，添加下面代码；找到/conf/setting.xml文件，用文本编辑器打开，添加如下信息： &lt;mirror&gt; &lt;id&gt;alimaven&lt;/id&gt; &lt;name&gt;aliyun maven&lt;/name&gt; &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt; &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;/mirror&gt; &lt;mirror&gt; &lt;id&gt;uk&lt;/id&gt; &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt; &lt;url&gt;http://uk.maven.org/maven2/&lt;/url&gt; &lt;/mirror&gt; &lt;mirror&gt; &lt;id&gt;CN&lt;/id&gt; &lt;name&gt;OSChina Central&lt;/name&gt; &lt;url&gt;http://maven.oschina.net/content/groups/public/&lt;/url&gt; &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;/mirror&gt; &lt;mirror&gt; &lt;id&gt;nexus&lt;/id&gt; &lt;name&gt;internal nexus repository&lt;/name&gt; &lt;!-- &lt;url&gt;http://192.168.1.100:8081/nexus/content/groups/public/&lt;/url&gt;--&gt; &lt;url&gt;http://repo.maven.apache.org/maven2&lt;/url&gt; &lt;mirrorOf&gt;central&lt;/mirrorOf&gt; &lt;/mirror&gt; &lt;/mirrors&gt; 2.配置IDEA加上-DarchetypeCatalog=internal 运行参数，archetype-catalog.xml本地获取操作如图： 新建项目注意：要选maven-archetype-webapp（如图）nextGroupID 是项目组织唯一的标识符，实际对应JAVA的包的结构，是main目录里java的目录结构。ArtifactID 是项目的唯一的标识符，实际对应项目的名称，就是项目根目录的名称。 nextMaven home directory:即上一步Maven解压目录User settings file：即上一步修改的那个xml文件Local repository：在解压目录同级新建包repository，仓库目录。next修改项目名称。finish配置成功提示信息（如图）成功了，开心撒花！！！完成之后项目的文件目录如图。]]></content>
+      <categories>
+        <category>IntelliJ IDEA</category>
+      </categories>
+      <tags>
+        <tag>Maven</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[正则表达式]]></title>
     <url>%2F2017%2F08%2F02%2F%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[你好，欢迎来到我的个人技术博客。 正则表达式 1，正则表达式的用途：正则表达式是用来判断“字 符串”是否符合某个“样式”时，这个“样式”的表达方式。 2，正则表达式的写法：1）可以使用“//”括住正则表达式的样式，当在程序中使用正则表达式时，这是最快速容易的方式。2）可以用类方法建立对象“Regxep.new(str)”这种写法。原来已经有了一个代表样式的字符串时，用这种方式建立正则表达式会比较方 便。3）“%r”，当正则表达式内部用到“/”字符时，改用“%r”会比较方便。 3，正则表达式的匹配：符号“=~”，写法：正则表达式 =~ 字符串；不成立时会返回null，成立时会返回字符串中与样式匹配成功的起始位置。 4，正则表达式的样式：1）英文字母与数字：只会单纯地去匹配字符串里是否包含相同的文字。 2）转义字符： “^”表示“与行首匹配成功的样式”；“$”表示“与行尾匹配成功的样式”；“\A”表示“与字符串头匹配成功的样式”；“\z”表示“与字符 串尾匹配成功的样式”。 “[]”表示“与其中任意一个字符匹配”；“[-]”表示“匹配的范围”；“[^]”表示“与这里所指定之外的字匹配成功”； “.”表示任意一个字符；“\s”表示与空白，即空白字符(0×20)、定位符号、换行字符、换页字符匹配成功；“\d”表示“与0-9之间的 数字匹配成功”；“\w”表示“与英文与数字匹配成功”；“\”后面接上“^”、“$”、“[”这些英文、数字以外的转义字符时，这些字符将不再具备转义 字符的小用了，而可以去匹配这些字符本身。 “”表示“出现0次以上”；“+”表示“出现1次以上”；“？”表示“出现0次和1次”；“？”表示“出现0次以上，但取最短的匹配结 果”；“+？”表示“出现1次以上，但取最短的匹配结果”；“()”表示“多个字构成的字符串反复匹配”；“|”表示“可以在样式里列举多个候补条件，只 要其中一个符合就匹配成功”。 quote方法：会返回忽略所有转移字符串后的字符串，再以这个字符串作为new的实参建立出正则表达式对象。 “i”：忽略英文字母大小写的差异；“s”：字符编码方式为Shift_JIS;“e”：字符编码方式为E _JP;”u”:字符编码方式为 UTF-8,”n”：匹配时不考虑文字编码；“x”：忽略正则表达式内部的空白，并忽略“#”后面的内容；“m”：使得“.”能与换行符号匹配成功 常用正则表达式： 1.匹配中文字符的正则表达式： [/u4e00-/u9fa5]2.匹配双字节字符(包括汉字在内)：[^\x00-\xff]3.匹配空白行：\n\s\r4.匹配HTML标记：&lt;(\S\?)[^&gt;]*&gt;.?&lt;/\1&gt;|&lt;.? /&gt;5.匹配首尾空白字符：^\s*|\s$6.匹配Email地址：\w+([-+.]\w+)\@\w+([-.]\w+)*.\w+([-.]\w+)7.匹配网址URL：[a-zA-z]+://[^\s]8.匹配帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]{4,15}$9.匹配国内电话号码：\d{3}-\d{8}|\d{4}-\d{7}10.匹配中国邮政编码：[1-9]\d{5}(?!\d)11.匹配身份证：\d{15}|\d{18}12.匹配ip地址：\d+.\d+.\d+.\d+13.匹配特定数字：^[1-9]\d$ //匹配正整数^-[1-9]\d$ //匹配负整数^-?[1-9]\d$ //匹配整数^[1-9]\d|0$ //匹配非负整数（正整数 + 0）^-[1-9]\d|0$ //匹配非正整数（负整数 + 0）^[1-9]\d\.\d*|0.\d*[1-9]\d$ //匹配正浮点数^-([1-9]\d\.\d*|0.\d*[1-9]\d)$ //匹配负浮点数^-?([1-9]\d\.\d*|0.\d*[1-9]\d|0?.0+|0)$ //匹配浮点数^[1-9]\d\.\d*|0.\d*[1-9]\d|0?.0+|0$ //匹配非负浮点数（正浮点数 + 0）^(-([1-9]\d\.\d*|0.\d*[1-9]\d))|0?.0+|0$ //匹配非正浮点数（负浮点数 + 0）14.匹配特定字符串：^[A-Za-z]+$ //匹配由26个英文字母组成的字符串^[A-Z]+$ //匹配由26个英文字母的大写组成的字符串^[a-z]+$ //匹配由26个英文字母的小写组成的字符串^[A-Za-z0-9]+$ //匹配由数字和26个英文字母组成的字符串^\w+$ //匹配由数字、26个英文字母或者下划线组成的字符串\d{18}|\d{17}[a-zA-Z]{1}|\d{15} //身份证号码验证（包括新旧的验证）^(13[0-9]|15[0|3|6|8|9])\d{8}$ //任意手机号码验证^[w-]+(.[w-]+)@[w-]+(.[w-]+)+$ //email地址^[a-zA-z]+://(w+(-w+)*)(.(w+(-w+)*))*(?S*)?$ //url[1-9][0-9]{4,} //腾讯QQ号只能输入长度为3的字符：^.{3}$以字母开头，长度在6-18之间，只能包含字符、数字和下划线:^[a-zA-Z]w{5,17}$验证是否含有^%&amp;’,;=?$等字符：[^%&amp;’,;=?$x22]+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>正则表达式</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[分享整理自己做这个博客的经验]]></title>
     <url>%2F2017%2F08%2F01%2F%E5%88%86%E4%BA%AB%E6%95%B4%E7%90%86%E8%87%AA%E5%B7%B1%E5%81%9A%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%BB%8F%E9%AA%8C%2F</url>
     <content type="text"><![CDATA[你好，欢迎来到我的个人技术博客。 自己做博客的全过程整理（Github+Hexo）自己建博客的初衷：首先觉得它高大上，学计算机不是都应该有自己的blog吗？然后想好好整理自己所学所想，记录自己学习、思考、总结的过程，分享我的故事、经验，这里可以张扬个性，崇尚自由。在这里，严格要求自己，不断进步，加油。 我的步骤：github账户准备关于github，这是一个网站，就是每个程序员自己写的程序，可以在github上建立一个网上的仓库，你每次提交的时候可以把代码提交到网上，这样你的每次提交，别人也都可以看到你的代码，同时别人也可以帮你修改你的代码，这种开源的方式非常方便程序员之间的交流和学习。 我先知道的github，所以就先进行了这方面准备： 账号注册然后登录进去[Github官网]（https://github.com/）注：记你的用户名为username创建一个代码库，名称为 username.github.io 开启github pages功能，主要就是用它搭建的博客。（点击设置，点击Automatic page generator） GitHubPages可以被认为是用户编写的、托管在GitHub上的静态网页。 至此网址username.github.io就可以在浏览器中访问了。撒花！！！ 插曲：Git SSH keys的生成和添加。 ssh keys是ssh中基于密匙的安全验证。通过ssh keys本地git项目与远程的GitHub建立起了联系。 1.设置Git的user name和email： $ git config –global user.name”张玉鹰”（名字是你的真名，不是GitHub的昵称。） $ git config –global user.email “862071204@qq.com” 2.检查SSH keys是否已经有了。桌面打开Git Bash Here： $ cd ~/.ssh 如果提示：No such file or directory 说明你是第一次使用 git。 3.生成密匙： $ ssh-keygen -t rsa -C “862071204@qq.com”回车 回车 回车 回车（密码可以为空，也可设置） 4.这样成功之后在～/.ssh目录下有两个文件，如图记事本打开id_rsa.pub，复制内容到github帐号管理中的添加SSH key界面中。 5.验证： $ ssh -T git@GitHub.com 然后yes 看到如图字样就算成功了。 从此以后就可以拷贝github上的项目源码了。 使用github得到源码：1.获取源码： $ git clone git@github.com:billyanyteen/github-services.git 这样你的机器上就有一个repo了。git是分布式的，没有服务器概念。所有的人的机器上都有一个repo，每次提交都是给自己机器的repo 2.仓库初始化： $ git init 3.生成快照并存入项目索引： $ git add . 4.项目索引提交： $ git commit 4.协作编程：将本地repo于远程的origin的repo合并，推送本地更新到远程： $ git push origin master 5.更新远程更新到本地： $ git pull origin master 下载安装准备软件1.node.js 2.git 如图验证安装，出现版本信息说明安装正确 自定义域名（.com等，需要购买）与Github Pages域名绑定我半信半疑的去腾讯云买了一年（/45元）的zyyup.com的域名。1.进行域名解析，在哪买在哪解析，记录指向的ip地址是 GitHub Pages 的提供的 ip（自己ping username.github.io）2.去到你的username.github.io代码仓库，新建一个文件，名称CNAME 内容zyyup.com（你买的自定义域名）至此你的博客网址zyyup.com就可以在浏览器中访问了。撒花！！！ 至此，个人博客就搭建完毕了。 下面是使用一个快速blog生成工具Hexo，进行博客装饰和博客提交、部署安装配置hexo1.在D盘新建文件夹/blog2.下载安装hexo：打开git bash here ： $ npm install -g hexo-cli 终端输入hexo 回车 如图说明安装成功了。 3.初始化hexo $ hexo init 4.进入安装文件夹 $ npm install （自动安装你需要的组件）之后会出现很多文件如图 5.写博客 $ hexo new “我的第一篇博文” 然后在本地博客文件夹source-&gt;_post文件夹下看到我们新建的markdown文件；用Markdown编辑器打开md文件编辑文字 “你好，欢迎来到我的个人技术博客。”保存 本地发布: $ hexo server 打开 http://localhost：4000 就可以看到自己的文章了。开心撒花！！！ 将blog部署到Github Pages上使用hexo deploy部署1.打开站点配置文件，做如图修改2.安装一个扩展 $ npm install hexo-deployer-git –save 执行部署 $ hexo d 网络发布： $ hexo generate //生成$ hexo deploy //部署 这样，zyyjoin.github.io以及zyyup.com都可以看到那篇文章了。 6.hexo的主题等相关配置 以NexT为例介绍：http://theme-next.iissnan.com/ 1.下载主题使用克隆（clone）最新版本 的方式，之后的更新可以通过 git pull 来快速更新。$ cd your-hexo-site //定位站点目录的 themes 目录下$ git clone https://github.com/iissnan/hexo-theme-next themes/next2.启用主题打开站点配置文件，修改theme值3.验证主题 $ hexo s –debug // 启动服务浏览器访问 http://localhost:4000/检查站点是否正确运行。 附：hexo常用命令 hexo new “postName” #新建文章 hexo new page “pageName” #新建页面 hexo generate #生成静态页面至public目录 hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server） hexo deploy #将.deploy目录部署到GitHub通常使用 hexo d -g 加载部署新博文]]></content>
+      <categories>
+        <category>杂记</category>
+      </categories>
+      <tags>
+        <tag>博客搭建</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Markdown常用语法]]></title>

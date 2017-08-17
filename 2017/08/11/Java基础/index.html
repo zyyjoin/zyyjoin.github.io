@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="Java基础," />
 
 
 
@@ -94,16 +94,16 @@
 
 
 <meta name="description" content="你好，欢迎来到我的个人技术博客。 Java基础Java语言1995年由Sun公司发布，2009年被Oracle公司收购。（2014年JDK8）">
-<meta name="keywords" content="Java">
+<meta name="keywords" content="Java基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java学习笔记">
+<meta property="og:title" content="Java基础">
 <meta property="og:url" content="http://zyyup.com/2017/08/11/Java基础/index.html">
 <meta property="og:site_name" content="ZYY的博客">
 <meta property="og:description" content="你好，欢迎来到我的个人技术博客。 Java基础Java语言1995年由Sun公司发布，2009年被Oracle公司收购。（2014年JDK8）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-14T14:25:22.800Z">
+<meta property="og:updated_time" content="2017-08-17T07:42:53.583Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java学习笔记">
+<meta name="twitter:title" content="Java基础">
 <meta name="twitter:description" content="你好，欢迎来到我的个人技术博客。 Java基础Java语言1995年由Sun公司发布，2009年被Oracle公司收购。（2014年JDK8）">
 
 
@@ -138,7 +138,7 @@
 
 
 
-  <title>Java学习笔记 | ZYY的博客</title>
+  <title>Java基础 | ZYY的博客</title>
   
 
 
@@ -304,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java学习笔记</h1>
+          <h1 class="post-title" itemprop="name headline">Java基础</h1>
         
 
         <div class="post-meta">
@@ -339,8 +339,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java基础/" itemprop="url" rel="index">
-                    <span itemprop="name">Java基础</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -392,7 +392,22 @@
 <h4 id="Map-HashMap"><a href="#Map-HashMap" class="headerlink" title="Map HashMap"></a>Map<k,v> HashMap</k,v></h4><p>特点：存放键映射值的对象引用，键不可以重复，值可以重复。无序<br>添加或<strong>修改</strong>元素：(V)<strong>put</strong>(K key,V value) 添加时应判断key不存在，修改是判断key存在<br>删除元素：(V)remove(Object key)<br>(V)get(Object key):返回指定键所映射的值或null。（可用于判断要添加元素键是否已存在）</p>
 <p><strong>特殊方法</strong>：可以方便遍历Map中的元素<br>得到Map中key值的集合:(Set<k>)<strong>keySet</strong>()<br>得到Map中Value值的集合:(Collection<v>)<strong>values</strong>()<br>得到Map中键值对的集合:(Set<map,entry<k,v>&gt;)<strong>entrySet</strong>()</map,entry<k,v></v></k></p>
 <h4 id="集合其他功能方法（size-）"><a href="#集合其他功能方法（size-）" class="headerlink" title="集合其他功能方法（size()）"></a>集合其他功能方法（size()）</h4><p>1.判断集合中是否包含某个元素：适用于Set List（需要时重写hashCode()、equals(Object obj)方法） (boolean)<strong>contains</strong>(Object o)（containsAll(Collection c)）<br>2.判断元素在集合中的索引位置：适用于List（多个时返回第一个的索引，lastIndexOf()相反，没找到返回-1） (int)<strong>indexOf</strong>(Object o)<br>3.判断Map中是否包含某个key和value：(boolean)containsKey(Object key)、containsValue(Object value)（需要重写hashCode()、equals(Object obj)方法）<br>4.List元素排序方法：（从小到大）Collections.sort(List l)（字符串排序：先数字，然后大写字母，然后小写字母）<br>5.学生等对象如何比较大小：实现Comparable接口（定义默认比较规则）或Comparator接口（定义临时的），重写CompareTo(T o)方法（此对象小于参数o返回负）</p>
-
+<h4 id="关于二进制"><a href="#关于二进制" class="headerlink" title="关于二进制"></a>关于二进制</h4><p>任何数据都能转化成二进制在计算机底层进行数据传输，也可以反转。<br>1.Java中十进制与其它进制之间的转换</p>
+<pre><code>//十进制转换成其他进制数
+System.out.println(Integer.toBinaryString(160));//二进制
+System.out.println(Integer.toHexString(160));//十六进制
+System.out.println(Integer.toOctalString(160));//八进制
+//其他进制数转换成十进制
+System.out.println(Integer.parseInt(&quot;1110000&quot;, 2));
+System.out.println(Integer.parseInt(&quot;7a&quot;, 16));
+System.out.println(Integer.parseInt(&quot;167&quot;, 8));
+</code></pre><p>2.基本数据类型字节数位数：<br>整型byte(8bit -128~127)、short(16bit)、int(32bit)、long(64bit)<br>浮点型float(32bit)、double(64bit)<br>布尔型boolean(2bit) true、false<br>字符型char(16bit)Unicode字符<br>3.大小端（内存数据存储）</p>
+<blockquote>
+<p>小端：低地址存低位<br>大端：低地址存高位</p>
+</blockquote>
+<h4 id="Java注解"><a href="#Java注解" class="headerlink" title="Java注解"></a>Java注解</h4><h6 id="JDK中的注解"><a href="#JDK中的注解" class="headerlink" title="JDK中的注解"></a>JDK中的注解</h6><p>学习注解，更能看懂别人的代码（特别是框架），使自己的代码清晰简洁。<br>1.@Override（重写） 下面表示子类<strong>重写</strong>父类的方法<br>2.@Deprecated（弃用） 当已经定义的<strong>方法过时了</strong>，不过不能删掉，因为其他的可能还有在用。<br>3.@SuppressWarnings(“deprecation”) 当使用2类型方法时，使用这个注解消除警告。</p>
+<h6 id="第三方注解"><a href="#第三方注解" class="headerlink" title="第三方注解"></a>第三方注解</h6><p>Spring中@Autowired、@Service、@Repository<br>Mybatis中@InsertProvider、@UpdateProvider、@Options</p>
+<h6 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h6><h6 id="解析注解"><a href="#解析注解" class="headerlink" title="解析注解"></a>解析注解</h6><h6 id="自定义注解-1"><a href="#自定义注解-1" class="headerlink" title="自定义注解"></a>自定义注解</h6><h6 id="自定义注解-2"><a href="#自定义注解-2" class="headerlink" title="自定义注解"></a>自定义注解</h6>
       
     </div>
 
@@ -421,7 +436,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
+            <a href="/tags/Java基础/" rel="tag"># Java基础</a>
           
         </div>
       
@@ -434,8 +449,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/09/Servlet/" rel="next" title="Servlet学习笔记">
-                <i class="fa fa-chevron-left"></i> Servlet学习笔记
+              <a href="/2017/08/09/JavaEE之Servlet学习/" rel="next" title="JavaEE之Servlet学习">
+                <i class="fa fa-chevron-left"></i> JavaEE之Servlet学习
               </a>
             
           </div>
@@ -530,7 +545,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -541,7 +556,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -576,7 +591,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java基础"><span class="nav-number">1.</span> <span class="nav-text">Java基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开发环境相关"><span class="nav-number">1.0.1.</span> <span class="nav-text">开发环境相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#封装继承多态"><span class="nav-number">1.0.2.</span> <span class="nav-text">封装继承多态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常"><span class="nav-number">1.0.3.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集合：即盛装其他元素的容器。"><span class="nav-number">1.0.4.</span> <span class="nav-text">集合：即盛装其他元素的容器。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#List-ArrayList"><span class="nav-number">1.0.4.1.</span> <span class="nav-text">List ArrayList</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#泛型"><span class="nav-number">1.0.4.2.</span> <span class="nav-text">泛型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set-HashSet"><span class="nav-number">1.0.4.3.</span> <span class="nav-text">Set HashSet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Map-HashMap"><span class="nav-number">1.0.4.4.</span> <span class="nav-text">Map HashMap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集合其他功能方法（size-）"><span class="nav-number">1.0.4.5.</span> <span class="nav-text">集合其他功能方法（size()）</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java基础"><span class="nav-number">1.</span> <span class="nav-text">Java基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开发环境相关"><span class="nav-number">1.0.1.</span> <span class="nav-text">开发环境相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#封装继承多态"><span class="nav-number">1.0.2.</span> <span class="nav-text">封装继承多态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常"><span class="nav-number">1.0.3.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集合：即盛装其他元素的容器。"><span class="nav-number">1.0.4.</span> <span class="nav-text">集合：即盛装其他元素的容器。</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#List-ArrayList"><span class="nav-number">1.0.4.1.</span> <span class="nav-text">List ArrayList</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#泛型"><span class="nav-number">1.0.4.2.</span> <span class="nav-text">泛型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Set-HashSet"><span class="nav-number">1.0.4.3.</span> <span class="nav-text">Set HashSet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Map-HashMap"><span class="nav-number">1.0.4.4.</span> <span class="nav-text">Map HashMap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集合其他功能方法（size-）"><span class="nav-number">1.0.4.5.</span> <span class="nav-text">集合其他功能方法（size()）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于二进制"><span class="nav-number">1.0.4.6.</span> <span class="nav-text">关于二进制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java注解"><span class="nav-number">1.0.4.7.</span> <span class="nav-text">Java注解</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#JDK中的注解"><span class="nav-number">1.0.4.7.0.1.</span> <span class="nav-text">JDK中的注解</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#第三方注解"><span class="nav-number">1.0.4.7.0.2.</span> <span class="nav-text">第三方注解</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#自定义注解"><span class="nav-number">1.0.4.7.0.3.</span> <span class="nav-text">自定义注解</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#解析注解"><span class="nav-number">1.0.4.7.0.4.</span> <span class="nav-text">解析注解</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#自定义注解-1"><span class="nav-number">1.0.4.7.0.5.</span> <span class="nav-text">自定义注解</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#自定义注解-2"><span class="nav-number">1.0.4.7.0.6.</span> <span class="nav-text">自定义注解</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
