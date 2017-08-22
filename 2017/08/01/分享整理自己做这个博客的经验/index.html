@@ -101,19 +101,19 @@
 <meta property="og:site_name" content="ZYY的博客">
 <meta property="og:description" content="你好，欢迎来到我的个人技术博客。 自己做博客的全过程整理（Github+Hexo）自己建博客的初衷：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://zyyup.com/2017/08/01/images/ssh.png">
-<meta property="og:image" content="http://zyyup.com/2017/08/01/images/ssh成功可用.png">
-<meta property="og:image" content="http://zyyup.com/2017/08/01/images/验证安装.png">
-<meta property="og:image" content="http://zyyup.com/2017/08/01/images/hexo安装验证.png">
-<meta property="og:image" content="http://zyyup.com/2017/08/01/images/hexo文件夹.png">
-<meta property="og:image" content="http://zyyup.com/2017/08/01/images/deploy.png">
-<meta property="og:image" content="http://zyyup.com/2017/08/01/images/NexT.png">
-<meta property="og:image" content="http://zyyup.com/2017/08/01/images/theme.png">
-<meta property="og:updated_time" content="2017-08-17T07:37:58.736Z">
+<meta property="og:image" content="http://ov2s3rx7c.bkt.clouddn.com/ssh.png">
+<meta property="og:image" content="http://ov2s3rx7c.bkt.clouddn.com/ssh%E6%88%90%E5%8A%9F%E5%8F%AF%E7%94%A8.png">
+<meta property="og:image" content="http://ov2s3rx7c.bkt.clouddn.com/%E9%AA%8C%E8%AF%81%E5%AE%89%E8%A3%85.png">
+<meta property="og:image" content="http://ov2s3rx7c.bkt.clouddn.com/hexo%E5%AE%89%E8%A3%85%E9%AA%8C%E8%AF%81.png">
+<meta property="og:image" content="http://ov2s3rx7c.bkt.clouddn.com/hexo%E6%96%87%E4%BB%B6%E5%A4%B9.png">
+<meta property="og:image" content="http://ov2s3rx7c.bkt.clouddn.com/deploy.png">
+<meta property="og:image" content="http://ov2s3rx7c.bkt.clouddn.com/NexT.png">
+<meta property="og:image" content="http://ov2s3rx7c.bkt.clouddn.com/theme.png">
+<meta property="og:updated_time" content="2017-08-22T07:47:57.218Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分享整理自己做这个博客的经验">
 <meta name="twitter:description" content="你好，欢迎来到我的个人技术博客。 自己做博客的全过程整理（Github+Hexo）自己建博客的初衷：">
-<meta name="twitter:image" content="http://zyyup.com/2017/08/01/images/ssh.png">
+<meta name="twitter:image" content="http://ov2s3rx7c.bkt.clouddn.com/ssh.png">
 
 
 
@@ -412,11 +412,11 @@
 <p>$ ssh-keygen -t rsa -C “862071204@qq.com”回车</p>
 </blockquote>
 <p>回车 回车 回车（密码可以为空，也可设置）</p>
-<h4 id="4-这样成功之后在～-ssh目录下有两个文件，如图"><a href="#4-这样成功之后在～-ssh目录下有两个文件，如图" class="headerlink" title="4.这样成功之后在～/.ssh目录下有两个文件，如图"></a>4.这样成功之后在～/.ssh目录下有两个文件，如图</h4><p><img src="../images/ssh.png" alt="ssh"><br>记事本打开id_rsa.pub，复制内容到github帐号管理中的添加<br>SSH key界面中。</p>
+<h4 id="4-这样成功之后在～-ssh目录下有两个文件，如图"><a href="#4-这样成功之后在～-ssh目录下有两个文件，如图" class="headerlink" title="4.这样成功之后在～/.ssh目录下有两个文件，如图"></a>4.这样成功之后在～/.ssh目录下有两个文件，如图</h4><p><img src="http://ov2s3rx7c.bkt.clouddn.com/ssh.png" alt="ssh"><br>记事本打开id_rsa.pub，复制内容到github帐号管理中的添加<br>SSH key界面中。</p>
 <h4 id="5-验证："><a href="#5-验证：" class="headerlink" title="5.验证："></a>5.验证：</h4><blockquote>
 <p>$ ssh -T git@GitHub.com 然后yes 看到如图字样就算成功了。</p>
 </blockquote>
-<p><img src="../images/ssh成功可用.png" alt="ssh成功可用"><br><em>从此以后就可以拷贝github上的项目源码了。</em></p>
+<p><img src="http://ov2s3rx7c.bkt.clouddn.com/ssh%E6%88%90%E5%8A%9F%E5%8F%AF%E7%94%A8.png" alt="ssh成功可用"><br><em>从此以后就可以拷贝github上的项目源码了。</em></p>
 <h3 id="使用github得到源码："><a href="#使用github得到源码：" class="headerlink" title="使用github得到源码："></a>使用github得到源码：</h3><h4 id="1-获取源码："><a href="#1-获取源码：" class="headerlink" title="1.获取源码："></a>1.获取源码：</h4><blockquote>
 <p>$ git clone git@github.com:billyanyteen/github-services.git</p>
 </blockquote>
@@ -441,21 +441,21 @@
 </code></pre><blockquote>
 <p>如图验证安装，出现版本信息说明安装正确</p>
 </blockquote>
-<p><img src="../images/验证安装.png" alt="验证安装"></p>
+<p><img src="http://ov2s3rx7c.bkt.clouddn.com/%E9%AA%8C%E8%AF%81%E5%AE%89%E8%A3%85.png" alt="验证安装"></p>
 <h3 id="自定义域名（-com等，需要购买）与Github-Pages域名绑定"><a href="#自定义域名（-com等，需要购买）与Github-Pages域名绑定" class="headerlink" title="自定义域名（.com等，需要购买）与Github Pages域名绑定"></a>自定义域名（.com等，需要购买）与Github Pages域名绑定</h3><p><em>我半信半疑的去腾讯云买了一年（/45元）的zyyup.com的域名。</em><br>1.进行域名解析，在哪买在哪解析，记录指向的ip地址是 GitHub Pages 的提供的 ip（自己ping username.github.io）<br>2.去到你的username.github.io代码仓库，新建一个文件，名称CNAME 内容zyyup.com（你买的自定义域名）<br><strong>至此你的博客网址zyyup.com就可以在浏览器中访问了。撒花！！！</strong></p>
 <p><strong>至此，个人博客就搭建完毕了。</strong></p>
 <h1 id="下面是使用一个快速blog生成工具Hexo，进行博客装饰和博客提交、部署"><a href="#下面是使用一个快速blog生成工具Hexo，进行博客装饰和博客提交、部署" class="headerlink" title="下面是使用一个快速blog生成工具Hexo，进行博客装饰和博客提交、部署"></a>下面是使用一个快速blog生成工具Hexo，进行博客装饰和博客提交、部署</h1><h3 id="安装配置hexo"><a href="#安装配置hexo" class="headerlink" title="安装配置hexo"></a>安装配置hexo</h3><h4 id="1-在D盘新建文件夹-blog"><a href="#1-在D盘新建文件夹-blog" class="headerlink" title="1.在D盘新建文件夹/blog"></a>1.在D盘新建文件夹/blog</h4><h4 id="2-下载安装hexo："><a href="#2-下载安装hexo：" class="headerlink" title="2.下载安装hexo："></a>2.下载安装hexo：</h4><p>打开git bash here ：</p>
 <blockquote>
 <p>$ npm install -g hexo-cli</p>
 </blockquote>
-<p>终端输入hexo 回车 如图说明安装成功了。<br><img src="../images/hexo安装验证.png" alt="hexo安装验证"></p>
+<p>终端输入hexo 回车 如图说明安装成功了。<br><img src="http://ov2s3rx7c.bkt.clouddn.com/hexo%E5%AE%89%E8%A3%85%E9%AA%8C%E8%AF%81.png" alt="hexo安装验证"></p>
 <h4 id="3-初始化hexo"><a href="#3-初始化hexo" class="headerlink" title="3.初始化hexo"></a>3.初始化hexo</h4><blockquote>
 <p>$ hexo init </p>
 </blockquote>
 <h4 id="4-进入安装文件夹"><a href="#4-进入安装文件夹" class="headerlink" title="4.进入安装文件夹"></a>4.进入安装文件夹</h4><blockquote>
 <p>$ npm install</p>
 </blockquote>
-<p>（自动安装你需要的组件）之后会出现很多文件如图<br><img src="../images/hexo文件夹.png" alt="hexo文件夹"></p>
+<p>（自动安装你需要的组件）之后会出现很多文件如图<br><img src="http://ov2s3rx7c.bkt.clouddn.com/hexo%E6%96%87%E4%BB%B6%E5%A4%B9.png" alt="hexo文件夹"></p>
 <h4 id="5-写博客"><a href="#5-写博客" class="headerlink" title="5.写博客"></a>5.写博客</h4><blockquote>
 <p>$ hexo new “我的第一篇博文”</p>
 </blockquote>
@@ -468,7 +468,7 @@
 </ul>
 <p><strong>打开 <a href="http://localhost：4000" target="_blank" rel="external">http://localhost：4000</a> 就可以看到自己的文章了。开心撒花！！！</strong> </p>
 <ul>
-<li>将blog部署到Github Pages上<br>使用hexo deploy部署<br>1.打开<strong>站点配置文件</strong>，做如图修改<br><img src="../images/deploy.png" alt="deploy"><br>2.安装一个扩展<blockquote>
+<li>将blog部署到Github Pages上<br>使用hexo deploy部署<br>1.打开<strong>站点配置文件</strong>，做如图修改<br><img src="http://ov2s3rx7c.bkt.clouddn.com/deploy.png" alt="deploy"><br>2.安装一个扩展<blockquote>
 <p>$ npm install hexo-deployer-git –save</p>
 </blockquote>
 </li>
@@ -489,7 +489,7 @@
 <h4 id="6-hexo的主题等相关配置"><a href="#6-hexo的主题等相关配置" class="headerlink" title="6.hexo的主题等相关配置"></a>6.hexo的主题等相关配置</h4><blockquote>
 <p>以NexT为例介绍：<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">http://theme-next.iissnan.com/</a></p>
 </blockquote>
-<p><img src="../images/NexT.png" alt="NexT"><br>1.下载主题<br>使用克隆（clone）最新版本 的方式，之后的更新可以通过 git pull 来快速更新。<br><em>$ cd your-hexo-site //定位站点目录的 themes 目录下</em><br><em>$ git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a> themes/next</em><br>2.启用主题<br>打开<strong>站点配置文件</strong>，修改theme值<br><img src="../images/theme.png" alt="theme"><br>3.验证主题</p>
+<p><img src="http://ov2s3rx7c.bkt.clouddn.com/NexT.png" alt="NexT"><br>1.下载主题<br>使用克隆（clone）最新版本 的方式，之后的更新可以通过 git pull 来快速更新。<br><em>$ cd your-hexo-site //定位站点目录的 themes 目录下</em><br><em>$ git clone <a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a> themes/next</em><br>2.启用主题<br>打开<strong>站点配置文件</strong>，修改theme值<br><img src="http://ov2s3rx7c.bkt.clouddn.com/theme.png" alt="theme"><br>3.验证主题</p>
 <blockquote>
 <p>$ hexo s –debug // 启动服务<br>浏览器访问 <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>检查站点是否正确运行。</p>
 </blockquote>

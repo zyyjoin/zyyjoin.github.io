@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="你好，欢迎来到我的个人技术博客。 JavaEE之Jsp学习Java Server Pages（JSP）可以用于从数据库中检索信息或登记的用户偏好，访问JavaBeans组件，传递页面之间的控制和请求，网页等之间共享信息。">
+<meta name="description" content="你好，欢迎来到我的个人技术博客。 JavaEE之Jsp学习Java Server Pages（JSP）是使用&amp;lt;%%&amp;gt;标签嵌入了Java代码的动态Html页面，可以用于从数据库中检索信息或登记的用户偏好，访问JavaBeans组件，传递页面之间的控制和请求，网页等之间共享信息。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaEE之Jsp学习">
 <meta property="og:url" content="http://zyyup.com/2017/08/22/JavaEE之Jsp学习/index.html">
 <meta property="og:site_name" content="ZYY的博客">
-<meta property="og:description" content="你好，欢迎来到我的个人技术博客。 JavaEE之Jsp学习Java Server Pages（JSP）可以用于从数据库中检索信息或登记的用户偏好，访问JavaBeans组件，传递页面之间的控制和请求，网页等之间共享信息。">
+<meta property="og:description" content="你好，欢迎来到我的个人技术博客。 JavaEE之Jsp学习Java Server Pages（JSP）是使用&amp;lt;%%&amp;gt;标签嵌入了Java代码的动态Html页面，可以用于从数据库中检索信息或登记的用户偏好，访问JavaBeans组件，传递页面之间的控制和请求，网页等之间共享信息。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-22T03:03:47.661Z">
+<meta property="og:updated_time" content="2017-08-22T07:35:14.626Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaEE之Jsp学习">
-<meta name="twitter:description" content="你好，欢迎来到我的个人技术博客。 JavaEE之Jsp学习Java Server Pages（JSP）可以用于从数据库中检索信息或登记的用户偏好，访问JavaBeans组件，传递页面之间的控制和请求，网页等之间共享信息。">
+<meta name="twitter:description" content="你好，欢迎来到我的个人技术博客。 JavaEE之Jsp学习Java Server Pages（JSP）是使用&amp;lt;%%&amp;gt;标签嵌入了Java代码的动态Html页面，可以用于从数据库中检索信息或登记的用户偏好，访问JavaBeans组件，传递页面之间的控制和请求，网页等之间共享信息。">
 
 
 
@@ -351,16 +351,12 @@
 
       
         <p><em>你好，欢迎来到我的个人技术博客。</em></p>
-<h1 id="JavaEE之Jsp学习"><a href="#JavaEE之Jsp学习" class="headerlink" title="JavaEE之Jsp学习"></a>JavaEE之Jsp学习</h1><p>Java Server Pages（JSP）可以用于从数据库中检索信息或登记的用户偏好，访问JavaBeans组件，传递页面之间的控制和请求，网页等之间共享信息。<br><a id="more"></a></p>
-<p>脚本（scriptlet）可以包含任意数量的Java语句，变量、方法声明，有效表达式<br>&lt;%out.println(“Your IP address is”+request.getRemoteAddr());%&gt;</p>
-<p>1.JSP声明（一个或多个变量、方法）（属于全局的）<br>Jsp文件使用变量、方法必须先声明。<br>&lt;%! int i = 0; %&gt;<br>&lt;%! int a,b,c; %&gt;<br>&lt;%! Circle ci = new Circle(2.0); %&gt;//这个需要新建类，导入java包<br>jsp里导入java包问题：<a href="http://www.cnblogs.com/rongyao/p/6295950.html" target="_blank" rel="external">http://www.cnblogs.com/rongyao/p/6295950.html</a></p>
-<p>2.JSP表达式（计算、转换字符串）<br>注意不要使用分号结尾。</p>
-<p>今天是：&lt;%= (new Date()).toLocaleString() %&gt;</p>
-
+<h1 id="JavaEE之Jsp学习"><a href="#JavaEE之Jsp学习" class="headerlink" title="JavaEE之Jsp学习"></a>JavaEE之Jsp学习</h1><p>Java Server Pages（JSP）是使用&lt;%%&gt;标签嵌入了Java代码的动态Html页面，可以用于从数据库中检索信息或登记的用户偏好，访问JavaBeans组件，传递页面之间的控制和请求，网页等之间共享信息。<br><a id="more"></a><br>&lt;% java相关代码  %&gt;：脚本（scriptlet）可以包含任意数量的Java语句，变量、方法声明，有效表达式<br>&lt;%out.println(“Your IP address is”+request.getRemoteAddr());%&gt;</p>
+<h3 id="JSP入门"><a href="#JSP入门" class="headerlink" title="JSP入门"></a>JSP入门</h3><p>1.JSP声明（一个或多个变量、方法）（属于全局的）<br>Jsp文件使用变量、方法必须先声明。<br>&lt;%! int i = 0; %&gt;<br>&lt;%! int a,b,c; %&gt;<br>&lt;%! Circle ci = new Circle(2.0); %&gt;//这个需要新建类，导入java包<br>jsp里导入java包问题：<a href="http://www.cnblogs.com/rongyao/p/6295950.html" target="_blank" rel="external">http://www.cnblogs.com/rongyao/p/6295950.html</a></p>
+<p>2.JSP表达式（计算、转换字符串）<br>注意不要使用分号结尾。<br>&lt;\p&gt;今天是：&lt;%= (new Date()).toLocaleString() %&gt;&lt;\/p&gt;</p>
 <p>3.JSP注释<br>&lt;%–JSP注释将不显示，被JSP引擎忽略 –%&gt;<br><!-- html注释，被浏览器忽略 --></p>
-<p>4.JSP指令<br>影响servlet的整体结构<br>表格<br>&lt;%@page %&gt;       定义页面依赖属性，例如脚本语言，错误页面和缓冲的要求<br>&lt;%@include %&gt;    包括在转换阶段的文件<br>&lt;%@taglib %&gt;     声明了一个标签库，包含自定义动作，用在页面中<br>设置锚点：JSP指令</p>
-<p>5.JSP动作<br>使用XML语法结构来控制Servlet引擎的行为。可以动态地插入文件，重用JavaBeans组件，用户转发到另一<br>个页面，或为Java插件生成HTML。</p>
-<p><jsp:action_name attribute="value"><br>表格<br>jsp:include    包括页面被一次请求的文件<br>jsp:useBean    查找或实例化一个JavaBean<br>jsp:setProperty    设置一个JavaBean的属性<br>jsp:getProperty    插入一个JavaBean的属性到输出<br>jsp:forward    转发请求到一个新的页面<br>jsp:plugin    生成特定浏览器的代码，使对象或嵌入标签Java插件<br>jsp:element    定义XML元素动态<br>jsp:attribute    定义动态定义XML元素的属性<br>jsp:body    定义动态定义的XML元素主体<br>jsp:text    用于编写模板文本在JSP页面和文档<br>设置锚点：JSP动作</jsp:action_name></p>
+<p>4.JSP指令（后面详细介绍）<br>影响servlet的整体结构<br>表格<br>&lt;%@page %&gt;       定义页面依赖属性，例如脚本语言，错误页面和缓冲的要求<br>&lt;%@include %&gt;    包括在转换阶段的文件<br>&lt;%@taglib %&gt;     声明了一个标签库，包含自定义动作，用在页面中</p>
+<p>5.JSP动作（后面详细介绍）<br>使用XML语法结构来控制Servlet引擎的行为。可以动态地插入文件，重用JavaBeans组件，用户转发到另一<br>个页面，或为Java插件生成HTML。<br>&lt;\jsp:action_name attribute=”value” /&gt;<br>jsp:include    包括页面被一次请求的文件<br>jsp:useBean    查找或实例化一个JavaBean<br>jsp:setProperty    设置一个JavaBean的属性<br>jsp:getProperty    插入一个JavaBean的属性到输出<br>jsp:forward    转发请求到一个新的页面<br>jsp:plugin    生成特定浏览器的代码，使对象或嵌入标签Java插件<br>jsp:element    定义XML元素动态<br>jsp:attribute    定义动态定义XML元素的属性<br>jsp:body    定义动态定义的XML元素主体<br>jsp:text    用于编写模板文本在JSP页面和文档</p>
 <p>6.JSP隐式对象（JSP自动定义的变量）<br>表格<br>request    这是与请求相关联的HttpServletRequest对象<br>response    这是用于响应客户端相关联的HttpServletResponse对象<br>out    这是用于将输出发送给客户端的PrintWriter对象<br>session    这是与请求相关联的HttpSession对象<br>application    这是应用程序上下文关联的ServletContext对象<br>config    这是与页面关联的ServletConfig对象<br>pageContext    这封装采用类似更高的性能JspWriters服务器特定的功能<br>page    这是一个简单的代名词，是用来调用由转换servlet类中定义的方法<br>Exception    Exception对象允许例外的数据由JSP指定访问<br>设置锚点：JSP隐式对象</p>
 <p>7.控制语句（条件语句、循环语句）<br>if…else、switch…case<br>for、while、do…while</p>
 <p>8.运算符（类似Java）<br>后缀运算符：()、[]、.</p>
@@ -548,7 +544,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaEE之Jsp学习"><span class="nav-number">1.</span> <span class="nav-text">JavaEE之Jsp学习</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaEE之Jsp学习"><span class="nav-number">1.</span> <span class="nav-text">JavaEE之Jsp学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP入门"><span class="nav-number">1.0.1.</span> <span class="nav-text">JSP入门</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
