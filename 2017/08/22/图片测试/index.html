@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Servlet," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -93,18 +93,16 @@
 
 
 
-<meta name="description" content="你好，欢迎来到我的个人技术博客。 Java web之servlet学习Servlet是jsp的前身，他是运行在服务器上的Java小程序。">
-<meta name="keywords" content="Servlet">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaEE之Servlet学习">
-<meta property="og:url" content="http://zyyup.com/2017/08/09/JavaEE之Servlet学习/index.html">
+<meta property="og:title" content="图片测试">
+<meta property="og:url" content="http://zyyup.com/2017/08/22/图片测试/index.html">
 <meta property="og:site_name" content="ZYY的博客">
-<meta property="og:description" content="你好，欢迎来到我的个人技术博客。 Java web之servlet学习Servlet是jsp的前身，他是运行在服务器上的Java小程序。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-17T07:41:36.958Z">
+<meta property="og:image" content="http://zyyup.com/2017/08/22/图片测试/图片测试/1.jpg">
+<meta property="og:updated_time" content="2017-08-22T07:00:30.456Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaEE之Servlet学习">
-<meta name="twitter:description" content="你好，欢迎来到我的个人技术博客。 Java web之servlet学习Servlet是jsp的前身，他是运行在服务器上的Java小程序。">
+<meta name="twitter:title" content="图片测试">
+<meta name="twitter:image" content="http://zyyup.com/2017/08/22/图片测试/图片测试/1.jpg">
 
 
 
@@ -132,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://zyyup.com/2017/08/09/JavaEE之Servlet学习/"/>
+  <link rel="canonical" href="http://zyyup.com/2017/08/22/图片测试/"/>
 
 
 
 
 
-  <title>JavaEE之Servlet学习 | ZYY的博客</title>
+  <title>图片测试 | ZYY的博客</title>
   
 
 
@@ -287,7 +285,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://zyyup.com/2017/08/09/JavaEE之Servlet学习/">
+    <link itemprop="mainEntityOfPage" href="http://zyyup.com/2017/08/22/图片测试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Yuying">
@@ -304,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaEE之Servlet学习</h1>
+          <h1 class="post-title" itemprop="name headline">图片测试</h1>
         
 
         <div class="post-meta">
@@ -316,8 +314,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-09T18:24:49+08:00">
-                2017-08-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-22T14:57:09+08:00">
+                2017-08-22
               </time>
             
 
@@ -326,28 +324,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaEE/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaEE</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -373,89 +349,8 @@
       
 
       
-        <p><em>你好，欢迎来到我的个人技术博客。</em></p>
-<h1 id="Java-web之servlet学习"><a href="#Java-web之servlet学习" class="headerlink" title="Java web之servlet学习"></a>Java web之servlet学习</h1><p>Servlet是jsp的前身，他是运行在服务器上的Java小程序。<br><a id="more"></a></p>
-<h1 id="servlet基础："><a href="#servlet基础：" class="headerlink" title="servlet基础："></a>servlet基础：</h1><h3 id="手工编写Servlet类："><a href="#手工编写Servlet类：" class="headerlink" title="手工编写Servlet类："></a>手工编写Servlet类：</h3><p>1.Servlet类继承HttpServlet（实现了http协议）<br>2.重写doGet()或者doGet()方法<br>注：&lt;\a&gt;标签超链接是doGet()方式请求，form表单可以doPost()可以doGet()<br>3.在web.xml中注册该Servlet类<br>    &lt;\servlet&gt;<br>        &lt;\servlet-name&gt;HelloServlet&lt;\/servlet-name&gt;<br>        &lt;\servlet-class&gt;servlet.HelloServlet&lt;\/servlet-class&gt;<br>    &lt;\/servlet&gt;<br>      &lt;\servlet-mapping&gt;<br>        &lt;\servlet-name&gt;HelloServlet&lt;\/servlet-name&gt;<br>        &lt;\url-pattern&gt;/servlet/HelloServlet&lt;\/url-pattern&gt;<br>      &lt;\/servlet-mapping&gt;</p>
-<h3 id="集成工具编写Servlet："><a href="#集成工具编写Servlet：" class="headerlink" title="集成工具编写Servlet："></a>集成工具编写Servlet：</h3><p>1.src-&gt;new-&gt;Servlet<br>2.重写doGet()或者doGet()方法<br>3.部署运行</p>
-<h3 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h3><p>1.生命周期：init()初始化、调用service()方法执行doGet()或者doPost()方法、调用destroy()销毁。<br>2.Tomcat装载Servlet的三种情况：<em> Servlet容器（Tomcat服务器包含多个Servlet容器）启动时，可以在<servlet>&lt;\/Servlet&gt;中添加代码：&lt;\load-on-startup&gt;2&lt;\/load-on-startup&gt;（设置加载优先级，数字小优先级高。） </servlet></em> Servlet容器启动后，客户端首次向服务器发送请求时。 * Servlet类文件修改更新时，重新加载Servlet容器。<br>3.整个生命周期，init()方法只调用一次。</p>
-<h3 id="获取初始化参数"><a href="#获取初始化参数" class="headerlink" title="获取初始化参数"></a>获取初始化参数</h3><p>1.在\<servlet>&lt;\/Servlet&gt;中添加代码：<br>    &lt;\init-param&gt;<br>        &lt;\param-name&gt;username&lt;\/param-name&gt;<br>        &lt;\param-value&gt;admin&lt;\/param-value&gt;<br>    &lt;\/init-param&gt;<br>    &lt;\init-param&gt;<br>        &lt;\param-name&gt;password&lt;\/param-name&gt;<br>        &lt;\param-value&gt;admin&lt;\/param-value&gt;<br>    &lt;\/init-param&gt;<br>设置初始化参数&lt;名、值&gt;<br>2.Servlet类调用父类方法getInitParameter(“username”)获取初始化参数。</servlet></p>
-<h3 id="Servlet与jsp九大内置对象"><a href="#Servlet与jsp九大内置对象" class="headerlink" title="Servlet与jsp九大内置对象"></a>Servlet与jsp九大内置对象</h3><table>
-<thead>
-<tr>
-<th>JSP对象</th>
-<th>Servlet如何获取</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>out</td>
-<td>response.getWriter</td>
-</tr>
-<tr>
-<td>requset</td>
-<td>service方法中的requset</td>
-</tr>
-<tr>
-<td>response</td>
-<td>service方法中的response</td>
-</tr>
-<tr>
-<td>session</td>
-<td>requset.getSession()函数</td>
-</tr>
-<tr>
-<td>application</td>
-<td>getServletContext()函数</td>
-</tr>
-<tr>
-<td>exception</td>
-<td>Throwable </td>
-</tr>
-<tr>
-<td>page</td>
-<td>this</td>
-</tr>
-<tr>
-<td>pageContext</td>
-<td>PageContext</td>
-</tr>
-<tr>
-<td>Config</td>
-<td>getServletConfig()函数</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Servlet表单提交回显"><a href="#Servlet表单提交回显" class="headerlink" title="Servlet表单提交回显"></a>Servlet表单提交回显</h3><p>1.实例化Javabean对象，使用getParameter()获取表单数据，getParameterValues()获取复选框数据，将数据封装到Javabean对象中。<br>2.保存Javabean对象到session中。例：</p>
-<blockquote>
-<p>request.getSession().setAttribute(“regUser”, u);</p>
-</blockquote>
-<p>3.页面跳转。例：</p>
-<blockquote>
-<p>request.getRequestDispatcher(“userinfo.jsp”).forward(request, response);<br>//response.sendRedirect(“userinfo.jsp”);</p>
-</blockquote>
-<p>4.jsp页面回显数据：<br>    &lt;\jsp:useBean id=”regUser” class=”bean.User” scope=”session”&gt;&lt;\/jsp:useBean&gt;<br>正常获取显示<br>    &lt;\jsp:getProperty property=”username” name=”regUser”/&gt;<br>Java遍历输出显示</p>
-<pre><code>&lt;%
-String[] favorites = regUser.getFavorites();
-if(favorites!=null){
-    for(String f:favorites){
-%&gt;
-&lt;%=f %&gt;&amp;nbsp;&amp;nbsp;
-&lt;%} 
-    }else{%>
-    <%="null" %="">
-            <%} %="" &gt;="" <="" code=""></%}></%="null"></code></pre><h3 id="Servlet路径跳转"><a href="#Servlet路径跳转" class="headerlink" title="Servlet路径跳转"></a>Servlet路径跳转</h3><p>1.jsp跳转到Servlet</p>
-<pre><code>&lt;!-- 使用相对路径访问HelloServlet 加&quot;/&quot;就表示服务器根目录--&gt;
-&lt;a href=&quot;HelloServlet&quot;&gt;相对路径访问HelloServlet&lt;/a&gt;&lt;br&gt;
-&lt;!-- 使用绝对路径访问HelloServlet 借助path变量(path标识项目的路径)  --&gt;
-&lt;a href=&quot;&lt;%=path %&gt;/HelloServlet&quot;&gt;绝对路径访问HelloServlet&lt;/a&gt;&lt;br&gt;
-&lt;a href=&quot;TestServlet&quot;&gt;访问TestServlet，跳转到test.jsp&lt;/a&gt;&lt;br&gt;
-</code></pre><p>2.Servlet跳转到jsp</p>
-<pre><code>//请求重定向方式跳转到jsp页面
-response.sendRedirect(&quot;test.jsp&quot;);
-//response.sendRedirect(request.getContextPath()+&quot;/test.jsp&quot;);
-//服务器内部跳转
-request.getRequestDispatcher(&quot;/test.jsp&quot;).forward(request, response);
-</code></pre>
+        <p><img src="图片测试/1.jpg" alt="图片测试"></p>
+
       
     </div>
 
@@ -482,12 +377,6 @@ request.getRequestDispatcher(&quot;/test.jsp&quot;).forward(request, response);
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Servlet/" rel="tag"># Servlet</a>
-          
-        </div>
-      
 
       
       
@@ -497,8 +386,8 @@ request.getRequestDispatcher(&quot;/test.jsp&quot;).forward(request, response);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/02/使用IDEA和Maven创建Java web项目/" rel="next" title="使用IDEA和Maven创建Java web项目">
-                <i class="fa fa-chevron-left"></i> 使用IDEA和Maven创建Java web项目
+              <a href="/2017/08/22/JavaEE之Jsp学习/" rel="next" title="JavaEE之Jsp学习">
+                <i class="fa fa-chevron-left"></i> JavaEE之Jsp学习
               </a>
             
           </div>
@@ -506,10 +395,6 @@ request.getRequestDispatcher(&quot;/test.jsp&quot;).forward(request, response);
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/11/Java基础/" rel="prev" title="Java基础">
-                Java基础 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -557,17 +442,8 @@ request.getRequestDispatcher(&quot;/test.jsp&quot;).forward(request, response);
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -629,22 +505,6 @@ request.getRequestDispatcher(&quot;/test.jsp&quot;).forward(request, response);
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-web之servlet学习"><span class="nav-number">1.</span> <span class="nav-text">Java web之servlet学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#servlet基础："><span class="nav-number">2.</span> <span class="nav-text">servlet基础：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#手工编写Servlet类："><span class="nav-number">2.0.1.</span> <span class="nav-text">手工编写Servlet类：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集成工具编写Servlet："><span class="nav-number">2.0.2.</span> <span class="nav-text">集成工具编写Servlet：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意点："><span class="nav-number">2.0.3.</span> <span class="nav-text">注意点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取初始化参数"><span class="nav-number">2.0.4.</span> <span class="nav-text">获取初始化参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet与jsp九大内置对象"><span class="nav-number">2.0.5.</span> <span class="nav-text">Servlet与jsp九大内置对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet表单提交回显"><span class="nav-number">2.0.6.</span> <span class="nav-text">Servlet表单提交回显</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet路径跳转"><span class="nav-number">2.0.7.</span> <span class="nav-text">Servlet路径跳转</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
