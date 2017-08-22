@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Servlet," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -93,18 +93,17 @@
 
 
 
-<meta name="description" content="你好，欢迎来到我的个人技术博客。 Java web之servlet学习Servlet是jsp的前身，他是运行在服务器上的Java小程序。">
-<meta name="keywords" content="Servlet">
+<meta name="description" content="你好，欢迎来到我的个人技术博客。 JavaEE之Jsp学习Java Server Pages（JSP）可以用于从数据库中检索信息或登记的用户偏好，访问JavaBeans组件，传递页面之间的控制和请求，网页等之间共享信息。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaEE之Servlet学习">
-<meta property="og:url" content="http://zyyup.com/2017/08/09/JavaEE之Servlet学习/index.html">
+<meta property="og:title" content="JavaEE之Jsp学习">
+<meta property="og:url" content="http://zyyup.com/2017/08/22/JavaEE之Jsp学习/index.html">
 <meta property="og:site_name" content="ZYY的博客">
-<meta property="og:description" content="你好，欢迎来到我的个人技术博客。 Java web之servlet学习Servlet是jsp的前身，他是运行在服务器上的Java小程序。">
+<meta property="og:description" content="你好，欢迎来到我的个人技术博客。 JavaEE之Jsp学习Java Server Pages（JSP）可以用于从数据库中检索信息或登记的用户偏好，访问JavaBeans组件，传递页面之间的控制和请求，网页等之间共享信息。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-17T07:41:36.958Z">
+<meta property="og:updated_time" content="2017-08-22T03:03:47.661Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaEE之Servlet学习">
-<meta name="twitter:description" content="你好，欢迎来到我的个人技术博客。 Java web之servlet学习Servlet是jsp的前身，他是运行在服务器上的Java小程序。">
+<meta name="twitter:title" content="JavaEE之Jsp学习">
+<meta name="twitter:description" content="你好，欢迎来到我的个人技术博客。 JavaEE之Jsp学习Java Server Pages（JSP）可以用于从数据库中检索信息或登记的用户偏好，访问JavaBeans组件，传递页面之间的控制和请求，网页等之间共享信息。">
 
 
 
@@ -132,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://zyyup.com/2017/08/09/JavaEE之Servlet学习/"/>
+  <link rel="canonical" href="http://zyyup.com/2017/08/22/JavaEE之Jsp学习/"/>
 
 
 
 
 
-  <title>JavaEE之Servlet学习 | ZYY的博客</title>
+  <title>JavaEE之Jsp学习 | ZYY的博客</title>
   
 
 
@@ -287,7 +286,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://zyyup.com/2017/08/09/JavaEE之Servlet学习/">
+    <link itemprop="mainEntityOfPage" href="http://zyyup.com/2017/08/22/JavaEE之Jsp学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Yuying">
@@ -304,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaEE之Servlet学习</h1>
+          <h1 class="post-title" itemprop="name headline">JavaEE之Jsp学习</h1>
         
 
         <div class="post-meta">
@@ -316,8 +315,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-09T18:24:49+08:00">
-                2017-08-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-22T10:57:27+08:00">
+                2017-08-22
               </time>
             
 
@@ -326,28 +325,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaEE/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaEE</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -374,88 +351,30 @@
 
       
         <p><em>你好，欢迎来到我的个人技术博客。</em></p>
-<h1 id="Java-web之servlet学习"><a href="#Java-web之servlet学习" class="headerlink" title="Java web之servlet学习"></a>Java web之servlet学习</h1><p>Servlet是jsp的前身，他是运行在服务器上的Java小程序。<br><a id="more"></a></p>
-<h1 id="servlet基础："><a href="#servlet基础：" class="headerlink" title="servlet基础："></a>servlet基础：</h1><h3 id="手工编写Servlet类："><a href="#手工编写Servlet类：" class="headerlink" title="手工编写Servlet类："></a>手工编写Servlet类：</h3><p>1.Servlet类继承HttpServlet（实现了http协议）<br>2.重写doGet()或者doGet()方法<br>注：&lt;\a&gt;标签超链接是doGet()方式请求，form表单可以doPost()可以doGet()<br>3.在web.xml中注册该Servlet类<br>    &lt;\servlet&gt;<br>        &lt;\servlet-name&gt;HelloServlet&lt;\/servlet-name&gt;<br>        &lt;\servlet-class&gt;servlet.HelloServlet&lt;\/servlet-class&gt;<br>    &lt;\/servlet&gt;<br>      &lt;\servlet-mapping&gt;<br>        &lt;\servlet-name&gt;HelloServlet&lt;\/servlet-name&gt;<br>        &lt;\url-pattern&gt;/servlet/HelloServlet&lt;\/url-pattern&gt;<br>      &lt;\/servlet-mapping&gt;</p>
-<h3 id="集成工具编写Servlet："><a href="#集成工具编写Servlet：" class="headerlink" title="集成工具编写Servlet："></a>集成工具编写Servlet：</h3><p>1.src-&gt;new-&gt;Servlet<br>2.重写doGet()或者doGet()方法<br>3.部署运行</p>
-<h3 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h3><p>1.生命周期：init()初始化、调用service()方法执行doGet()或者doPost()方法、调用destroy()销毁。<br>2.Tomcat装载Servlet的三种情况：<em> Servlet容器（Tomcat服务器包含多个Servlet容器）启动时，可以在<servlet>&lt;\/Servlet&gt;中添加代码：&lt;\load-on-startup&gt;2&lt;\/load-on-startup&gt;（设置加载优先级，数字小优先级高。） </servlet></em> Servlet容器启动后，客户端首次向服务器发送请求时。 * Servlet类文件修改更新时，重新加载Servlet容器。<br>3.整个生命周期，init()方法只调用一次。</p>
-<h3 id="获取初始化参数"><a href="#获取初始化参数" class="headerlink" title="获取初始化参数"></a>获取初始化参数</h3><p>1.在\<servlet>&lt;\/Servlet&gt;中添加代码：<br>    &lt;\init-param&gt;<br>        &lt;\param-name&gt;username&lt;\/param-name&gt;<br>        &lt;\param-value&gt;admin&lt;\/param-value&gt;<br>    &lt;\/init-param&gt;<br>    &lt;\init-param&gt;<br>        &lt;\param-name&gt;password&lt;\/param-name&gt;<br>        &lt;\param-value&gt;admin&lt;\/param-value&gt;<br>    &lt;\/init-param&gt;<br>设置初始化参数&lt;名、值&gt;<br>2.Servlet类调用父类方法getInitParameter(“username”)获取初始化参数。</servlet></p>
-<h3 id="Servlet与jsp九大内置对象"><a href="#Servlet与jsp九大内置对象" class="headerlink" title="Servlet与jsp九大内置对象"></a>Servlet与jsp九大内置对象</h3><table>
-<thead>
-<tr>
-<th>JSP对象</th>
-<th>Servlet如何获取</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>out</td>
-<td>response.getWriter</td>
-</tr>
-<tr>
-<td>requset</td>
-<td>service方法中的requset</td>
-</tr>
-<tr>
-<td>response</td>
-<td>service方法中的response</td>
-</tr>
-<tr>
-<td>session</td>
-<td>requset.getSession()函数</td>
-</tr>
-<tr>
-<td>application</td>
-<td>getServletContext()函数</td>
-</tr>
-<tr>
-<td>exception</td>
-<td>Throwable </td>
-</tr>
-<tr>
-<td>page</td>
-<td>this</td>
-</tr>
-<tr>
-<td>pageContext</td>
-<td>PageContext</td>
-</tr>
-<tr>
-<td>Config</td>
-<td>getServletConfig()函数</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Servlet表单提交回显"><a href="#Servlet表单提交回显" class="headerlink" title="Servlet表单提交回显"></a>Servlet表单提交回显</h3><p>1.实例化Javabean对象，使用getParameter()获取表单数据，getParameterValues()获取复选框数据，将数据封装到Javabean对象中。<br>2.保存Javabean对象到session中。例：</p>
-<blockquote>
-<p>request.getSession().setAttribute(“regUser”, u);</p>
-</blockquote>
-<p>3.页面跳转。例：</p>
-<blockquote>
-<p>request.getRequestDispatcher(“userinfo.jsp”).forward(request, response);<br>//response.sendRedirect(“userinfo.jsp”);</p>
-</blockquote>
-<p>4.jsp页面回显数据：<br>    &lt;\jsp:useBean id=”regUser” class=”bean.User” scope=”session”&gt;&lt;\/jsp:useBean&gt;<br>正常获取显示<br>    &lt;\jsp:getProperty property=”username” name=”regUser”/&gt;<br>Java遍历输出显示</p>
-<pre><code>&lt;%
-String[] favorites = regUser.getFavorites();
-if(favorites!=null){
-    for(String f:favorites){
-%&gt;
-&lt;%=f %&gt;&amp;nbsp;&amp;nbsp;
-&lt;%} 
-    }else{%>
-    <%="null" %="">
-            <%} %="" &gt;="" <="" code=""></%}></%="null"></code></pre><h3 id="Servlet路径跳转"><a href="#Servlet路径跳转" class="headerlink" title="Servlet路径跳转"></a>Servlet路径跳转</h3><p>1.jsp跳转到Servlet</p>
-<pre><code>&lt;!-- 使用相对路径访问HelloServlet 加&quot;/&quot;就表示服务器根目录--&gt;
-&lt;a href=&quot;HelloServlet&quot;&gt;相对路径访问HelloServlet&lt;/a&gt;&lt;br&gt;
-&lt;!-- 使用绝对路径访问HelloServlet 借助path变量(path标识项目的路径)  --&gt;
-&lt;a href=&quot;&lt;%=path %&gt;/HelloServlet&quot;&gt;绝对路径访问HelloServlet&lt;/a&gt;&lt;br&gt;
-&lt;a href=&quot;TestServlet&quot;&gt;访问TestServlet，跳转到test.jsp&lt;/a&gt;&lt;br&gt;
-</code></pre><p>2.Servlet跳转到jsp</p>
-<pre><code>//请求重定向方式跳转到jsp页面
-response.sendRedirect(&quot;test.jsp&quot;);
-//response.sendRedirect(request.getContextPath()+&quot;/test.jsp&quot;);
-//服务器内部跳转
-request.getRequestDispatcher(&quot;/test.jsp&quot;).forward(request, response);
-</code></pre>
+<h1 id="JavaEE之Jsp学习"><a href="#JavaEE之Jsp学习" class="headerlink" title="JavaEE之Jsp学习"></a>JavaEE之Jsp学习</h1><p>Java Server Pages（JSP）可以用于从数据库中检索信息或登记的用户偏好，访问JavaBeans组件，传递页面之间的控制和请求，网页等之间共享信息。<br><a id="more"></a></p>
+<p>脚本（scriptlet）可以包含任意数量的Java语句，变量、方法声明，有效表达式<br>&lt;%out.println(“Your IP address is”+request.getRemoteAddr());%&gt;</p>
+<p>1.JSP声明（一个或多个变量、方法）（属于全局的）<br>Jsp文件使用变量、方法必须先声明。<br>&lt;%! int i = 0; %&gt;<br>&lt;%! int a,b,c; %&gt;<br>&lt;%! Circle ci = new Circle(2.0); %&gt;//这个需要新建类，导入java包<br>jsp里导入java包问题：<a href="http://www.cnblogs.com/rongyao/p/6295950.html" target="_blank" rel="external">http://www.cnblogs.com/rongyao/p/6295950.html</a></p>
+<p>2.JSP表达式（计算、转换字符串）<br>注意不要使用分号结尾。</p>
+<p>今天是：&lt;%= (new Date()).toLocaleString() %&gt;</p>
+
+<p>3.JSP注释<br>&lt;%–JSP注释将不显示，被JSP引擎忽略 –%&gt;<br><!-- html注释，被浏览器忽略 --></p>
+<p>4.JSP指令<br>影响servlet的整体结构<br>表格<br>&lt;%@page %&gt;       定义页面依赖属性，例如脚本语言，错误页面和缓冲的要求<br>&lt;%@include %&gt;    包括在转换阶段的文件<br>&lt;%@taglib %&gt;     声明了一个标签库，包含自定义动作，用在页面中<br>设置锚点：JSP指令</p>
+<p>5.JSP动作<br>使用XML语法结构来控制Servlet引擎的行为。可以动态地插入文件，重用JavaBeans组件，用户转发到另一<br>个页面，或为Java插件生成HTML。</p>
+<p><jsp:action_name attribute="value"><br>表格<br>jsp:include    包括页面被一次请求的文件<br>jsp:useBean    查找或实例化一个JavaBean<br>jsp:setProperty    设置一个JavaBean的属性<br>jsp:getProperty    插入一个JavaBean的属性到输出<br>jsp:forward    转发请求到一个新的页面<br>jsp:plugin    生成特定浏览器的代码，使对象或嵌入标签Java插件<br>jsp:element    定义XML元素动态<br>jsp:attribute    定义动态定义XML元素的属性<br>jsp:body    定义动态定义的XML元素主体<br>jsp:text    用于编写模板文本在JSP页面和文档<br>设置锚点：JSP动作</jsp:action_name></p>
+<p>6.JSP隐式对象（JSP自动定义的变量）<br>表格<br>request    这是与请求相关联的HttpServletRequest对象<br>response    这是用于响应客户端相关联的HttpServletResponse对象<br>out    这是用于将输出发送给客户端的PrintWriter对象<br>session    这是与请求相关联的HttpSession对象<br>application    这是应用程序上下文关联的ServletContext对象<br>config    这是与页面关联的ServletConfig对象<br>pageContext    这封装采用类似更高的性能JspWriters服务器特定的功能<br>page    这是一个简单的代名词，是用来调用由转换servlet类中定义的方法<br>Exception    Exception对象允许例外的数据由JSP指定访问<br>设置锚点：JSP隐式对象</p>
+<p>7.控制语句（条件语句、循环语句）<br>if…else、switch…case<br>for、while、do…while</p>
+<p>8.运算符（类似Java）<br>后缀运算符：()、[]、.</p>
+<p>9.JSP对象范围<br>JSP对象所使用的可用性通常是由该对象的范围限定。<br>Page 范围:<br>使用此JSP对象可以在其中创建的页面内使用。<br>Request 范围:<br>使用该JSP对象可以在请求服务任何地方使用。<br>Session 范围:<br>使用该JSP的对象可用于在属于同一个会话页面。<br>Application 范围:<br>使用该JSP的对象可以在整个应用程序页面中使用。</p>
+<p>10.在JSP页面中创建方法<br>先定义方法，使用方法<br>&lt;%!<br>    public int add(int a,int b){<br>        return a+b;<br>    }<br>%&gt;<br>两个数相加和：&lt;%=add(1, 2) %&gt;</p>
+<p>11.在JSP页面中使用数组<br>&lt;%<br>String[] arr = {“red”,”green”,”pink”};<br>%&gt;<br>&lt;%<br>int j;<br>out.println(“</p><p>输出字符串数组中的元素：</p>“);<br>for(j=0;j<arr.length;j++){ out.print(arr[j]+",");="" }="" %=""><p></p>
+<p>12.在JSP页面中使用Java Bean<br>嵌入一个Java bean到JSP网页，有三个基本动作或标签：</p>
+<p><jsp:usebean>这个标签是用来给bean指定“id”和“scope”属性相关联。</jsp:usebean></p>
+<p><jsp:setproperty>这个标签被用于设置一个beans属性的值，主要使用“name”属性已经定义了相同的<br>范围对象。其他属性是 “property”, “param”, “value”</jsp:setproperty></p>
+<p><jsp:getproperty>这个标签是用来获取引用Bean实例属性并将其存储到隐式out对象。<br>Beans的规则：<br>包应该是java bean的第一行<br>Bean应该有一个空的构造<br>所有的bean中的变量应该设置有“get”，“set”方法。<br>属性名应以大写字母开头在使用“set”，“get”方法时。<br>例如变量“名称”的get，set方法就是getName(), setName(String)<br>设置方法应该返回像一个空(void)值： “return void()”<br><a href="http://www.cnblogs.com/sherryueda/p/4270400.html" target="_blank" rel="external">http://www.cnblogs.com/sherryueda/p/4270400.html</a></jsp:getproperty></p>
+<p>13.JSP Session（会话）<br>会话处理变得必不可少，当一个请求数据需要被持续保持以供进一步使用。 由于HTTP协议认为每个请求<br>是一个新的请求，它不能保持过去访问的数据，因此会话处理就变得很重要。<br>String name = request.getParameter(“name”);<br>if((name!=null))<br>{<br>    session.setAttribute(“username”,name);<br>}<br>&lt;%= session.getAttribute(“username”) %&gt;</p>
+<p>14.JSP Cookies信息处理<br>Cookies和会话有一些相似的地方，唯一的区别是cookies 存储在浏览器，而会话存储在服务器端。<br>创建Cookie：<br>Cookie cookie = new Cookie (“name”,name);<br>response.addCookie(cookie);<br>cookie.setMaxAge(50 * 50);<br>使用读取Cookie：<br>Cookie[] cookies = request.getCookies();<br>for (int i=0; i&lt;cookies.length; i++){<br>    if(cookies[i].getName().equals(“name”))<br>        out.println(cookies[i].getValue());<br>}<br>删除Cookie：<br>Cookie cookie = new Cookie( “name”, “” );<br>cookie.setMaxAge( 0 );<br><a href="http://blog.csdn.net/springsen/article/details/7833582" target="_blank" rel="external">http://blog.csdn.net/springsen/article/details/7833582</a></p>
+<p>JSP指令<br>JSP动作<br>JSP隐式对象</p>
+</arr.length;j++){>
       
     </div>
 
@@ -482,12 +401,6 @@ request.getRequestDispatcher(&quot;/test.jsp&quot;).forward(request, response);
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Servlet/" rel="tag"># Servlet</a>
-          
-        </div>
-      
 
       
       
@@ -497,8 +410,8 @@ request.getRequestDispatcher(&quot;/test.jsp&quot;).forward(request, response);
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/02/使用IDEA和Maven创建Java web项目/" rel="next" title="使用IDEA和Maven创建Java web项目">
-                <i class="fa fa-chevron-left"></i> 使用IDEA和Maven创建Java web项目
+              <a href="/2017/08/17/Java类加载机制/" rel="next" title="Java类加载机制">
+                <i class="fa fa-chevron-left"></i> Java类加载机制
               </a>
             
           </div>
@@ -506,10 +419,6 @@ request.getRequestDispatcher(&quot;/test.jsp&quot;).forward(request, response);
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/11/Java基础/" rel="prev" title="Java基础">
-                Java基础 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -639,7 +548,7 @@ request.getRequestDispatcher(&quot;/test.jsp&quot;).forward(request, response);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-web之servlet学习"><span class="nav-number">1.</span> <span class="nav-text">Java web之servlet学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#servlet基础："><span class="nav-number">2.</span> <span class="nav-text">servlet基础：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#手工编写Servlet类："><span class="nav-number">2.0.1.</span> <span class="nav-text">手工编写Servlet类：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集成工具编写Servlet："><span class="nav-number">2.0.2.</span> <span class="nav-text">集成工具编写Servlet：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意点："><span class="nav-number">2.0.3.</span> <span class="nav-text">注意点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取初始化参数"><span class="nav-number">2.0.4.</span> <span class="nav-text">获取初始化参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet与jsp九大内置对象"><span class="nav-number">2.0.5.</span> <span class="nav-text">Servlet与jsp九大内置对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet表单提交回显"><span class="nav-number">2.0.6.</span> <span class="nav-text">Servlet表单提交回显</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet路径跳转"><span class="nav-number">2.0.7.</span> <span class="nav-text">Servlet路径跳转</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaEE之Jsp学习"><span class="nav-number">1.</span> <span class="nav-text">JavaEE之Jsp学习</span></a></li></ol></div>
             
 
           </div>
