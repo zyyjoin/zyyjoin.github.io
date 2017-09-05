@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Jsp、Servlet," />
+  <meta name="keywords" content="Jsp," />
 
 
 
@@ -94,14 +94,14 @@
 
 
 <meta name="description" content="你好，欢迎来到我的个人技术博客。 JavaEE之Jsp学习Java Server Pages（JSP）是使用&amp;lt;%%&amp;gt;标签嵌入了Java代码的动态Html页面，可以用于从数据库中检索信息或登记的用户偏好，访问JavaBeans组件，传递页面之间的控制和请求，网页等之间共享信息。">
-<meta name="keywords" content="Jsp、Servlet">
+<meta name="keywords" content="Jsp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaEE之Jsp学习">
 <meta property="og:url" content="http://zyyup.com/2017/08/22/JavaEE之Jsp学习/index.html">
 <meta property="og:site_name" content="ZYY的博客">
 <meta property="og:description" content="你好，欢迎来到我的个人技术博客。 JavaEE之Jsp学习Java Server Pages（JSP）是使用&amp;lt;%%&amp;gt;标签嵌入了Java代码的动态Html页面，可以用于从数据库中检索信息或登记的用户偏好，访问JavaBeans组件，传递页面之间的控制和请求，网页等之间共享信息。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-26T06:33:25.664Z">
+<meta property="og:updated_time" content="2017-09-05T06:48:36.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaEE之Jsp学习">
 <meta name="twitter:description" content="你好，欢迎来到我的个人技术博客。 JavaEE之Jsp学习Java Server Pages（JSP）是使用&amp;lt;%%&amp;gt;标签嵌入了Java代码的动态Html页面，可以用于从数据库中检索信息或登记的用户偏好，访问JavaBeans组件，传递页面之间的控制和请求，网页等之间共享信息。">
@@ -375,25 +375,106 @@
       
         <p><em>你好，欢迎来到我的个人技术博客。</em></p>
 <h1 id="JavaEE之Jsp学习"><a href="#JavaEE之Jsp学习" class="headerlink" title="JavaEE之Jsp学习"></a>JavaEE之Jsp学习</h1><p>Java Server Pages（JSP）是使用&lt;%%&gt;标签嵌入了Java代码的动态Html页面，可以用于从数据库中检索信息或登记的用户偏好，访问JavaBeans组件，传递页面之间的控制和请求，网页等之间共享信息。<br><a id="more"></a><br>&lt;% java相关代码  %&gt;：脚本（scriptlet）可以包含任意数量的Java语句，变量、方法声明，有效表达式<br>&lt;%out.println(“Your IP address is”+request.getRemoteAddr());%&gt;</p>
-<h3 id="JSP入门"><a href="#JSP入门" class="headerlink" title="JSP入门"></a>JSP入门</h3><p>1.JSP声明（一个或多个变量、方法）（属于全局的）<br>Jsp文件使用变量、方法必须先声明。<br>&lt;%! int i = 0; %&gt;<br>&lt;%! int a,b,c; %&gt;<br>&lt;%! Circle ci = new Circle(2.0); %&gt;//这个需要新建类，导入java包<br>jsp里导入java包问题：<a href="http://www.cnblogs.com/rongyao/p/6295950.html" target="_blank" rel="external">http://www.cnblogs.com/rongyao/p/6295950.html</a></p>
+<h3 id="JSP入门"><a href="#JSP入门" class="headerlink" title="JSP入门"></a>JSP入门</h3><p>1.JSP声明（一个或多个变量、方法）（属于全局的）<br>Jsp文件使用变量、方法必须先声明。</p>
+<pre><code>&lt;%! int i = 0; %&gt;
+&lt;%! int a,b,c; %&gt;
+&lt;%! Circle ci = new Circle(2.0); %&gt;//这个需要新建类，导入java包
+</code></pre><p>jsp里导入java包问题：<a href="http://www.cnblogs.com/rongyao/p/6295950.html" target="_blank" rel="external">http://www.cnblogs.com/rongyao/p/6295950.html</a></p>
 <p>2.JSP表达式（计算、转换字符串）<br>注意不要使用分号结尾。<br>&lt;\p&gt;今天是：&lt;%= (new Date()).toLocaleString() %&gt;&lt;\/p&gt;</p>
-<p>3.JSP注释<br>&lt;%–JSP注释将不显示，被JSP引擎忽略 –%&gt;<br><!-- html注释，被浏览器忽略 --></p>
+<p>3.JSP注释<br>&lt;%–JSP注释将不显示，被JSP引擎忽略 –%&gt;<br>&lt;、!– html注释，被浏览器忽略 –&gt;</p>
 <p>4.JSP指令（后面详细介绍）<br>影响servlet的整体结构<br>表格<br>&lt;%@page %&gt;       定义页面依赖属性，例如脚本语言，错误页面和缓冲的要求<br>&lt;%@include %&gt;    包括在转换阶段的文件<br>&lt;%@taglib %&gt;     声明了一个标签库，包含自定义动作，用在页面中</p>
 <p>5.JSP动作（后面详细介绍）<br>使用XML语法结构来控制Servlet引擎的行为。可以动态地插入文件，重用JavaBeans组件，用户转发到另一<br>个页面，或为Java插件生成HTML。<br>&lt;\jsp:action_name attribute=”value” /&gt;<br>jsp:include    包括页面被一次请求的文件<br>jsp:useBean    查找或实例化一个JavaBean<br>jsp:setProperty    设置一个JavaBean的属性<br>jsp:getProperty    插入一个JavaBean的属性到输出<br>jsp:forward    转发请求到一个新的页面<br>jsp:plugin    生成特定浏览器的代码，使对象或嵌入标签Java插件<br>jsp:element    定义XML元素动态<br>jsp:attribute    定义动态定义XML元素的属性<br>jsp:body    定义动态定义的XML元素主体<br>jsp:text    用于编写模板文本在JSP页面和文档</p>
-<p>6.JSP隐式对象（JSP自动定义的变量）<br>表格<br>request    这是与请求相关联的HttpServletRequest对象<br>response    这是用于响应客户端相关联的HttpServletResponse对象<br>out    这是用于将输出发送给客户端的PrintWriter对象<br>session    这是与请求相关联的HttpSession对象<br>application    这是应用程序上下文关联的ServletContext对象<br>config    这是与页面关联的ServletConfig对象<br>pageContext    这封装采用类似更高的性能JspWriters服务器特定的功能<br>page    这是一个简单的代名词，是用来调用由转换servlet类中定义的方法<br>Exception    Exception对象允许例外的数据由JSP指定访问<br>设置锚点：JSP隐式对象</p>
-<p>7.控制语句（条件语句、循环语句）<br>if…else、switch…case<br>for、while、do…while</p>
-<p>8.运算符（类似Java）<br>后缀运算符：()、[]、.</p>
-<p>9.JSP对象范围<br>JSP对象所使用的可用性通常是由该对象的范围限定。<br>Page 范围:<br>使用此JSP对象可以在其中创建的页面内使用。<br>Request 范围:<br>使用该JSP对象可以在请求服务任何地方使用。<br>Session 范围:<br>使用该JSP的对象可用于在属于同一个会话页面。<br>Application 范围:<br>使用该JSP的对象可以在整个应用程序页面中使用。</p>
-<p>10.在JSP页面中创建方法<br>先定义方法，使用方法<br>&lt;%!<br>    public int add(int a,int b){<br>        return a+b;<br>    }<br>%&gt;<br>两个数相加和：&lt;%=add(1, 2) %&gt;</p>
-<p>11.在JSP页面中使用数组<br>&lt;%<br>String[] arr = {“red”,”green”,”pink”};<br>%&gt;<br>&lt;%<br>int j;<br>out.println(“</p><p>输出字符串数组中的元素：</p>“);<br>for(j=0;j<arr.length;j++){ out.print(arr[j]+",");="" }="" %=""><p></p>
-<p>12.在JSP页面中使用Java Bean<br>嵌入一个Java bean到JSP网页，有三个基本动作或标签：</p>
+<p>6.JSP隐式对象（JSP自动定义的变量）<br>out    这是用于将输出发送给客户端的PrintWriter对象<br>request    这是与请求相关联的HttpServletRequest对象<br>response    这是用于响应客户端相关联的HttpServletResponse对象<br>session    这是与请求相关联的HttpSession对象<br>application    这是应用程序上下文关联的ServletContext对象<br>config    这是与页面关联的ServletConfig对象<br>pageContext    这封装采用类似更高的性能JspWriters服务器特定的功能<br>page    这是一个简单的代名词，是用来调用由转换servlet类中定义的方法<br>Exception    Exception对象允许例外的数据由JSP指定访问</p>
+<p>7.JSP对象范围<br>JSP对象所使用的可用性通常是由该对象的范围限定。<br>Page 范围:<br>使用此JSP对象可以在其中创建的页面内使用。<br>Request 范围:<br>使用该JSP对象可以在请求服务任何地方使用。<br>Session 范围:<br>使用该JSP的对象可用于在属于同一个会话页面。<br>Application 范围:<br>使用该JSP的对象可以在整个应用程序页面中使用。</p>
+<p>8.控制语句（条件语句、循环语句）<br>if…else、switch…case<br>for、while、do…while</p>
+<p>9.运算符（类似Java）<br>后缀运算符：()、[]、.</p>
+<p>10.在JSP页面中创建方法<br>先定义方法，使用方法</p>
+<pre><code>&lt;%!
+    public int add(int a,int b){
+        return a+b;
+    }
+%&gt;
+</code></pre><p>两个数相加和：&lt;%=add(1, 2) %&gt;</p>
+<p>11.在JSP页面中使用数组</p>
+<pre><code>&lt;%
+String[] arr = {&quot;red&quot;,&quot;green&quot;,&quot;pink&quot;};
+%&gt;
+&lt;%
+int j;
+out.println(&quot;&lt;p&gt;输出字符串数组中的元素：&lt;/p&gt;&quot;);
+for(j=0;j&lt;arr.length;j++){
+    out.print(arr[j]+&quot;,&quot;);
+}
+%&gt;
+</code></pre><p>12.在JSP页面中使用Java Bean<br>嵌入一个Java bean到JSP网页，有三个基本动作或标签：</p>
 <p><jsp:usebean>这个标签是用来给bean指定“id”和“scope”属性相关联。</jsp:usebean></p>
 <p><jsp:setproperty>这个标签被用于设置一个beans属性的值，主要使用“name”属性已经定义了相同的<br>范围对象。其他属性是 “property”, “param”, “value”</jsp:setproperty></p>
-<p><jsp:getproperty>这个标签是用来获取引用Bean实例属性并将其存储到隐式out对象。<br>Beans的规则：<br>包应该是java bean的第一行<br>Bean应该有一个空的构造<br>所有的bean中的变量应该设置有“get”，“set”方法。<br>属性名应以大写字母开头在使用“set”，“get”方法时。<br>例如变量“名称”的get，set方法就是getName(), setName(String)<br>设置方法应该返回像一个空(void)值： “return void()”<br><a href="http://www.cnblogs.com/sherryueda/p/4270400.html" target="_blank" rel="external">http://www.cnblogs.com/sherryueda/p/4270400.html</a></jsp:getproperty></p>
-<p>13.JSP Session（会话）<br>会话处理变得必不可少，当一个请求数据需要被持续保持以供进一步使用。 由于HTTP协议认为每个请求<br>是一个新的请求，它不能保持过去访问的数据，因此会话处理就变得很重要。<br>String name = request.getParameter(“name”);<br>if((name!=null))<br>{<br>    session.setAttribute(“username”,name);<br>}<br>&lt;%= session.getAttribute(“username”) %&gt;</p>
-<p>14.JSP Cookies信息处理<br>Cookies和会话有一些相似的地方，唯一的区别是cookies 存储在浏览器，而会话存储在服务器端。<br>创建Cookie：<br>Cookie cookie = new Cookie (“name”,name);<br>response.addCookie(cookie);<br>cookie.setMaxAge(50 * 50);<br>使用读取Cookie：<br>Cookie[] cookies = request.getCookies();<br>for (int i=0; i&lt;cookies.length; i++){<br>    if(cookies[i].getName().equals(“name”))<br>        out.println(cookies[i].getValue());<br>}<br>删除Cookie：<br>Cookie cookie = new Cookie( “name”, “” );<br>cookie.setMaxAge( 0 );<br><a href="http://blog.csdn.net/springsen/article/details/7833582" target="_blank" rel="external">http://blog.csdn.net/springsen/article/details/7833582</a></p>
-<p>JSP指令<br>JSP动作<br>JSP隐式对象</p>
-</arr.length;j++){>
+<p><jsp:getproperty>这个标签是用来获取引用Bean实例属性并将其存储到隐式out对象。<br>Beans的规则：<br>包应该是java bean的第一行<br>Bean应该有一个空的构造<br>所有的bean中的变量应该设置有“get”，“set”方法。<br>属性名应以大写字母开头在使用“set”，“get”方法时。<br>例如变量“名称”的get，set方法就是getName(), setName(String)<br>设置方法应该返回像一个空(void)值： “return void()”<br>在JSP页面中使用JavaBean：<a href="http://www.cnblogs.com/sherryueda/p/4270400.html" target="_blank" rel="external">http://www.cnblogs.com/sherryueda/p/4270400.html</a></jsp:getproperty></p>
+<p>13.JSP Session（会话）<br>会话处理变得必不可少，当一个请求数据需要被持续保持以供进一步使用。 由于HTTP协议认为每个请求<br>是一个新的请求，它不能保持过去访问的数据，因此会话处理就变得很重要。</p>
+<pre><code>String name = request.getParameter(&quot;name&quot;);
+if((name!=null))
+{
+    session.setAttribute(&quot;username&quot;,name);
+}
+&lt;%= session.getAttribute(&quot;username&quot;) %&gt;
+</code></pre><p>14.JSP Cookies信息处理<br>Cookies和会话有一些相似的地方，唯一的区别是cookies 存储在浏览器，而会话存储在服务器端。<br>创建Cookie：</p>
+<pre><code>Cookie cookie = new Cookie (&quot;name&quot;,name);
+response.addCookie(cookie);
+cookie.setMaxAge(50 * 50); 
+</code></pre><p>使用读取Cookie：</p>
+<pre><code>Cookie[] cookies = request.getCookies();
+for (int i=0; i&lt;cookies.length; i++){
+    if(cookies[i].getName().equals(&quot;name&quot;))
+        out.println(cookies[i].getValue());
+}
+</code></pre><p>删除Cookie：</p>
+<pre><code>Cookie cookie = new Cookie( &quot;name&quot;, &quot;&quot; );
+cookie.setMaxAge( 0 );
+http://blog.csdn.net/springsen/article/details/7833582
+</code></pre><h3 id="JSP指令"><a href="#JSP指令" class="headerlink" title="JSP指令"></a>JSP指令</h3><p>page指令：通常位于jsp页面的顶端，同一个页面可以有多个page指令</p>
+<pre><code>&lt;%@ page 属性=“属性值” %&gt;
+</code></pre><p>三种主要属性1.language属性（默认”java”）2.import属性（引入类文件”java.util.*”）3.contentType属性（”text/html;charset=utf-8”）<br>include指令：将一个外部文件嵌入到jsp中，同时解析其中jsp语句<br>taglib指令：使用标签库定义新的自定义标签</p>
+<h3 id="JSP动作"><a href="#JSP动作" class="headerlink" title="JSP动作"></a>JSP动作</h3><h3 id="JSP内置对象（隐式对象）"><a href="#JSP内置对象（隐式对象）" class="headerlink" title="JSP内置对象（隐式对象）"></a>JSP内置对象（隐式对象）</h3><p><strong>1.out对象</strong>，JspWriter类的实例，用于向客户端输出内容。<br>常用方法：<br>println()打印字符串<br>clean()清除缓冲区内容，如果在flash之后调用会抛出异常<br>cleanBuffer()清除缓冲区内容，如果在flash之后调用不会抛出异常<br>flush()将缓冲区内容输出到客户端<br>(int)getBufferSize()缓冲区大小（byte）<br>(int)getRemaining()缓冲区剩余空间大小（byte）<br>(boolean)isAutoFlush()缓冲区满时，是否自动清空<br>close()关闭输出流<br><strong>2.request对象</strong>客户端的请求信息被封装在request对象中，是HttpServletRequest类的实例，<br>常用方法：<br>setCharacterEncoding(“utf-8”)设置提交表单中文显示<br>setAttribute(String,Object)存储请求中的键值对<br>(String)getParameter(String name)返回name指定参数的对应值<br>(String[])getParameterValues(String name)获取例如checkbox类型复选框的多个值<br>(Object)getAttribute(String name)返回属性值<br>(String)getRealPath(“request.jsp”)返回文件物理地址<br>(String)getContextPath()返回上下文项目地址</p>
+<p><strong>3.response对象</strong>很少直接使用。<br>(String)getCharacterEncoding()<br>(PrintWriter)getWriter()返回一个可以向客户端输出字符的对象，输出提前于内置的out对象（可使用out.flush();语句解决）<br>setRedirect(“reg.jsp”)请求重定向方法</p>
+<p><strong>4.Session对象</strong>（表示客户端与服务器之间的一次会话）是一个时间概念。<br>1.Web中Session指用户浏览网页时，从打开到浏览器关闭这段时间。<br>2.服务器会为每个用户在服务器中保存一个session，使用session可以保存用户对象，实现在多个也页面切换过程中仍然知道是一个用户，即通过超链接打开的新页面是同一个会话。session是HttpSession类的实例。<br>3.session的生命周期，<strong>创建</strong>客户端打开jsp或Servlet时，服务器为用户创建一个会话，使用SessionId唯一标识并用于校验。<strong>活动</strong>通过超链接跳转，重新打开浏览器新窗口访问同一项目资源。<strong>销毁</strong>调用了session。invalidate()方法，Session超时，服务器重启。<br>常用方法：<br>(String)getCreationTime():返回session创建时间(String)getId():session创建时系统生成的唯一id<br>(Object)setAttribute(name,value):使用name将对象绑定到此会话getAttribute():返回绑定的对象<br>(String[])getValueNames(name):session中属性数组<br>(int)getMaxInactiveInterval():两次请求相隔多久此session被释放（秒）即session超时时间</p>
+<p><strong>5.application对象</strong>存储共享数据</p>
+<p><strong>6.page对象</strong>page对象是指向当前jsp页面，（类似this）是java.lang.Object类的实例，方法类似于Object类方法，如有toString()方法</p>
+<p><strong>7.pageContext对象与Config对象</strong><br>1.pageContext对象提供了对JSP页面中所有对象及名字空间的访问，例如可以访问session，访问本页面所在application的某属性值。他的类名也叫pageContext。<br>2.常用方法：<br>(JspWriter)getOut()<br>(HttpSession)getSession()<br>(Object)getPage()<br>(ServletRequest)getRequest()<br>(ServletResponse)getResponse()<br>setAttribute()<br>(Object)getAttribute()<br>forWard()页面跳转</p>
+<h3 id="JavaBean"><a href="#JavaBean" class="headerlink" title="JavaBean"></a>JavaBean</h3><p>1.JavaBean的设计原则：共有类，无参构造方法，属性私有，getter和setter方法<br>2.JSP动作元素：主要学习以下三种：&lt;\jsp:userBean&gt;、&lt;\jsp:setProperty&gt;、&lt;\jsp:getProperty&gt;<br>&lt;\jsp:useBean id=”myUsers” class=”com.dao.Users” scope=”page”&gt;&lt;\/jsp:useBean&gt;<br>其中id属性表示Java对象（名字自定义）与下面元素中name属性对应，class属性表示Java类（包括包名），scope属性表示作用范围（application\request\session\page）。<br>&lt;\jsp:setProperty property=”<em>“ name=”myUsers”/&gt;<br>为JavaBean对象属性赋值，有四种形式：与表单关联可以用“</em>”使一一对应，也可以单个赋值，可以加一个value属性手动设置值，可以使用“?username=zhangsan”参数传递加一个param属性。<br>&lt;\jsp:getProperty property=”username” name=”myUsers”/&gt;<br>获取JavaBean对象属性值</p>
+<h3 id="Jsp状态管理"><a href="#Jsp状态管理" class="headerlink" title="Jsp状态管理"></a>Jsp状态管理</h3><p>1.http是无状态的，不记忆用户信息及用户访问浏览信息，为了弥补，引入session和cookie<br>2.Session<br>3.Cookie（小甜饼）是Web服务器保存在客户端的一些文本信息。<br>典型应用：判定用户是否已登录，“购物车”处理。视频网站会记录用户浏览看过的视频。登录时有记住用户名密码选项实现自动登录功能。<br>Jsp页面中使用Cookie：<br>创建：Cookie cookie = new Cookie(String key,Object value);<br>写入对象：response.addCookie(cookie);<br>读取对象：Cookie[] cookies = request.getCookies();<br>常用方法：获取cookie名称：getName()\设置和获取cookie的有效期（单位秒）设置和获取cookie的值。</p>
+<h3 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h3><p>1.form表单提交方式get方式和post方式的区别：get方式（以明文方式通过URL提交数据，数据在URL中可以看到。数据量不能超过2KB，安全不高，效率高，多用于比如：<strong>搜索、查询</strong>等）post方式（将提交的信息封装在HTML HEADER里，提交比如<strong>注册、修改、上传</strong>等）<br>2.请求重定向与请求转发：<strong>请求重定向</strong>（response.sendRedirect(“request.jsp”)）是客户端行为，本质是两次请求，第一次的不会保存，地址栏的URL地址会变。<strong>请求转发</strong>（request.getRequestDispatcher(“request.jsp”).forward(req,resp)）是服务器行为，转发后保存请求对象，地址栏不变。<br>（假设一个表单提交用户信息action=”a.jsp”，然后在a.jsp中进行页面跳转到b.jsp，信息在b.jsp中显示。请求重定向方式传的数据均为空，请求转发可以传成功。）<br>3.jdbc连接oracle（端口默认8080）、mysql（端口默认3306）等主流数据库的驱动类和url：<a href="http://blog.csdn.net/huozengguang/article/details/60956621" target="_blank" rel="external">http://blog.csdn.net/huozengguang/article/details/60956621</a></p>
+<pre><code>public class DBHelper {
+    //数据库驱动
+    private static final String driver = &quot;com.mysql.jdbc.Driver&quot;;
+    //连接数据库的URL地址
+    private static final String url = &quot;jdbc:mysql://localhost:3306/shopping?useUnicode=true&amp;characterEncoding=utf-8&quot;;
+    //数据库用户名
+    private static final String username = &quot;root&quot;;
+    //数据库密码
+    private static final String password = &quot;root&quot;;
+    private static Connection conn = null;
+    //静态代码块负责加载驱动
+    static{
+        try {
+            Class.forName(driver);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    //单例模式返回一个数据库连接对象
+    public static Connection getConnection(){
+        if(conn==null){
+            try {
+                conn = DriverManager.getConnection(url,username,password);
+                return conn;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return conn;
+    }
+}
+</code></pre>
       
     </div>
 
@@ -422,7 +503,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Jsp、Servlet/" rel="tag"># Jsp、Servlet</a>
+            <a href="/tags/Jsp/" rel="tag"># Jsp</a>
           
         </div>
       
@@ -542,7 +623,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -577,7 +658,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaEE之Jsp学习"><span class="nav-number">1.</span> <span class="nav-text">JavaEE之Jsp学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP入门"><span class="nav-number">1.0.1.</span> <span class="nav-text">JSP入门</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaEE之Jsp学习"><span class="nav-number">1.</span> <span class="nav-text">JavaEE之Jsp学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP入门"><span class="nav-number">1.0.1.</span> <span class="nav-text">JSP入门</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP指令"><span class="nav-number">1.0.2.</span> <span class="nav-text">JSP指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP动作"><span class="nav-number">1.0.3.</span> <span class="nav-text">JSP动作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSP内置对象（隐式对象）"><span class="nav-number">1.0.4.</span> <span class="nav-text">JSP内置对象（隐式对象）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaBean"><span class="nav-number">1.0.5.</span> <span class="nav-text">JavaBean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jsp状态管理"><span class="nav-number">1.0.6.</span> <span class="nav-text">Jsp状态管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充："><span class="nav-number">1.0.7.</span> <span class="nav-text">补充：</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

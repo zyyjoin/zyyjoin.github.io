@@ -93,18 +93,22 @@
 
 
 
-<meta name="description" content="如果有一天我们湮没在人潮中庸碌一生，那是因为我们没有努力要活的丰盛。">
+<meta name="description" content="你好，欢迎来到我的个人技术博客。 JAVA中的数据存储JVM中内存区域划分：（我们主要关心栈、堆、常量池）">
 <meta name="keywords" content="Java高级">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA中的数据存储">
 <meta property="og:url" content="http://zyyup.com/2017/08/26/JAVA中的数据存储/index.html">
 <meta property="og:site_name" content="ZYY的博客">
-<meta property="og:description" content="如果有一天我们湮没在人潮中庸碌一生，那是因为我们没有努力要活的丰盛。">
+<meta property="og:description" content="你好，欢迎来到我的个人技术博客。 JAVA中的数据存储JVM中内存区域划分：（我们主要关心栈、堆、常量池）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-26T06:31:55.197Z">
+<meta property="og:image" content="http://ov2s3rx7c.bkt.clouddn.com/java%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A81.png">
+<meta property="og:image" content="http://ov2s3rx7c.bkt.clouddn.com/java%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A82.png">
+<meta property="og:image" content="http://ov2s3rx7c.bkt.clouddn.com/java%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A83.png">
+<meta property="og:updated_time" content="2017-08-26T12:43:15.020Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA中的数据存储">
-<meta name="twitter:description" content="如果有一天我们湮没在人潮中庸碌一生，那是因为我们没有努力要活的丰盛。">
+<meta name="twitter:description" content="你好，欢迎来到我的个人技术博客。 JAVA中的数据存储JVM中内存区域划分：（我们主要关心栈、堆、常量池）">
+<meta name="twitter:image" content="http://ov2s3rx7c.bkt.clouddn.com/java%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A81.png">
 
 
 
@@ -373,7 +377,14 @@
       
 
       
-        
+        <p><em>你好，欢迎来到我的个人技术博客。</em></p>
+<h1 id="JAVA中的数据存储"><a href="#JAVA中的数据存储" class="headerlink" title="JAVA中的数据存储"></a>JAVA中的数据存储</h1><h3 id="JVM中内存区域划分：（我们主要关心栈、堆、常量池）"><a href="#JVM中内存区域划分：（我们主要关心栈、堆、常量池）" class="headerlink" title="JVM中内存区域划分：（我们主要关心栈、堆、常量池）"></a>JVM中内存区域划分：（我们主要关心栈、堆、常量池）</h3><a id="more"></a>
+<p>1.<strong>寄存器</strong>：（最快）编译器分配，不由程序控制<br><strong>线程私有的（一个线程有一个这样的内存区域）：程序计数器和栈帧（stack）。</strong><br>2.<strong>程序计数器</strong>：<br>指示线程执行到第几行，即行号指示器，不存在内存溢出。<br>3.<strong>虚拟机栈</strong>：<br>当执行Java方法时创建，存储局部变量表、操作站、动态链接、方法出口。<br>4.<strong>本地方法栈</strong>：（一般用不到）<br>当执行本地方法时创建。<br><strong>线程共享区：堆区（heap），方法区。</strong><br>5.<strong>堆区</strong>：<br>（空间最大）虚拟机启动时创建，存储对象实例、成员变量。（可能存在对象在栈上分配空间）<br>6.<strong>方法区</strong>：<br>存储已经被JVM加载的类信息（包括版本、field、方法、接口）、final常量、静态变量、编译期即是编译的代码。<br>方法区包含一个运行时<strong>常量池</strong>，用于存储编译期就生成的字面常量、符号引用、翻译出来的直接引用（符号引用就是编码是用字符串表示某个变量、接口的位置，直接引用就是根据符号引用翻译出来的地址，将在类链接阶段完成翻译）；运行时常量池除了存储编译期常量外，也可以存储在运行时间产生的常量（比如String类的intern()方法，作用是String维护了一个常量池，如果调用的字符“abc”已经在常量池中，则返回池中的字符串地址，否则，新建一个常量加入池中，并返回地址）。<br>7.<strong>非ROM存储</strong>：硬盘等永久存储空间</p>
+<h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><p>以Object obj = new Object();为例区分：JVM栈、堆、方法区<br>Object obj：表示一个本地引用，存储在栈中，表示一个reference（引用）类型数据<br>new Object()：作为实例对象数据存储在堆中<br>堆中还记录了Object类的类型信息的地址，地址指向的数据存储在方法区中</p>
+<h4 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h4><p>1.Java方法与本地方法<br><strong>JAVA方法</strong>是由JAVA编写的，编译成字节码，存储在class文件中<br>本地方法是由其它语言编写的，编译成和处理器相关的机器代码<br>2.对于String类，String s = “字符串”;是存放在常量池中，对于equals相同的字符串在常量池中只有一份<br>String s = new String(“zyy”);是存放在堆中，当用这种方法创建字符串”zyy”时，会先查找常量池中是否有”zyy”<br>如果没有，就先在常量池中创建一个此对象，然后再堆中创建一个”zyy”对象的拷贝对象。<br>String s = new String(“xyz”);产生几个对象？（面试题）<br>3.基础类型的变量存放在栈、常量存放在常量池<br>4.字符串拼接编译期是用StringBuilder的append()方法</p>
+<p>参考图片：<br><img src="http://ov2s3rx7c.bkt.clouddn.com/java%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A81.png" alt="java数据存储"><br><img src="http://ov2s3rx7c.bkt.clouddn.com/java%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A82.png" alt="java数据存储"><br><img src="http://ov2s3rx7c.bkt.clouddn.com/java%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A83.png" alt="java数据存储"></p>
+<h4 id="参考博文"><a href="#参考博文" class="headerlink" title="参考博文"></a>参考博文</h4><p>String相关：<a href="http://blog.csdn.net/renyuanchunby/article/details/6980358" target="_blank" rel="external">http://blog.csdn.net/renyuanchunby/article/details/6980358</a><br>Java代码分析：<a href="http://www.iteye.com/topic/634530" target="_blank" rel="external">http://www.iteye.com/topic/634530</a></p>
+
       
     </div>
 
@@ -471,8 +482,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -509,7 +529,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -534,6 +554,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JAVA中的数据存储"><span class="nav-number">1.</span> <span class="nav-text">JAVA中的数据存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM中内存区域划分：（我们主要关心栈、堆、常量池）"><span class="nav-number">1.0.1.</span> <span class="nav-text">JVM中内存区域划分：（我们主要关心栈、堆、常量池）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#举例"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#补充："><span class="nav-number">1.0.1.2.</span> <span class="nav-text">补充：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考博文"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">参考博文</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
