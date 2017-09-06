@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="ZYY的博客">
 <meta property="og:description" content="你好，欢迎来到我的个人技术博客。 JavaEE之Jsp学习Java Server Pages（JSP）是使用&amp;lt;%%&amp;gt;标签嵌入了Java代码的动态Html页面，可以用于从数据库中检索信息或登记的用户偏好，访问JavaBeans组件，传递页面之间的控制和请求，网页等之间共享信息。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-06T13:02:13.988Z">
+<meta property="og:updated_time" content="2017-09-06T13:04:23.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaEE之Jsp学习">
 <meta name="twitter:description" content="你好，欢迎来到我的个人技术博客。 JavaEE之Jsp学习Java Server Pages（JSP）是使用&amp;lt;%%&amp;gt;标签嵌入了Java代码的动态Html页面，可以用于从数据库中检索信息或登记的用户偏好，访问JavaBeans组件，传递页面之间的控制和请求，网页等之间共享信息。">
@@ -574,7 +574,50 @@ http://blog.csdn.net/springsen/article/details/7833582
 </code></pre><h3 id="JSP指令"><a href="#JSP指令" class="headerlink" title="JSP指令"></a>JSP指令</h3><p>page指令：通常位于jsp页面的顶端，同一个页面可以有多个page指令</p>
 <pre><code>&lt;%@ page 属性=“属性值” %&gt;
 </code></pre><p>三种主要属性1.language属性（默认”java”）2.import属性（引入类文件”java.util.*”）3.contentType属性（”text/html;charset=utf-8”）<br>include指令：将一个外部文件嵌入到jsp中，同时解析其中jsp语句<br>taglib指令：使用标签库定义新的自定义标签</p>
-<h3 id="JSP动作"><a href="#JSP动作" class="headerlink" title="JSP动作"></a>JSP动作</h3><h3 id="JSP内置对象（隐式对象）"><a href="#JSP内置对象（隐式对象）" class="headerlink" title="JSP内置对象（隐式对象）"></a>JSP内置对象（隐式对象）</h3><p><strong>1.out对象</strong>，JspWriter类的实例，用于向客户端输出内容。<br>常用方法：<br>名                     |文字描述<br>———————–|—————————–<br>println()              |打印字符串<br>clean()                |清除缓冲区内容，如果在flash之后调用会抛出异常<br>cleanBuffer()          |清除缓冲区内容，如果在flash之后调用不会抛出异常<br>flush()                |将缓冲区内容输出到客户端<br>(int)getBufferSize()   |缓冲区大小（byte）<br>(int)getRemaining()    |缓冲区剩余空间大小（byte）<br>(boolean)isAutoFlush() |缓冲区满时，是否自动清空<br>close()                |关闭输出流<br><strong>2.request对象</strong>客户端的请求信息被封装在request对象中，是HttpServletRequest类的实例，<br>常用方法：</p>
+<h3 id="JSP动作"><a href="#JSP动作" class="headerlink" title="JSP动作"></a>JSP动作</h3><h3 id="JSP内置对象（隐式对象）"><a href="#JSP内置对象（隐式对象）" class="headerlink" title="JSP内置对象（隐式对象）"></a>JSP内置对象（隐式对象）</h3><p><strong>1.out对象</strong>，JspWriter类的实例，用于向客户端输出内容。<br>常用方法：</p>
+<table>
+<thead>
+<tr>
+<th>名</th>
+<th>文字描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>println()</td>
+<td>打印字符串</td>
+</tr>
+<tr>
+<td>clean()</td>
+<td>清除缓冲区内容，如果在flash之后调用会抛出异常</td>
+</tr>
+<tr>
+<td>cleanBuffer()</td>
+<td>清除缓冲区内容，如果在flash之后调用不会抛出异常</td>
+</tr>
+<tr>
+<td>flush()</td>
+<td>将缓冲区内容输出到客户端</td>
+</tr>
+<tr>
+<td>(int)getBufferSize()</td>
+<td>缓冲区大小（byte）</td>
+</tr>
+<tr>
+<td>(int)getRemaining()</td>
+<td>缓冲区剩余空间大小（byte）</td>
+</tr>
+<tr>
+<td>(boolean)isAutoFlush()</td>
+<td>缓冲区满时，是否自动清空</td>
+</tr>
+<tr>
+<td>close()</td>
+<td>关闭输出流</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2.request对象</strong>客户端的请求信息被封装在request对象中，是HttpServletRequest类的实例，<br>常用方法：</p>
 <table>
 <thead>
 <tr>
