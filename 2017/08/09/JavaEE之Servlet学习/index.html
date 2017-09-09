@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="ZYY的博客">
 <meta property="og:description" content="你好，欢迎来到我的个人技术博客。 Java web之servlet学习Servlet是jsp的前身，他是运行在服务器上的Java小程序。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-17T07:41:36.958Z">
+<meta property="og:updated_time" content="2017-09-07T11:17:17.684Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaEE之Servlet学习">
 <meta name="twitter:description" content="你好，欢迎来到我的个人技术博客。 Java web之servlet学习Servlet是jsp的前身，他是运行在服务器上的Java小程序。">
@@ -375,8 +375,16 @@
       
         <p><em>你好，欢迎来到我的个人技术博客。</em></p>
 <h1 id="Java-web之servlet学习"><a href="#Java-web之servlet学习" class="headerlink" title="Java web之servlet学习"></a>Java web之servlet学习</h1><p>Servlet是jsp的前身，他是运行在服务器上的Java小程序。<br><a id="more"></a></p>
-<h1 id="servlet基础："><a href="#servlet基础：" class="headerlink" title="servlet基础："></a>servlet基础：</h1><h3 id="手工编写Servlet类："><a href="#手工编写Servlet类：" class="headerlink" title="手工编写Servlet类："></a>手工编写Servlet类：</h3><p>1.Servlet类继承HttpServlet（实现了http协议）<br>2.重写doGet()或者doGet()方法<br>注：&lt;\a&gt;标签超链接是doGet()方式请求，form表单可以doPost()可以doGet()<br>3.在web.xml中注册该Servlet类<br>    &lt;\servlet&gt;<br>        &lt;\servlet-name&gt;HelloServlet&lt;\/servlet-name&gt;<br>        &lt;\servlet-class&gt;servlet.HelloServlet&lt;\/servlet-class&gt;<br>    &lt;\/servlet&gt;<br>      &lt;\servlet-mapping&gt;<br>        &lt;\servlet-name&gt;HelloServlet&lt;\/servlet-name&gt;<br>        &lt;\url-pattern&gt;/servlet/HelloServlet&lt;\/url-pattern&gt;<br>      &lt;\/servlet-mapping&gt;</p>
-<h3 id="集成工具编写Servlet："><a href="#集成工具编写Servlet：" class="headerlink" title="集成工具编写Servlet："></a>集成工具编写Servlet：</h3><p>1.src-&gt;new-&gt;Servlet<br>2.重写doGet()或者doGet()方法<br>3.部署运行</p>
+<h1 id="servlet基础："><a href="#servlet基础：" class="headerlink" title="servlet基础："></a>servlet基础：</h1><h3 id="手工编写Servlet类："><a href="#手工编写Servlet类：" class="headerlink" title="手工编写Servlet类："></a>手工编写Servlet类：</h3><p>1.Servlet类继承HttpServlet（实现了http协议）<br>2.重写doGet()或者doGet()方法<br>注：&lt;\a&gt;标签超链接是doGet()方式请求，form表单可以doPost()可以doGet()<br>3.在web.xml中注册该Servlet类</p>
+<pre><code>&lt;\servlet&gt;
+    &lt;\servlet-name&gt;HelloServlet&lt;\/servlet-name&gt;
+    &lt;\servlet-class&gt;servlet.HelloServlet&lt;\/servlet-class&gt;
+&lt;\/servlet&gt;
+  &lt;\servlet-mapping&gt;
+    &lt;\servlet-name&gt;HelloServlet&lt;\/servlet-name&gt;
+    &lt;\url-pattern&gt;/servlet/HelloServlet&lt;\/url-pattern&gt;
+  &lt;\/servlet-mapping&gt;
+</code></pre><h3 id="集成工具编写Servlet："><a href="#集成工具编写Servlet：" class="headerlink" title="集成工具编写Servlet："></a>集成工具编写Servlet：</h3><p>1.src-&gt;new-&gt;Servlet<br>2.重写doGet()或者doGet()方法<br>3.部署运行</p>
 <h3 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h3><p>1.生命周期：init()初始化、调用service()方法执行doGet()或者doPost()方法、调用destroy()销毁。<br>2.Tomcat装载Servlet的三种情况：<em> Servlet容器（Tomcat服务器包含多个Servlet容器）启动时，可以在<servlet>&lt;\/Servlet&gt;中添加代码：&lt;\load-on-startup&gt;2&lt;\/load-on-startup&gt;（设置加载优先级，数字小优先级高。） </servlet></em> Servlet容器启动后，客户端首次向服务器发送请求时。 * Servlet类文件修改更新时，重新加载Servlet容器。<br>3.整个生命周期，init()方法只调用一次。</p>
 <h3 id="获取初始化参数"><a href="#获取初始化参数" class="headerlink" title="获取初始化参数"></a>获取初始化参数</h3><p>1.在\<servlet>&lt;\/Servlet&gt;中添加代码：<br>    &lt;\init-param&gt;<br>        &lt;\param-name&gt;username&lt;\/param-name&gt;<br>        &lt;\param-value&gt;admin&lt;\/param-value&gt;<br>    &lt;\/init-param&gt;<br>    &lt;\init-param&gt;<br>        &lt;\param-name&gt;password&lt;\/param-name&gt;<br>        &lt;\param-value&gt;admin&lt;\/param-value&gt;<br>    &lt;\/init-param&gt;<br>设置初始化参数&lt;名、值&gt;<br>2.Servlet类调用父类方法getInitParameter(“username”)获取初始化参数。</servlet></p>
 <h3 id="Servlet与jsp九大内置对象"><a href="#Servlet与jsp九大内置对象" class="headerlink" title="Servlet与jsp九大内置对象"></a>Servlet与jsp九大内置对象</h3><table>
@@ -425,15 +433,20 @@
 </tr>
 </tbody>
 </table>
-<h3 id="Servlet表单提交回显"><a href="#Servlet表单提交回显" class="headerlink" title="Servlet表单提交回显"></a>Servlet表单提交回显</h3><p>1.实例化Javabean对象，使用getParameter()获取表单数据，getParameterValues()获取复选框数据，将数据封装到Javabean对象中。<br>2.保存Javabean对象到session中。例：</p>
+<p>注意：<br>out对象与response.getWriter并不完全对等，out是JspWriter类型对象，后者是PrintWriter类型对象。</p>
+<h3 id="Servlet表单提交回显"><a href="#Servlet表单提交回显" class="headerlink" title="Servlet表单提交回显"></a>Servlet表单提交回显</h3><p>1.实例化Javabean对象，使用getParameter()获取表单数据，getParameterValues()获取复选框checkbox数据，将数据封装到Javabean对象中。<br>2.保存Javabean对象到session中。例：</p>
 <blockquote>
 <p>request.getSession().setAttribute(“regUser”, u);</p>
 </blockquote>
-<p>3.页面跳转。例：</p>
+<p>3.页面跳转。例：<br>服务器转发</p>
 <blockquote>
-<p>request.getRequestDispatcher(“userinfo.jsp”).forward(request, response);<br>//response.sendRedirect(“userinfo.jsp”);</p>
+<p>request.getRequestDispatcher(“userinfo.jsp”).forward(request, response);</p>
 </blockquote>
-<p>4.jsp页面回显数据：<br>    &lt;\jsp:useBean id=”regUser” class=”bean.User” scope=”session”&gt;&lt;\/jsp:useBean&gt;<br>正常获取显示<br>    &lt;\jsp:getProperty property=”username” name=”regUser”/&gt;<br>Java遍历输出显示</p>
+<p>请求重定向（超链接）</p>
+<blockquote>
+<p>response.sendRedirect(“userinfo.jsp”);</p>
+</blockquote>
+<p>4.jsp页面回显数据：<br>    &lt;\jsp:useBean id=”regUser” class=”bean.User” scope=”session”&gt;&lt;\/jsp:useBean&gt;<br>注意：id值与向session中保存对象时的名称相同。<br>正常获取显示<br>    &lt;\jsp:getProperty property=”username” name=”regUser”/&gt;<br>注意：标签书写要规范末尾“\”不能少。用EL表达式获取javaBean对象属性：${regUser.username }<br>Java遍历输出显示</p>
 <pre><code>&lt;%
 String[] favorites = regUser.getFavorites();
 if(favorites!=null){
@@ -455,7 +468,39 @@ response.sendRedirect(&quot;test.jsp&quot;);
 //response.sendRedirect(request.getContextPath()+&quot;/test.jsp&quot;);
 //服务器内部跳转
 request.getRequestDispatcher(&quot;/test.jsp&quot;).forward(request, response);
-</code></pre>
+</code></pre><p>补充：<br>1.提交表单中Post方式与Get方式：</p>
+<table>
+<thead>
+<tr>
+<th>Get方式</th>
+<th>Post方式  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>从服务器获取数据</td>
+<td>向服务器上传数据</td>
+</tr>
+<tr>
+<td>将表单数据按键值对方式添加到URL地址中（？&amp;）</td>
+<td>将数据封装然后传递</td>
+</tr>
+<tr>
+<td>不安全、可见</td>
+<td>安全、不可见</td>
+</tr>
+<tr>
+<td>数据量小（受URL长度限制1024字节）</td>
+<td>数据量大</td>
+</tr>
+<tr>
+<td>必须是ASCII字符集</td>
+<td>支持所有字符集</td>
+</tr>
+</tbody>
+</table>
+<p>Get请求没有请求体，无法通过request.setCharacterEncoding()来设置参数的编码；超链接（&lt;\a href=””&gt;&lt;\/a&gt;）是Get请求，是请求重定向跳转。</p>
+
       
     </div>
 
