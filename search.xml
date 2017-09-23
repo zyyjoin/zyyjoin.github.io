@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数据结构]]></title>
+    <url>%2F2017%2F09%2F23%2F%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构、C语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[JAVA中的数据存储]]></title>
     <url>%2F2017%2F08%2F26%2FJAVA%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%2F</url>
     <content type="text"><![CDATA[你好，欢迎来到我的个人技术博客。 JAVA中的数据存储JVM中内存区域划分：（我们主要关心栈、堆、常量池） 1.寄存器：（最快）编译器分配，不由程序控制线程私有的（一个线程有一个这样的内存区域）：程序计数器和栈帧（stack）。2.程序计数器：指示线程执行到第几行，即行号指示器，不存在内存溢出。3.虚拟机栈：当执行Java方法时创建，存储局部变量表、操作站、动态链接、方法出口。4.本地方法栈：（一般用不到）当执行本地方法时创建。线程共享区：堆区（heap），方法区。5.堆区：（空间最大）虚拟机启动时创建，存储对象实例、成员变量。（可能存在对象在栈上分配空间）6.方法区：存储已经被JVM加载的类信息（包括版本、field、方法、接口）、final常量、静态变量、编译期即是编译的代码。方法区包含一个运行时常量池，用于存储编译期就生成的字面常量、符号引用、翻译出来的直接引用（符号引用就是编码是用字符串表示某个变量、接口的位置，直接引用就是根据符号引用翻译出来的地址，将在类链接阶段完成翻译）；运行时常量池除了存储编译期常量外，也可以存储在运行时间产生的常量（比如String类的intern()方法，作用是String维护了一个常量池，如果调用的字符“abc”已经在常量池中，则返回池中的字符串地址，否则，新建一个常量加入池中，并返回地址）。7.非ROM存储：硬盘等永久存储空间 举例以Object obj = new Object();为例区分：JVM栈、堆、方法区Object obj：表示一个本地引用，存储在栈中，表示一个reference（引用）类型数据new Object()：作为实例对象数据存储在堆中堆中还记录了Object类的类型信息的地址，地址指向的数据存储在方法区中 补充：1.Java方法与本地方法JAVA方法是由JAVA编写的，编译成字节码，存储在class文件中本地方法是由其它语言编写的，编译成和处理器相关的机器代码2.对于String类，String s = “字符串”;是存放在常量池中，对于equals相同的字符串在常量池中只有一份String s = new String(“zyy”);是存放在堆中，当用这种方法创建字符串”zyy”时，会先查找常量池中是否有”zyy”如果没有，就先在常量池中创建一个此对象，然后再堆中创建一个”zyy”对象的拷贝对象。String s = new String(“xyz”);产生几个对象？（面试题）3.基础类型的变量存放在栈、常量存放在常量池4.字符串拼接编译期是用StringBuilder的append()方法 参考图片： 参考博文String相关：http://blog.csdn.net/renyuanchunby/article/details/6980358Java代码分析：http://www.iteye.com/topic/634530]]></content>
