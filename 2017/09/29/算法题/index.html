@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="算法," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="你好，欢迎来到我的个人技术博客。让思想融入技术（首先要有某种思想）。 算法第一篇世界之大，算法之美，你终会理解O(n^2)、O(n*logn)、O(n)之间差别。">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法题">
+<meta property="og:url" content="http://zyyup.com/2017/09/29/算法题/index.html">
+<meta property="og:site_name" content="ZYY的博客">
+<meta property="og:description" content="你好，欢迎来到我的个人技术博客。让思想融入技术（首先要有某种思想）。 算法第一篇世界之大，算法之美，你终会理解O(n^2)、O(n*logn)、O(n)之间差别。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://ov2s3rx7c.bkt.clouddn.com/KMP%E7%AE%97%E6%B3%95">
+<meta property="og:updated_time" content="2017-09-30T08:28:01.791Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法题">
+<meta name="twitter:description" content="你好，欢迎来到我的个人技术博客。让思想融入技术（首先要有某种思想）。 算法第一篇世界之大，算法之美，你终会理解O(n^2)、O(n*logn)、O(n)之间差别。">
+<meta name="twitter:image" content="http://ov2s3rx7c.bkt.clouddn.com/KMP%E7%AE%97%E6%B3%95">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zyyup.com/2017/09/29/算法题/"/>
+
+
+
+
+
+  <title>算法题 | ZYY的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZYY的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">进击的Java小牛</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://zyyup.com/2017/09/29/算法题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Yuying">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZYY的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">算法题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-29T08:50:01+08:00">
+                2017-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2017/09/29/算法题/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2017/09/29/算法题/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><em>你好，欢迎来到我的个人技术博客。</em><br>让思想融入技术（首先要有某种思想）。</p>
+<h1 id="算法第一篇"><a href="#算法第一篇" class="headerlink" title="算法第一篇"></a>算法第一篇</h1><p>世界之大，算法之美，你终会理解O(n^2)、O(n*logn)、O(n)之间差别。</p>
+<a id="more"></a>
+<h3 id="二分法查找的时间复杂度O-logn"><a href="#二分法查找的时间复杂度O-logn" class="headerlink" title="二分法查找的时间复杂度O(logn)"></a>二分法查找的时间复杂度O(logn)</h3><p>一组（n个）有序数列中找所要的key值，返回位置。每次与n/2位置数比较，知道找到或n==1, 停止检索。<br>则最坏情况（即最后到1的）假设二分操作了x次（则O(x)），n*(1/2)^x=1;推算x=logn(以2为底)。其实logn、lgn、lnn是无差的，因为他们的比值是一个常量。</p>
+<h3 id="将10亿个ipV4地址排序"><a href="#将10亿个ipV4地址排序" class="headerlink" title="将10亿个ipV4地址排序"></a>将10亿个ipV4地址排序</h3><p>一个ipV4地址占内存32位，ipV4地址的总个数为2^32个。<br>将ipV4地址转化为整数，建立一个长度2^32的数组arr，遍历那10亿个ipV4地址整数，将ipV4整数-1对应arr下标，将值置为1,以此方式遍历完10亿整数。之后遍历数组arr，找元素值为1的下标+1，然后转化为ipV4地址格式完成排序。时间复杂度O(n)。<br>类似的，电话号码排序，身份证好排序。有重复就在那个位置值+1，最后查不是null的就行。</p>
+<h3 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h3><p>参考：<a href="http://www.cnblogs.com/c-cloud/p/3224788.html" target="_blank" rel="external">http://www.cnblogs.com/c-cloud/p/3224788.html</a><br><a href="http://blog.csdn.net/yutianzuijin/article/details/11954939/" target="_blank" rel="external">http://blog.csdn.net/yutianzuijin/article/details/11954939/</a><br>1.O(n<em>m)解：两层循环遍历，<strong>外层</strong>1-n原字符串str（称大串）一个一个往后移动，<strong>内层</strong>1-m匹配字符串s（称小串）一个一个与大串字符比较，直到全部匹配成功，不成功跳出，小串后移一个字符。<br>2.O(n+m)解：与1算法唯一区别仅在于<strong>如果匹配不成功，小串后移k字符（k&gt;=1），而且下一轮内层遍历比较从刚刚匹配失败字符位置开始继续比较遍历。</strong><br><img src="http://ov2s3rx7c.bkt.clouddn.com/KMP%E7%AE%97%E6%B3%95" alt="KMP算法1"><br>然后需要求k值，设头字符到匹配失败字符前的字符为<strong>子串</strong>。<br>引入一个概念：部分匹配值<strong>一个字符串的前缀与后缀相同的最大长度</strong>（前缀和后缀都是字符串本身），如：ab12ab是2,cbcbc是3，1234是不存在的就是0，aaaa对应是3。<br>想啊，小串匹配失败前的子串（已匹配长度）同时在大串中存在，则小串移动到前缀与大串对应的后缀重合，如果相同的前后缀不存在就移动到匹配失败字符即可。<em>*k=已匹配字符长度-部分匹配值</em></em>之后的匹配，大串后缀与小串前缀对应匹配，所以大串匹配索引不变，小串索引是前缀的下个字符（j=next[j-1]）。<br>创建数组next[m]存放小串所有子串对应的部分匹配值。运用递归计算。</p>
+<pre><code>int[] next(String sub){
+    int m = s.length();
+    int next[m];
+    int k=0;//部分匹配值，next[i],即最大前后缀长度
+    next[0]=0;//对于前一个字符
+    for(int i=1;i&lt;m;i++){//求每个字符对应的next[]值，即前i个字符的最大前后缀长度
+        //只有前i-1字符有k&gt;=1个最大前后缀匹配，才能进这个while
+        while(k&gt;0 &amp;&amp; sub.charAt(i) != sub.charAt(k)){//s[k]表示 前缀 后的一个字符
+            //加一个字符后k++失败，即aba？加个字符变abaa？如果是abab就跳出了。（飞升失败。）
+            k=next[k-1];//next[k-1]中k是前i-1字符的最大前、后缀，k-1对应的next是前缀的最大前后缀（这个前缀也是前i-1字符的后缀，只不过不是最大），然后进行之后的比较。例如ABADABA-&gt;ABADABAB就是2了
+        }
+        if(sub.charAt(i) == sub.charAt(k)){
+            k++;
+        }
+        next[i] = k;
+    }
+    return next;
+}
+
+public static int kmpZ(String str,String s){
+    int index=-1;//求得的大串的索引
+    if((str==null||str.length()==0)||(s==null||s.length()==0)){
+        System.out.println(&quot;主字符串和匹配字符串不能为空！&quot;);
+        return index;
+    }
+    int[] next = next(s);
+    int j = 0;//指示小串的下标
+    for(int i=0;i&lt;str.length();i++){
+        while(j&gt;0 &amp;&amp; str.charAt(i) != s.charAt(j)){
+            j=next[j-1];//解释看上面
+        }
+        if(str.charAt(i) == s.charAt(j)){
+            j++;
+        }
+        if(s.length()==j){//注意j从0开始的
+            index = i-(j-1);
+            return index;//这句也是必须的
+        }
+    }
+    return index;
+}
+</code></pre><h3 id="字符串相关"><a href="#字符串相关" class="headerlink" title="字符串相关"></a>字符串相关</h3><p>1.（旋转字符串）给定一个字符串，要求把字符串前面的若干个字符移动到字符串的尾部，如把字符串“abcdef”前面的2个字符’a’和’b’移动到字符串的尾部，使得原字符串变成字符串“cdefab”<br>要求：时间复杂度为 O(n)，空间复杂度为 O(1)</p>
+<p>变化过程：abcdef中分别将‘ab’、‘cdef’做自身反转得到‘bafedc’，然后整个做自身反转得到‘cdefab’<br>ps：StringBuilder.reverse()可以反转字符串。<br>2.（反转句子型字符串，单词不反转）即以单词为单位反转，保留空格，如”I’am a student”-&gt;”student a I’am”</p>
+<p>变化过程：整体反转得到”tneduts a ma’I”,然后单个单词反转得到”student a I’am”<br>ps: StringBuilder的resverse()方法和append()方法，使用String的split()方法分割字符串。<br>3.字符串算数表达式求值（如12+(23<em> 3-56+7)</em>(2+90)/2）<br><strong>先将字符串转化为List，将中缀表达式转化为后缀表达式，计算后缀表达式，比较运算符等级。</strong></p>
+<pre><code>import java.util.ArrayList;  
+import java.util.Stack;   
+public class Calculate {     
+    /** 
+     * 将字符串转化成List 
+     * @param str 
+     * @return 
+     */  
+    public ArrayList&lt;String&gt; getStringList(String str){  
+        ArrayList&lt;String&gt; result = new ArrayList&lt;String&gt;();  
+        String num = &quot;&quot;;  
+        for (int i = 0; i &lt; str.length(); i++) {  
+            if(Character.isDigit(str.charAt(i))){  
+                num = num + str.charAt(i);  
+            }else{  
+                if(num != &quot;&quot;){  
+                    result.add(num);  
+                }  
+                result.add(str.charAt(i) + &quot;&quot;);  
+                num = &quot;&quot;;  
+            }  
+        }  
+        if(num != &quot;&quot;){  
+            result.add(num);  
+        }  
+        return result;  
+    }   
+    /** 
+     * 将中缀表达式转化为后缀表达式 
+     * @param inOrderList 
+     * @return 
+     */  
+    public ArrayList&lt;String&gt; getPostOrder(ArrayList&lt;String&gt; inOrderList){      
+        ArrayList&lt;String&gt; result = new ArrayList&lt;String&gt;();  
+        Stack&lt;String&gt; stack = new Stack&lt;String&gt;();  
+        for (int i = 0; i &lt; inOrderList.size(); i++) {  
+            if(Character.isDigit(inOrderList.get(i).charAt(0))){  
+                result.add(inOrderList.get(i));  
+            }else{  
+                switch (inOrderList.get(i).charAt(0)) {  
+                case &apos;(&apos;:  
+                    stack.push(inOrderList.get(i));  
+                    break;  
+                case &apos;)&apos;:  
+                    while (!stack.peek().equals(&quot;(&quot;)) {  
+                        result.add(stack.pop());  
+                    }  
+                    stack.pop();  
+                    break;  
+                default:  
+                    while (!stack.isEmpty() &amp;&amp; compare(stack.peek(), inOrderList.get(i))){  
+                        result.add(stack.pop());  
+                    }  
+                    stack.push(inOrderList.get(i));  
+                    break;  
+                }  
+            }  
+        }  
+        while(!stack.isEmpty()){  
+            result.add(stack.pop());  
+        }  
+        return result;  
+    }    
+    /** 
+     * 计算后缀表达式 
+     * @param postOrder 
+     * @return 
+     */  
+    public Integer calculate(ArrayList&lt;String&gt; postOrder){  
+        Stack stack = new Stack();  
+        for (int i = 0; i &lt; postOrder.size(); i++) {  
+            if(Character.isDigit(postOrder.get(i).charAt(0))){  
+                stack.push(Integer.parseInt(postOrder.get(i)));  
+            }else{  
+                Integer back = (Integer)stack.pop();  
+                Integer front = (Integer)stack.pop();  
+                Integer res = 0;  
+                switch (postOrder.get(i).charAt(0)) {  
+                case &apos;+&apos;:  
+                    res = front + back;  
+                    break;  
+                case &apos;-&apos;:  
+                    res = front - back;  
+                    break;  
+                case &apos;*&apos;:  
+                    res = front * back;  
+                    break;  
+                case &apos;/&apos;:  
+                    res = front / back;  
+                    break;  
+                }  
+                stack.push(res);  
+            }  
+        }  
+        return (Integer)stack.pop();  
+    }   
+    /** 
+     * 比较运算符等级 
+     * @param peek 
+     * @param cur 
+     * @return 
+     */  
+    public static boolean compare(String peek, String cur){  
+        if(&quot;*&quot;.equals(peek) &amp;&amp; (&quot;/&quot;.equals(cur) || &quot;*&quot;.equals(cur) ||&quot;+&quot;.equals(cur) ||&quot;-&quot;.equals(cur))){  
+            return true;  
+        }else if(&quot;/&quot;.equals(peek) &amp;&amp; (&quot;/&quot;.equals(cur) || &quot;*&quot;.equals(cur) ||&quot;+&quot;.equals(cur) ||&quot;-&quot;.equals(cur))){  
+            return true;  
+        }else if(&quot;+&quot;.equals(peek) &amp;&amp; (&quot;+&quot;.equals(cur) || &quot;-&quot;.equals(cur))){  
+            return true;  
+        }else if(&quot;-&quot;.equals(peek) &amp;&amp; (&quot;+&quot;.equals(cur) || &quot;-&quot;.equals(cur))){  
+            return true;  
+        }  
+        return false;  
+    }   
+    public static void main(String[] args) {  
+        Calculate calculate = new Calculate();  
+        String s = &quot;12+(23*3-56+7)*(2+90)/2&quot;;  
+        ArrayList result = calculate.getStringList(s);  //String转换为List  
+        result = calculate.getPostOrder(result);   //中缀变后缀  
+        int i = calculate.calculate(result);   //计算  
+        System.out.println(i);  
+    }    
+}  
+</code></pre><p>4.字符串相似度（编辑距离）<br>许多程序会大量使用字符串。对于不同的字符串，我们希望能够有办法判断其相似程度。我们定义了一套操作方法来把两个不相同的字符串变得相同，具体的操作方法为：<br>修改一个字符（如把“a”替换为“b”）。<br>增加一个字符（如把“abdd”变为“aebdd”）。<br>删除一个字符（如把“travelling”变为“traveling”）。<br>比如，对于“abcdefg”和“abcdef”两个字符串来说，我们认为可以通过增加/减少一个“g“的方式来达到目的。上面的两种方案，都仅需要一次操作。把这个操作所需要的次数定义为两个字符串的距离，给定任意两个字符串，写出一个算法来计算出它们的距离<br>距离，即两个字符串，由一个转成另一个所需最少的编辑次数。<br>设数组dp[i][j]的含义：str2(“0-&gt;i”)通过操作变成str1(“0-&gt;j”)的编辑距离<br>考虑以下三种情况<br>str2(“0-&gt;i”)与str1(“0-&gt;j-1”)相同，在<strong>末尾增加</strong>一个str1[j]字符，故此时dp[i][j] = dp[i][j-1] + 1；<br>str2(“0-&gt;i-1”)与str1(“0-&gt;j”)相同，在<strong>末尾删除</strong>一个str2[i]字符，故此时dp[i][j] = dp[i-1][j] + 1；<br>str2(“0-&gt;i-1”)与str1(“0-&gt;j-1”)相同，根据str2[i]与str1[j]的相等情况，分别考虑。str2[i]等于str1[j]时，无需任何操作，故此时dp[i][j] = dp[i-1][j-1];str2[i]不等于str1[j]时，<strong>替换</strong>str2[i]字符为str1[j]字符，故此时dp[i][j] = dp[i-1][j-1] + 1；<br>根据上面的讨论，我们可以看到<strong>dp[i][j]的值依赖它左上角的3个dp值</strong>。在程序的开始阶段，我们应首先计算得到最不需要依赖的dp值，也就是整个dp二维数组中的第一行与第一列。</p>
+<pre><code>for(int i = 0; i &lt; lenA; i++) dp[i][0] = i;
+for(int j = 0; j &lt; lenB; j++) dp[0][j] = j;
+dp[0][0] = 0;
+</code></pre><p>//根据dp依赖的三种情况，从(1,1)位置处开始计算dp值</p>
+<pre><code>for(int i=1;i&lt;l1;i++){
+        for(int j=1;j&lt;l2;j++){
+            if(c1[i-1]==c2[j-1]){
+                dp[i][j]=dp[i-1][j-1];
+            }else {
+                dp[i][j] = minValue(dp[i][j-1],dp[i-1][j],dp[i-1][j-1])+1;
+            }
+        }
+}
+int distance =  dp[lenA-1][lenB-1];
+</code></pre><h3 id="链表中环，链表相交问题"><a href="#链表中环，链表相交问题" class="headerlink" title="链表中环，链表相交问题"></a>链表中环，链表相交问题</h3><p><a href="http://www.cnblogs.com/cwkpql/p/4743602.html" target="_blank" rel="external">http://www.cnblogs.com/cwkpql/p/4743602.html</a><br><a href="https://murfyexp.github.io/2017/03/25/%E4%B8%A4%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/" target="_blank" rel="external">https://murfyexp.github.io/2017/03/25/%E4%B8%A4%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9B%B8%E4%BA%A4%E7%9A%84%E4%B8%80%E7%B3%BB%E5%88%97%E9%97%AE%E9%A2%98/</a></p>
+<h3 id="两柱子围成面积问题"><a href="#两柱子围成面积问题" class="headerlink" title="两柱子围成面积问题"></a>两柱子围成面积问题</h3><p>一个一维数组，数组值代表柱子的高度，两个柱子围成面积=较小的柱子*两柱子的距离</p>
+<p>使用两个变量，分别指向数字头、尾，向中间移动，每次计算围成的面积，比较可得出围成最大面积的两个值。<br>这里移动的是头部的尾部的，看谁那端的小，看短板了。</p>
+<p>### </p>
+<h3 id="沙皇问题"><a href="#沙皇问题" class="headerlink" title="沙皇问题"></a>沙皇问题</h3>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/23/数据结构/" rel="next" title="数据结构">
+                <i class="fa fa-chevron-left"></i> 数据结构
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="SOHUCS"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Zhang Yuying" />
+          <p class="site-author-name" itemprop="name">Zhang Yuying</p>
+           
+              <p class="site-description motion-element" itemprop="description">如果有一天我们湮没在人潮中庸碌一生，那是因为我们没有努力要活的丰盛。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#算法第一篇"><span class="nav-number">1.</span> <span class="nav-text">算法第一篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二分法查找的时间复杂度O-logn"><span class="nav-number">1.0.1.</span> <span class="nav-text">二分法查找的时间复杂度O(logn)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将10亿个ipV4地址排序"><span class="nav-number">1.0.2.</span> <span class="nav-text">将10亿个ipV4地址排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KMP算法"><span class="nav-number">1.0.3.</span> <span class="nav-text">KMP算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串相关"><span class="nav-number">1.0.4.</span> <span class="nav-text">字符串相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链表中环，链表相交问题"><span class="nav-number">1.0.5.</span> <span class="nav-text">链表中环，链表相交问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两柱子围成面积问题"><span class="nav-number">1.0.6.</span> <span class="nav-text">两柱子围成面积问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#沙皇问题"><span class="nav-number">1.0.7.</span> <span class="nav-text">沙皇问题</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhang Yuying</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cytcPEnyw';
+      var conf = '5f5dc3b9e307c655ae1e9bc0a8037cc9';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
